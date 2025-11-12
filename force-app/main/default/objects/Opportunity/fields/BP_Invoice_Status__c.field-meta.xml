@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BP_Invoice_Status__c</fullName>
+    <label>BP Invoice Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Items Received</fullName>
+                <default>true</default>
+                <label>Items Received</label>
+            </value>
+            <value>
+                <fullName>BP Invoice Raised</fullName>
+                <default>false</default>
+                <label>BP Invoice Raised</label>
+            </value>
+            <value>
+                <fullName>BP Invoice Paid</fullName>
+                <default>false</default>
+                <label>BP Invoice Paid</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

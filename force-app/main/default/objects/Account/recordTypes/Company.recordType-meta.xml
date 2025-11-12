@@ -2,6 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Company</fullName>
     <active>true</active>
+    <compactLayoutAssignment>Company_Compact_Layout</compactLayoutAssignment>
     <label>Company</label>
     <picklistValues>
         <picklist>AccountSource</picklist>
@@ -63,21 +64,267 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Client_Status__c</picklist>
+        <picklist>Brands__c</picklist>
         <values>
-            <fullName>Active</fullName>
+            <fullName>3M</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Developing</fullName>
+            <fullName>ABS</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Lapsed</fullName>
+            <fullName>AWG</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Potential</fullName>
+            <fullName>Ajax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alukwa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Andersen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apollo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autonica</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CCS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consilium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crewsaver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DSB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eyeaid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flir</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Galileo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gloria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Haix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heli PPE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hoefnagels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honeywell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hydac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>InnoVFoam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lloyds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marioff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minimax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nau Steuerungstechnik</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Norma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paasar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paxton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Protek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RM Nautical Montfoort BV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sabre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sar-TB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SpinLock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TTV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traconed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultra Fog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultrafog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Viking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wika</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YAK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zollner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Detection Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency Vessels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extinguishing Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fire Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Life Saving Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Locator Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signal Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wind Breakers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wind Screens</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Department__c</picklist>
+        <values>
+            <fullName>Fire Safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marine Safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wind Protection</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -247,321 +494,144 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Sub_Type__c</picklist>
+        <picklist>Sub_Category__c</picklist>
         <values>
-            <fullName>AVIT</fullName>
+            <fullName>Detectors</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Advertising%2FSales</fullName>
+            <fullName>Extinguishing Systems</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Affinity Partner</fullName>
+            <fullName>Fire Detection</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Airport</fullName>
+            <fullName>Fire Extinguishers</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Ancillary</fullName>
+            <fullName>Fire Safety</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Art</fullName>
+            <fullName>Flame Detection</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Bank%2FFinancial</fullName>
+            <fullName>GPS Signals</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Boat Show Supplier</fullName>
+            <fullName>Gas Detection</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Burgess Account</fullName>
+            <fullName>Gas Detectors</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Captain</fullName>
+            <fullName>Gas Sensors</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Catering</fullName>
+            <fullName>Hearing Protection</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Charter Brokers</fullName>
+            <fullName>Heat Detection</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Charter Managers</fullName>
+            <fullName>Hose Reels</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Classification Society</fullName>
+            <fullName>Life Boats</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Coatings Specialist</fullName>
+            <fullName>Life Rafts</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Communications</fullName>
+            <fullName>Mist Systems</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Computer Services</fullName>
+            <fullName>Monitoring</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Control Systems</fullName>
+            <fullName>Monitors</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Courier</fullName>
+            <fullName>Nozzles</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Crew</fullName>
+            <fullName>PPE</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Crewing Agency</fullName>
+            <fullName>Piping Systems</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Dealer</fullName>
+            <fullName>Pump Stations</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Deck Supplies</fullName>
+            <fullName>Rescue Boats</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Designer</fullName>
+            <fullName>Respirators</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Editor</fullName>
+            <fullName>Safety Technology</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Electrical</fullName>
+            <fullName>Signalling</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Engineering Supplies</fullName>
+            <fullName>Smoke Detectors</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Engines</fullName>
+            <fullName>Sounders</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Entertainment</fullName>
+            <fullName>Suppression Systems</fullName>
             <default>false</default>
         </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Supplier_Currency__c</picklist>
         <values>
-            <fullName>Exterior Designer</fullName>
+            <fullName>AUD</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Family%2FWealth Management</fullName>
+            <fullName>EUR</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Fuel %26 Lube Oil</fullName>
+            <fullName>GBP</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Galley</fullName>
+            <fullName>None</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>General Supplier</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Ground Transportation</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Hotel</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Hull Specialist</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Insurance</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Interior Designer</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Interior Equipment</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Interior Finishing</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Interior Specialist</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Interior Supplies</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Lawyer</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Lighting Specialist</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Lighting Supplier</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Marine Engineer</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Marketing</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Naval Architect</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Navigation Equipment</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Noise %26 Vibration</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Online Marketing</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Other</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Photographer</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Port</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Press</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Print</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Project Managers</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Real Estate Agent</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Refrigeration</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Restaurant</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Safety</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Sales Brokers</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Security</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Ship Registry</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Shipping Agent</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Shipyard - Build</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Shipyard - Refit</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Shipyard - Repair</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Shop</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Social Media</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Spa%2FGym</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Sponsorship</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Steel%2FAlu fabrications</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Surveyor</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tenders %26 Toys</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Travel Agent</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Woodwork%2FVeneers</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yacht Managers</fullName>
+            <fullName>USD</fullName>
             <default>false</default>
         </values>
     </picklistValues>

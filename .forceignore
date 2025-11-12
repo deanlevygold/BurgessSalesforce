@@ -18,7 +18,6 @@ package.xml
 # ============================================
 
 # --- STANDARD PROFILES (ignore all except System Administrator) ---
-**/profiles/Admin.profile-meta.xml
 **/profiles/Chatter*.profile-meta.xml
 **/profiles/Marketing*.profile-meta.xml
 **/profiles/Standard*.profile-meta.xml

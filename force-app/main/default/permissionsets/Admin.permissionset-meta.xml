@@ -1062,6 +1062,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.GDPR_consent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.GDPR_consent_type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1583,21 +1588,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Custom_currency__c.Convert_to_currency__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Custom_currency__c.CurrencyExternalId__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Custom_currency__c.LastModified_On__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Custom_currency__c.Last_updated_at__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
