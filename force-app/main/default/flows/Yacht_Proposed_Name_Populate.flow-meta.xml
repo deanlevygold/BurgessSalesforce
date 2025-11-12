@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Updating naming formula</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ForClientAccountID</name>
+        <dataType>String</dataType>
+        <expression>IF
+(
+ISBLANK({!$Record.Opportunity__c} ) = TRUE,
+{!$Record.Proposed_To_Client__r.Id},
+{!Get_opp_Info.AccountId}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>ForContactID</name>
+        <dataType>String</dataType>
+        <expression>IF
+(
+ISBLANK({!$Record.Opportunity__c} ) = TRUE,
+{!$Record.Contact_Proposed_To__c},
+{!Get_Client_Contact.Id}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>yachtProposedName</name>
+        <dataType>String</dataType>
+        <expression>{!Get_MP.Yacht_name_at_event__c}+&apos; &apos;
++
+IF(
+ISBLANK({!$Record.Opportunity__c}) = TRUE, 
+{!$Record.Proposed_To_Client__r.Name},
+{!$Record.Opportunity__r.Account.Name}
+)
++&apos; &apos;+TEXT(MONTH(TODAY()))+&apos; &apos;+TEXT(YEAR(TODAY()))</expression>
+    </formulas>
+    <interviewLabel>Yacht Proposed Name Populate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Yacht Proposed Name Populate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Client_Contact</name>
+        <label>Get Client Contact</label>
+        <locationX>176</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_the_Name_Of_Yacht_Proposed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_opp_Info.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_MP</name>
+        <label>Get MP</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_opp_Info</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Market_Position__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Market_Position__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Yacht_name_at_event__c</queriedFields>
+        <queriedFields>Yacht__c</queriedFields>
+        <queriedFields>Yacht_ref_number__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_opp_Info</name>
+        <label>Get opp Info</label>
+        <locationX>176</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Client_Contact</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_the_Name_Of_Yacht_Proposed</name>
+        <label>Update the Name Of Yacht Proposed</label>
+        <locationX>176</locationX>
+        <locationY>611</locationY>
+        <inputAssignments>
+            <field>Contact_Proposed_To__c</field>
+            <value>
+                <elementReference>ForContactID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>yachtProposedName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Proposed_To_Client__c</field>
+            <value>
+                <elementReference>ForClientAccountID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht__c</field>
+            <value>
+                <elementReference>Get_MP.Yacht__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_MP</targetReference>
+        </connector>
+        <object>Yacht_Proposed__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

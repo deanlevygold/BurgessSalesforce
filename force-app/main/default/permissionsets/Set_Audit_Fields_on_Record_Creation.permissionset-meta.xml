@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Set Audit Fields on Record Creation</label>
+    <tabSettings>
+        <tab>Market_Position__c</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CreateAuditFields</name>
+    </userPermissions>
+</PermissionSet>

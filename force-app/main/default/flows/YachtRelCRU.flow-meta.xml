@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>AssignNewEventName</name>
+        <label>AssignNewEventName</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Yacht_name_at_event__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FORYRNameAtEventNEW</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_New_YR</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignUpdatedEventName</name>
+        <label>AssignUpdatedEventName</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Yacht_name_at_event__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FORYRNameAtEventNEW</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Existing_YR</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignYachtOnSaveTEXT</name>
+        <label>AssignYachtOnSaveTEXT</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarYachtEventNameOnSave</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Yacht_name_at_event__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarYachtEventNamePrior</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.Yacht_name_at_event__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsYachtNameAtEventChanged</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Is_New_Yacht_Relationship_Record</name>
+        <label>Is New Yacht Relationship Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>AssignYachtOnSaveTEXT</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_New_YR</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignNewEventName</targetReference>
+            </connector>
+            <label>Yes New YR</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsYachtNameAtEventChanged</name>
+        <label>IsYachtNameAtEventChanged</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Existing_YR</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_IsYachtNameAtEventChanged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ForEventNameLCvsUC</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignUpdatedEventName</targetReference>
+            </connector>
+            <label>Yes IsYachtNameAtEventChanged</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>ForEventNameLCvsUC</name>
+        <dataType>Boolean</dataType>
+        <expression>{!VarYachtEventNamePrior} = UPPER({!VarYachtEventNameOnSave})
+&amp;&amp;
+{!VarYachtEventNameOnSave} = UPPER({!VarYachtEventNameOnSave})</expression>
+    </formulas>
+    <formulas>
+        <description>for new YR records</description>
+        <name>FORYRNameAtEventNEW</name>
+        <dataType>String</dataType>
+        <expression>IF(
+ISNULL({!$Record.Yacht_name_at_event__c}) = TRUE,
+UPPER({!$Record.Yacht__r.Name}),
+UPPER({!$Record.Yacht_name_at_event__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>isnew()</expression>
+    </formulas>
+    <interviewLabel>YachtRelCRU {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>YachtRelCRU</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Existing_YR</name>
+        <label>Update Existing YR</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_New_YR</name>
+        <label>Update New YR</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_New_Yacht_Relationship_Record</targetReference>
+        </connector>
+        <object>Yacht_Relationship__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>VarYachtEventNameOnSave</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>VarYachtEventNamePrior</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>AllRecordsBeforeSevenDays</name>
+        <label>AllRecordsBeforeSevenDays</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Delete_Those_Records</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>sevenDaysBeforeDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_records</targetReference>
+            </connector>
+            <label>Delete Those Records</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>sevenDaysBeforeDate</name>
+        <dataType>Date</dataType>
+        <expression>(TODAY() - VALUE({!$Label.Yacht_Price_Updates}))</expression>
+    </formulas>
+    <interviewLabel>DeleteNewsTickerRecords {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>DeleteNewsTickerRecords</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_records</name>
+        <label>Delete records</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>$Record</inputReference>
+    </recordDeletes>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AllRecordsBeforeSevenDays</targetReference>
+        </connector>
+        <object>News_Ticker__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-09-20</startDate>
+            <startTime>01:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

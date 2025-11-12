@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Population_Score__c</fullName>
+    <formula>IF
+(ISBLANK( Website )  = TRUE, 0, 25)
++
+IF
+(ISBLANK(  Phone )  = TRUE, 0, 25)
++
+IF
+(ISBLANK(TEXT(     Industry  ))  = TRUE, 0, 25)
++
+IF
+(NumberOfEmployees &gt; 0,25,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Data Population Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

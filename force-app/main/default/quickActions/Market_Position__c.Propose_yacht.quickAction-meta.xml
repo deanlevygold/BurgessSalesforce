@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Manual propose a yacht the client has already seen</description>
+    <fieldOverrides>
+        <field>Market_Position__c</field>
+        <formula>Market_Position__c.Id</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Stage__c</field>
+        <literalValue>Proposed</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Yacht__c</field>
+        <formula>Market_Position__c.Yacht__c</formula>
+    </fieldOverrides>
+    <label>Propose yacht</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Proposed_To_Client__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Contact_Proposed_To__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Opportunity__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <targetObject>Yacht_Proposed__c</targetObject>
+    <targetParentField>Market_Position__c</targetParentField>
+    <type>Create</type>
+</QuickAction>

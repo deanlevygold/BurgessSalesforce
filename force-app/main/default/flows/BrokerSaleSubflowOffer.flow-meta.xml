@@ -1,0 +1,2826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>AddtoUBOBuyerCollection</name>
+        <label>AddtoUBOBuyerCollection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarUBOBuyersConRoles</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>VarNewBuyerConRole</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>No_of_Buyers</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AddUBOSellerCollection</name>
+        <label>AddUBOSellerCollection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarUBOSellerConRoles</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>VarNewSellerConRole</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_UBO_Sellers</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count_of_Buyers</name>
+        <label>Count of Buyers</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarBuyerCount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>GetKYCUBOBuyers</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>No</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Count_of_Sellers</name>
+        <label>Count of Sellers</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarSellersCount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Sellers</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>No_of_Sellers</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Prepare_Seller_Con_Role</name>
+        <label>Prepare Seller Con. Role</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarNewSellerConRole.ContractId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarContractId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarNewSellerConRole.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_UBO_Sellers.ContactId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarNewSellerConRole.Role</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Seller</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AddUBOSellerCollection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>PrepareBuyerConRole</name>
+        <label>PrepareBuyerConRole</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarNewBuyerConRole.ContractId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarContractId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarNewBuyerConRole.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>No_of_Buyers.ContactId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarNewBuyerConRole.Role</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Buyer</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AddtoUBOBuyerCollection</targetReference>
+        </connector>
+    </assignments>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <decisions>
+        <name>Any_seller_lawyer</name>
+        <label>Any seller lawyer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>CreateSellerLawyerConRole</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_seller_lawyer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Seller_Lawyer.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetKYCUBOBuyers</targetReference>
+            </connector>
+            <label>No seller lawyer</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Buyer_exist</name>
+        <label>Check Buyer exist</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Create_Buyer_Lawyer</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_Exist_Buyer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Buyer_s_Lawyer.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Offer</targetReference>
+            </connector>
+            <label>Not Exist Buyer</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Counter_Price</name>
+        <label>Check Counter Price</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Exist_Counter_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AddCounterPrice</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_All_Offer_Items</targetReference>
+            </connector>
+            <label>Exist Counter Price</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Offer_Price_Is_NUll</name>
+        <label>Check Offer Price Is NUll</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Offer_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OfferPriceCreate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CreateOffer</targetReference>
+            </connector>
+            <label>Check Offer Price</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Price_IsNull</name>
+        <label>Check Price IsNull</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Price_IsNotNull</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>PriceAddoffer</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Update_All_OfferItem</targetReference>
+            </connector>
+            <label>Price IsNotNull</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>No</name>
+        <label>No. of buyers</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>No_of_Buyers</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Zero_Buyers</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarBuyerCount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Buyer_s_Lawyer</targetReference>
+            </connector>
+            <label>Zero Buyers</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>No_of_Sellers</name>
+        <label>No of Sellers</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Loop_UBO_Sellers</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Zero_Sellers</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarSellersCount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Seller_Lawyer</targetReference>
+            </connector>
+            <label>Zero Sellers</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Path_Based_On_Button_Click</name>
+        <label>Path Based On Button Click</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Create_Offer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OfferCreatebtn.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Create New Offer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OfferCreatebtn.outputValue</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Offer_Price_Is_NUll</targetReference>
+            </connector>
+            <label>Create Offer</label>
+        </rules>
+        <rules>
+            <name>AddOffer</name>
+            <conditionLogic>7 AND ( 1 OR 2 OR 3 OR 4 OR 5 OR 6 )</conditionLogic>
+            <conditions>
+                <leftValueReference>OfferUpdateHeaderControll.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Offer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddBrokerController.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Offer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OfferCreatebtn.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Offer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddOppBtnController.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Offer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddOppBrokerBtnController.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Offer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddBrokerController.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Offer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PopUpScreenOfferAddOffer.cancelOutput</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Price_IsNull</targetReference>
+            </connector>
+            <label>AddOffer</label>
+        </rules>
+        <rules>
+            <name>AddBrokerPurchase</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AddPurchase.selectedOpportunityId</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddPurchase.cancelOutput</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ClickAddBrokerPurchase</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Broker_Purchase</targetReference>
+            </connector>
+            <label>AddBroker Purchase</label>
+        </rules>
+        <rules>
+            <name>Add_Counter</name>
+            <conditionLogic>7 AND 8 AND ( 1 OR 2 OR 3 OR 4 OR 5 OR 6 )</conditionLogic>
+            <conditions>
+                <leftValueReference>OfferUpdateHeaderControll.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Counter</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddBrokerController.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Counter</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OfferCreatebtn.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Counter</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddOppBtnController.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Counter</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddOppBrokerBtnController.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Counter</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddBrokerController.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add Counter</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddCounter.cancelOutput</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddCounterPrice</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Counter_Price</targetReference>
+            </connector>
+            <label>Add Counter</label>
+        </rules>
+        <rules>
+            <name>Agreed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AgreePriceValue</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddAgreed.cancelOutput</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateAllOfferItem_Agreed</targetReference>
+            </connector>
+            <label>Agreed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>UserId_Primary_sales_broker</name>
+        <label>UserId(Primary sales broker)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Userid_Check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opp_Team</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_contract</targetReference>
+            </connector>
+            <label>Userid Check</label>
+        </rules>
+    </decisions>
+    <description>adding sale opp to offer updates</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AddAgreeBTNClick</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+  OR(
+    {!OfferUpdateHeaderControll.outputValue} = &quot;Add Agreed&quot;,
+    {!AddBrokerController.outputValue} = &quot;Add Agreed&quot;,
+    {!OfferCreatebtn.outputValue} = &quot;Add Agreed&quot;,
+    {!AddOppBtnController.outputValue} = &quot;Add Agreed&quot;,
+    {!AddOppBrokerBtnController.outputValue} = &quot;Add Agreed&quot;,
+    {!AddBrokerController.outputValue} = &quot;Add Agreed&quot;
+  ),
+ OR( NOT(ISBLANK({!SaleOfferDataTable.firstSelectedRow.Buying_Broker__c})),
+  NOT(ISBLANK({!SaleOfferDataTable.firstSelectedRow.Purchase_Opportunity__c}))
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>AddAgreedBTNErrorlick</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+  OR(
+    {!OfferUpdateHeaderControll.outputValue} = &quot;Add Agreed&quot;,
+    {!AddBrokerController.outputValue} = &quot;Add Agreed&quot;,
+    {!OfferCreatebtn.outputValue} = &quot;Add Agreed&quot;,
+    {!AddOppBtnController.outputValue} = &quot;Add Agreed&quot;,
+    {!AddOppBrokerBtnController.outputValue} = &quot;Add Agreed&quot;,
+    {!AddBrokerController.outputValue} = &quot;Add Agreed&quot;
+  ),
+  AND(
+    ISBLANK({!SaleOfferDataTable.firstSelectedRow.Buying_Broker__c}),
+    ISBLANK({!SaleOfferDataTable.firstSelectedRow.Purchase_Opportunity__c})
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>AddBrokerBtnClick</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+{!OfferUpdateHeaderControll.outputValue} = &quot;Add Broker&quot;,
+{!AddBrokerController.outputValue} = &quot;Add Broker&quot;,
+{!OfferCreatebtn.outputValue} = &quot;Add Broker&quot;,
+{!OfferUpdateHeaderControll.outputValue} = &quot;Add Broker&quot;,
+{!AddOppBtnController.outputValue} = &quot;Add Broker&quot;,
+{!AddOppBrokerBtnController.outputValue} = &quot;Add Broker&quot;,
+{!AddBrokerController.outputValue} = &quot;Add Broker&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>AddCounterBtnClick</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+{!OfferUpdateHeaderControll.outputValue} = &quot;Add Counter&quot;,
+{!AddBrokerController.outputValue} = &quot;Add Counter&quot;,
+{!OfferCreatebtn.outputValue} = &quot;Add Counter&quot;,
+{!OfferUpdateHeaderControll.outputValue} = &quot;Add Counter&quot;,
+{!AddOppBtnController.outputValue} = &quot;Add Counter&quot;,
+{!AddOppBrokerBtnController.outputValue} = &quot;Add Counter&quot;,
+{!AddBrokerController.outputValue} = &quot;Add Counter&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>AddCounterPrice</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    CONTAINS({!AddCounter.fieldValuesJson}, &quot;Counter&quot;),
+    VALUE(
+        SUBSTITUTE(
+            LEFT(
+                MID(
+                    {!AddCounter.fieldValuesJson},
+                    FIND(&quot;Counter&quot;, {!AddCounter.fieldValuesJson}) + LEN(&quot;Counter&quot;) + 3,
+                    100
+                ),
+                FIND(
+                    &apos;&quot;&apos;,
+                    MID(
+                        {!AddCounter.fieldValuesJson},
+                        FIND(&quot;Counter&quot;, {!AddCounter.fieldValuesJson}) + LEN(&quot;Counter&quot;) + 3,
+                        100
+                    )
+                ) - 1
+            ),
+            &quot;,&quot;,
+            &quot;&quot;
+        )
+    ),
+    NULL
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>AddOfferBtnClick</name>
+        <dataType>Boolean</dataType>
+        <expression>{!OfferCreatebtn.outputValue} = &quot;Create New Offer&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>AddOfferButtonClick</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+{!OfferUpdateHeaderControll.outputValue} = &quot;Add Offer&quot;,
+{!AddBrokerController.outputValue} = &quot;Add Offer&quot;,
+{!OfferCreatebtn.outputValue} = &quot;Add Offer&quot;,
+{!OfferUpdateHeaderControll.outputValue} = &quot;Add Offer&quot;,
+{!AddOppBtnController.outputValue} = &quot;Add Offer&quot;,
+{!AddOppBrokerBtnController.outputValue} = &quot;Add Offer&quot;,
+{!AddBrokerController.outputValue} = &quot;Add Offer&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>AgreePriceValue</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    CONTAINS({!AddAgreed.fieldValuesJson}, &quot;Agreed&quot;),
+    VALUE(
+        SUBSTITUTE(
+            LEFT(
+                MID(
+                    {!AddAgreed.fieldValuesJson},
+                    FIND(&quot;Agreed&quot;, {!AddAgreed.fieldValuesJson}) + LEN(&quot;Agreed&quot;) + 3,
+                    100
+                ),
+                FIND(
+                    &apos;&quot;&apos;,
+                    MID(
+                        {!AddAgreed.fieldValuesJson},
+                        FIND(&quot;Agreed&quot;, {!AddAgreed.fieldValuesJson}) + LEN(&quot;Agreed&quot;) + 3,
+                        100
+                    )
+                ) - 1
+            ),
+            &quot;,&quot;,
+            &quot;&quot;
+        )
+    ),
+    NULL
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>ClickAddBrokerPurchase</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+{!OfferUpdateHeaderControll.outputValue} = &quot;Add Broker Purchase&quot;,
+{!AddBrokerController.outputValue} = &quot;Add Broker Purchase&quot;,
+{!OfferCreatebtn.outputValue} = &quot;Add Broker Purchase&quot;,
+{!OfferUpdateHeaderControll.outputValue} = &quot;Add Broker Purchase&quot;,
+{!AddOppBtnController.outputValue} = &quot;Add Broker Purchase&quot;,
+{!AddOppBrokerBtnController.outputValue} = &quot;Add Broker Purchase&quot;,
+{!AddBrokerController.outputValue} = &quot;Add Broker Purchase&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>OfferPriceCreate</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    CONTAINS({!PopUpScreenOfferCreate.fieldValuesJson}, &quot;offerPrice&quot;),
+    VALUE(
+        SUBSTITUTE(
+            LEFT(
+                MID(
+                    {!PopUpScreenOfferCreate.fieldValuesJson},
+                    FIND(&quot;offerPrice&quot;, {!PopUpScreenOfferCreate.fieldValuesJson}) + LEN(&quot;offerPrice&quot;) + 3,
+                    100
+                ),
+                FIND(
+                    &apos;&quot;&apos;,
+                    MID(
+                        {!PopUpScreenOfferCreate.fieldValuesJson},
+                        FIND(&quot;offerPrice&quot;, {!PopUpScreenOfferCreate.fieldValuesJson}) + LEN(&quot;offerPrice&quot;) + 3,
+                        100
+                    )
+                ) - 1
+            ),
+            &quot;,&quot;,
+            &quot;&quot;
+        )
+    ),
+    NULL
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>PriceAddoffer</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    CONTAINS({!PopUpScreenOfferAddOffer.fieldValuesJson}, &quot;Price&quot;),
+    VALUE(
+        SUBSTITUTE(
+            LEFT(
+                MID(
+                    {!PopUpScreenOfferAddOffer.fieldValuesJson},
+                    FIND(&quot;Price&quot;, {!PopUpScreenOfferAddOffer.fieldValuesJson}) + LEN(&quot;Price&quot;) + 3,
+                    100
+                ),
+                FIND(
+                    &apos;&quot;&apos;,
+                    MID(
+                        {!PopUpScreenOfferAddOffer.fieldValuesJson},
+                        FIND(&quot;Price&quot;, {!PopUpScreenOfferAddOffer.fieldValuesJson}) + LEN(&quot;Price&quot;) + 3,
+                        100
+                    )
+                ) - 1
+            ),
+            &quot;,&quot;,
+            &quot;&quot;
+        )
+    ),
+    NULL
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>ValueInMessage</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    ISBLANK({!SaleOfferDataTable.firstSelectedRow.Buying_Broker__c}) &amp;&amp;
+    ISBLANK({!SaleOfferDataTable.firstSelectedRow.Purchase_Opportunity__c}),
+    &quot;Buying Broker, Purchase Opportunity&quot;,
+    IF(
+        ISBLANK({!SaleOfferDataTable.firstSelectedRow.Buying_Broker__c}),
+        &quot;Buying Broker&quot;,
+        IF(
+            ISBLANK({!SaleOfferDataTable.firstSelectedRow.Purchase_Opportunity__c}),
+            &quot;Purchase Opportunity&quot;,
+            &quot;&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>BrokerSaleSubflowOffer {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BrokerSaleSubflowOffer</label>
+    <loops>
+        <name>Loop_UBO_Sellers</name>
+        <label>Loop UBO Sellers</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Sellers</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Prepare_Seller_Con_Role</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>CreateSellerUBOConRoles</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>No_of_Buyers</name>
+        <label>Loop of Buyers</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>GetKYCUBOBuyers</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>PrepareBuyerConRole</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>CreateBuyerUBOConRoles</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Buyer_Lawyer</name>
+        <label>Create Buyer Lawyer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Offer</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>Get_Buyer_s_Lawyer.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContractId</field>
+            <value>
+                <elementReference>VarContractId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Role</field>
+            <value>
+                <stringValue>Buyer&apos;s Lawyer</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ContractContactRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_contract</name>
+        <label>Create contract</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignRecordIdToReference>VarContractId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Get_Sellers</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>accountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Buying_Broker_Name__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Buying_Broker__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContractTerm</field>
+            <value>
+                <numberValue>12.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Market_Position__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Opp_Team.UserId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Price_Agreed_Amount__c</field>
+            <value>
+                <elementReference>AgreePriceValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Price_Agreed_Currency__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Asking_currency__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Price_Agreed_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Purchase_Opportunity__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Purchase_Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sale_Opportunity__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Live</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Contract</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Offer_Item</name>
+        <label>Create Offer Item</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Currency__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Asking_currency__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Offer__c</field>
+            <value>
+                <elementReference>CreateOffer</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Price_c__c</field>
+            <value>
+                <elementReference>OfferPriceCreate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Current</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Offer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Yacht__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer_Item__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Offer_Item_Agreed</name>
+        <label>Create Offer Item (Agreed)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opp_Team</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Currency__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Asking_currency__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Offer__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Price_c__c</field>
+            <value>
+                <elementReference>AgreePriceValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_c__c</field>
+            <value>
+                <stringValue>Current</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Agreed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht_Name__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Yacht_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Yacht__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer_Item__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Offer_Item_Current</name>
+        <label>Create Offer Item Current</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Offer_Price</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Currency__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Asking_currency__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Offer__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Price_c__c</field>
+            <value>
+                <elementReference>PriceAddoffer</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_c__c</field>
+            <value>
+                <stringValue>Current</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Offer</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht_Name__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Yacht_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Yacht__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer_Item__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Offer_Items_Counter</name>
+        <label>Create Offer Items (Counter)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Offer_Counter</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Currency__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Asking_currency__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Offer__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Price_c__c</field>
+            <value>
+                <elementReference>AddCounterPrice</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_c__c</field>
+            <value>
+                <stringValue>Current</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Counter</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht_Name__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Yacht_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht__c</field>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Yacht__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer_Item__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>CreateBuyerUBOConRoles</name>
+        <label>CreateBuyerUBOConRoles</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Buyer_s_Lawyer</targetReference>
+        </connector>
+        <inputReference>VarUBOBuyersConRoles</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>CreateOffer</name>
+        <label>Create Offer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Offer_Item</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Asking_currency__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Asking_currency__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Asking_price__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Askingprice__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Buying_Broker__c</field>
+            <value>
+                <elementReference>PopUpScreenOfferCreate.selectedContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Currency__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Asking_currency__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_price_change__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Market_Position__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OfferPrice__c</field>
+            <value>
+                <elementReference>OfferPriceCreate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Offer_currency__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Asking_currency__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Purchase_Opportunity__c</field>
+            <value>
+                <elementReference>PopUpScreenOfferCreate.selectedOpportunityId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sale_Opportunity__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht_Name__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Yacht_name_at_event__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Yacht__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Yacht__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>CreateSellerLawyerConRole</name>
+        <label>CreateSellerLawyerConRole</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetKYCUBOBuyers</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>Get_Seller_Lawyer.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContractId</field>
+            <value>
+                <elementReference>VarContractId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Role</field>
+            <value>
+                <stringValue>Seller&apos;s Lawyer</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ContractContactRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>CreateSellerUBOConRoles</name>
+        <label>CreateSellerUBOConRoles</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Seller_Lawyer</targetReference>
+        </connector>
+        <inputReference>VarUBOSellerConRoles</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Buyer_s_Lawyer</name>
+        <label>Get Buyer&apos;s Lawyer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Buyer_exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Purchase_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Role</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lawyer</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OpportunityContactRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Opp_Team</name>
+        <label>Get Opp Team</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>UserId_Primary_sales_broker</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>TeamMemberRole</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Primary Sales Broker</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OpportunityTeamMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Sale_Marketing_Position</name>
+        <label>Get Sale Marketing Position</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Sale_Offers</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Selling_Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status_Reason__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Inactive</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Market_position_type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Sale</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Market_Position__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Sale_Offers</name>
+        <label>Get Sale Offers</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>PageSaleDataTable</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Market_Position__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Offer__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Seller_Lawyer</name>
+        <label>Get Seller Lawyer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Any_seller_lawyer</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Role</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lawyer</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OpportunityContactRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Sellers</name>
+        <label>Get Sellers</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Count_of_Sellers</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>isubo__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityContactRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetKYCUBOBuyers</name>
+        <label>GetUBOBuyers</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Count_of_Buyers</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>isubo__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Purchase_Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityContactRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_All_Offer_Items</name>
+        <label>Update All Offer Items</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Offer_Items_Counter</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status_c__c</field>
+            <value>
+                <stringValue>Former</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Offer_Item__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_All_OfferItem</name>
+        <label>Update All OfferItem</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Offer_Item_Current</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Offer__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status_c__c</field>
+            <value>
+                <stringValue>Former</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Offer_Item__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Broker_Purchase</name>
+        <label>Update Broker Purchase</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Purchase_Opportunity__c</field>
+            <value>
+                <elementReference>AddPurchase.selectedOpportunityId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Offer</name>
+        <label>Update Offer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Opp</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Agreed_Price__c</field>
+            <value>
+                <elementReference>AgreePriceValue</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Offer_Counter</name>
+        <label>Update Offer (Counter)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Counter_Price__c</field>
+            <value>
+                <elementReference>AddCounterPrice</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Offer_Price</name>
+        <label>Update Offer Price</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OfferPrice__c</field>
+            <value>
+                <elementReference>PriceAddoffer</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Offer__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opp</name>
+        <label>Update Opp</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>1 AND (2 OR 3 OR 4)</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Amount__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Amount__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Tab_Visibility__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Opportunity_Amount__c</field>
+            <value>
+                <elementReference>AgreePriceValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity_Currency__c</field>
+            <value>
+                <elementReference>Get_Sale_Marketing_Position.Asking_currency__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Tab_Visibility__c</field>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateAllOfferItem_Agreed</name>
+        <label>Update All Offer Item (Agreed)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Offer_Item_Agreed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Offer__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status_c__c</field>
+            <value>
+                <stringValue>Former</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Offer_Item__c</object>
+    </recordUpdates>
+    <screens>
+        <name>PageSaleDataTable</name>
+        <label>PageSaleDataTable</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actions>
+            <name>OfferItem</name>
+            <actionName>OfferItemsGet</actionName>
+            <actionType>flow</actionType>
+            <inputParameters>
+                <name>OfferId</name>
+                <value>
+                    <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>OfferItemsGet</label>
+            <nameSegment>OfferItemsGet</nameSegment>
+        </actions>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Path_Based_On_Button_Click</targetReference>
+        </connector>
+        <fields>
+            <name>Offer</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Offer&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>SaleOfferDataTable</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>Offer__c</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Data table</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>SINGLE_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>Get_Sale_Offers</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name_Formula__c&quot;,&quot;guid&quot;:&quot;column-5e88&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Offer&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name Formula&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Purchase_Opp_URL__c&quot;,&quot;guid&quot;:&quot;column-f7d0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Purchase Opportunity&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Purchase Opp URL&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Yacht_Name__c&quot;,&quot;guid&quot;:&quot;column-0ad6&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Yacht Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Buying_Broker_Name__c&quot;,&quot;guid&quot;:&quot;column-90e0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Buying Broker&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Buying Broker Name&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Status__c&quot;,&quot;guid&quot;:&quot;column-2b9f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;CreatedDate&quot;,&quot;guid&quot;:&quot;column-d7e5&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Created Date&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Asking_currency__c&quot;,&quot;guid&quot;:&quot;column-706d&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Asking currency&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Asking_price__c&quot;,&quot;guid&quot;:&quot;column-c98b&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:7,&quot;label&quot;:&quot;Asking price&quot;,&quot;type&quot;:&quot;number&quot;},{&quot;apiName&quot;:&quot;OfferPrice__c&quot;,&quot;guid&quot;:&quot;column-b3a5&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:8,&quot;label&quot;:&quot;Offer Price&quot;,&quot;type&quot;:&quot;number&quot;},{&quot;apiName&quot;:&quot;Counter_Price__c&quot;,&quot;guid&quot;:&quot;column-858e&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:9,&quot;label&quot;:&quot;Counter Price&quot;,&quot;type&quot;:&quot;number&quot;},{&quot;apiName&quot;:&quot;Agreed_Price__c&quot;,&quot;guid&quot;:&quot;column-cad2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:10,&quot;label&quot;:&quot;Agreed Price&quot;,&quot;type&quot;:&quot;number&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>PageSaleDataTable_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>PageSaleDataTable_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>OfferCreatebtn</name>
+                    <extensionName>c:buttonCCTcustom</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>alignment</name>
+                        <value>
+                            <stringValue>Right</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>config</name>
+                        <value>
+                            <elementReference>CreateNewOfferbtn</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>customCss</name>
+                        <value>
+                            <elementReference>CreateOfferCssBtn</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>SaleOfferDataTable.firstSelectedRow.Id</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>OfferUpdateHeaderControll</name>
+                    <extensionName>c:buttonCCTcustom</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>alignment</name>
+                        <value>
+                            <stringValue>Right</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>config</name>
+                        <value>
+                            <elementReference>AgreedBtn</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>customCss</name>
+                        <value>
+                            <elementReference>CssAddBrokerBtn</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>3 AND ( 1 OR 2 )</conditionLogic>
+                        <conditions>
+                            <leftValueReference>SaleOfferDataTable.firstSelectedRow.Buying_Broker__c</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>SaleOfferDataTable.firstSelectedRow.Purchase_Opportunity__c</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>SaleOfferDataTable.firstSelectedRow.Id</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>AddBrokerController</name>
+                    <extensionName>c:buttonCCTcustom</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>alignment</name>
+                        <value>
+                            <stringValue>Right</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>config</name>
+                        <value>
+                            <elementReference>BtnAddBroker</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>customCss</name>
+                        <value>
+                            <elementReference>CssAddBrokerBtn</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>TrueBO</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>AddOppBtnController</name>
+                    <extensionName>c:buttonCCTcustom</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>config</name>
+                        <value>
+                            <elementReference>AddOppBtnName</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>alignment</name>
+                        <value>
+                            <stringValue>Right</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>customCss</name>
+                        <value>
+                            <elementReference>CssAddBrokerBtn</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>TrueBO</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>AddOppBrokerBtnController</name>
+                    <extensionName>c:buttonCCTcustom</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>alignment</name>
+                        <value>
+                            <stringValue>Right</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>customCss</name>
+                        <value>
+                            <elementReference>CssAddBrokerBtn</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>config</name>
+                        <value>
+                            <elementReference>BtnNameAddOppBroker</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>SaleOfferDataTable.firstSelectedRow.Id</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>SaleOfferDataTable.firstSelectedRow.Buying_Broker__c</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>SaleOfferDataTable.firstSelectedRow.Purchase_Opportunity__c</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>PopUpScreenOfferCreate</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Create Offer</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>Create Offer</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showContactLookup</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showOpportunityLookup</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <elementReference>AddOfferBtnClick</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldConfig</name>
+                <value>
+                    <elementReference>CreateInputFields</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>PopUpScreenOfferAddOffer</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Add Offer Item</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>Add Offer</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldConfig</name>
+                <value>
+                    <elementReference>AddAddOfferItemField</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <elementReference>AddOfferButtonClick</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>AddCounter</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Add Counter Price</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>Add Counter Price</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <elementReference>AddCounterBtnClick</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldConfig</name>
+                <value>
+                    <elementReference>AddCounterField</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>AddBroker</name>
+            <extensionName>c:customFlowPopUpdynamicModelForReq</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Offer__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldApiNames</name>
+                <value>
+                    <stringValue>Buying_Broker__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>SaleOfferDataTable.firstSelectedRow.Id</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <elementReference>AddBrokerBtnClick</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>AddPurchase</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Update Offer</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>Add Broker Purchase</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showOpportunityLookup</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <elementReference>ClickAddBrokerPurchase</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>AddAgreed</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Add Agreed</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>Add Agreed</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldConfig</name>
+                <value>
+                    <elementReference>AddAgreedField</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <elementReference>AddAgreeBTNClick</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>ErrorWindowSelingBrokerOppAgreed</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Finish</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>Error Window</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <elementReference>AddAgreedBTNErrorlick</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldConfig</name>
+                <value>
+                    <elementReference>ErrormessageAgeed</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>PageSaleDataTable_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>PageSaleDataTable_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>OfferItems</name>
+                    <dataTypeMappings>
+                        <typeName>T</typeName>
+                        <typeValue>Offer_Item__c</typeValue>
+                    </dataTypeMappings>
+                    <extensionName>flowruntime:datatable</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Offer Items</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>selectionMode</name>
+                        <value>
+                            <stringValue>NO_SELECTION</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>minRowSelection</name>
+                        <value>
+                            <numberValue>0.0</numberValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>tableData</name>
+                        <value>
+                            <elementReference>OfferItem.Results.OfferItemsCollection</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>maxRowSelection</name>
+                        <value>
+                            <numberValue>0.0</numberValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>columns</name>
+                        <value>
+                            <stringValue>[{&quot;apiName&quot;:&quot;Yacht_Name__c&quot;,&quot;guid&quot;:&quot;column-39d7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Yacht Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Currency__c&quot;,&quot;guid&quot;:&quot;column-d314&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Currency&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Price_c__c&quot;,&quot;guid&quot;:&quot;column-b1f1&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Price&quot;,&quot;type&quot;:&quot;number&quot;},{&quot;apiName&quot;:&quot;Status_c__c&quot;,&quot;guid&quot;:&quot;column-2190&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Type__c&quot;,&quot;guid&quot;:&quot;column-65c6&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+        <triggers>
+            <eventName>flow__screeninit</eventName>
+            <eventSource>PageSaleDataTable</eventSource>
+            <handlers>
+                <screenActionName>OfferItem</screenActionName>
+            </handlers>
+        </triggers>
+        <triggers>
+            <eventName>flow__screenfieldattributechange</eventName>
+            <eventSource>SaleOfferDataTable.firstSelectedRow.Id</eventSource>
+            <handlers>
+                <screenActionName>OfferItem</screenActionName>
+            </handlers>
+        </triggers>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Sale_Marketing_Position</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>AddAddOfferItemField</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+  {
+    &quot;label&quot;: &quot;🛥️ Yacht Name&quot;,
+    &quot;name&quot;: &quot;yachtName&quot;,
+    &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;{!SaleOfferDataTable.firstSelectedRow.Yacht_Name__c}&quot;
+  },
+{
+    &quot;label&quot;: &quot;Selected Currency&quot;,
+    &quot;name&quot;: &quot;currency&quot;,
+     &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;{!SaleOfferDataTable.firstSelectedRow.Offer_currency__c}&quot;
+    
+},
+  {
+    &quot;label&quot;: &quot;Price&quot;,
+    &quot;name&quot;: &quot;Price&quot;,
+    &quot;type&quot;: &quot;number&quot;
+  }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>AddAgreedField</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+  {
+    &quot;label&quot;: &quot;🛥️ Yacht Name&quot;,
+    &quot;name&quot;: &quot;yachtName&quot;,
+    &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;{!SaleOfferDataTable.firstSelectedRow.Yacht_Name__c}&quot;
+  },
+{
+    &quot;label&quot;: &quot;Selected Currency&quot;,
+    &quot;name&quot;: &quot;currency&quot;,
+     &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;{!SaleOfferDataTable.firstSelectedRow.Offer_currency__c}&quot;
+    
+},
+  {
+    &quot;label&quot;: &quot;Agreed Price&quot;,
+    &quot;name&quot;: &quot;Agreed&quot;,
+    &quot;type&quot;: &quot;number&quot;
+  }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>AddCounterField</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+  {
+    &quot;label&quot;: &quot;🛥️ Yacht Name&quot;,
+    &quot;name&quot;: &quot;yachtName&quot;,
+    &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;{!SaleOfferDataTable.firstSelectedRow.Yacht_Name__c}&quot;
+  },
+{
+    &quot;label&quot;: &quot;Selected Currency&quot;,
+    &quot;name&quot;: &quot;currency&quot;,
+     &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;{!SaleOfferDataTable.firstSelectedRow.Offer_currency__c}&quot;
+    
+},
+  {
+    &quot;label&quot;: &quot;Add Counter Price&quot;,
+    &quot;name&quot;: &quot;Counter&quot;,
+    &quot;type&quot;: &quot;number&quot;
+  }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>AddOppBtnName</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+    {
+        &quot;label&quot;: &quot;Add Broker Purchase&quot;,
+        &quot;value&quot;: &quot;Add Broker Purchase&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Broker-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Offer&quot;,
+        &quot;value&quot;: &quot;Add Offer&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Offer-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Counter&quot;,
+        &quot;value&quot;: &quot;Add Counter&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Counter-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Agreed&quot;,
+        &quot;value&quot;: &quot;Add Agreed&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Agreed-btn&quot;
+    }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>AgreedBtn</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+  {
+        &quot;label&quot;: &quot;Add Offer&quot;,
+        &quot;value&quot;: &quot;Add Offer&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Offer-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Counter&quot;,
+        &quot;value&quot;: &quot;Add Counter&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Counter-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Agreed&quot;,
+        &quot;value&quot;: &quot;Add Agreed&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Agreed-btn&quot;
+    }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>BtnAddBroker</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+    {
+        &quot;label&quot;: &quot;Add Broker&quot;,
+        &quot;value&quot;: &quot;Add Broker&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Broker-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Offer&quot;,
+        &quot;value&quot;: &quot;Add Offer&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Offer-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Counter&quot;,
+        &quot;value&quot;: &quot;Add Counter&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Counter-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Agreed&quot;,
+        &quot;value&quot;: &quot;Add Agreed&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Agreed-btn&quot;
+    }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>BtnNameAddOppBroker</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+    {
+        &quot;label&quot;: &quot;Add Broker&quot;,
+        &quot;value&quot;: &quot;Add Broker&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Broker-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Broker Purchase&quot;,
+        &quot;value&quot;: &quot;Add Broker Purchase&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Broker-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Offer&quot;,
+        &quot;value&quot;: &quot;Add Offer&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Offer-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Counter&quot;,
+        &quot;value&quot;: &quot;Add Counter&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Counter-btn&quot;
+    },
+    {
+        &quot;label&quot;: &quot;Add Agreed&quot;,
+        &quot;value&quot;: &quot;Add Agreed&quot;,
+        &quot;variant&quot;: &quot;brand&quot;,
+        &quot;cssClass&quot;: &quot;pill-button Add-Agreed-btn&quot;
+    }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CreateInputFields</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+{
+    &quot;label&quot;: &quot;Yacht&quot;,
+    &quot;name&quot;: &quot;Yacht&quot;,
+    &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;{!Get_Sale_Marketing_Position.Yacht__r.Name}&quot;
+  },
+ {
+    &quot;label&quot;: &quot;Asking Currency&quot;,
+    &quot;name&quot;: &quot;currency&quot;,
+    &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;{!Get_Sale_Marketing_Position.Asking_currency__c}&quot;
+  },
+  {
+    &quot;label&quot;: &quot;Asking Price&quot;,
+    &quot;name&quot;: &quot;asking&quot;,
+    &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;{!Get_Sale_Marketing_Position.Askingprice__c}&quot;
+  },
+  {
+    &quot;label&quot;: &quot;Offer Price&quot;,
+    &quot;name&quot;: &quot;offerPrice&quot;,
+    &quot;type&quot;: &quot;number&quot;
+  }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CreateNewOfferbtn</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+        {
+            &quot;label&quot;: &quot;Create New Offer&quot;,
+            &quot;value&quot;: &quot;Create New Offer&quot;,
+            &quot;variant&quot;: &quot;brand&quot;,
+            &quot;cssClass&quot;: &quot;pill-button New-btn&quot;
+        }
+   ]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CreateOfferCssBtn</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>.pill-button.New-btn {
+    border-radius: 25px !important;
+    font-size: 0.75rem;
+    padding: 0 0.75rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    float: right;
+}
+
+.pill-button.New-btn:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pill-button.New-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(1, 118, 211, 0.6);
+}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CssAddBrokerBtn</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>.pill-button.Add-Broker-btn,
+.pill-button.Add-Offer-btn,
+.pill-button.Add-Counter-btn,
+.pill-button.Add-Agreed-btn {
+    border-radius: 25px !important;
+    font-size: 0.75rem;
+    padding: 0 0.75rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    float: right;
+}
+
+.pill-button.Add-Broker-btn:hover,
+.pill-button.Add-Offer-btn:hover,
+.pill-button.Add-Counter-btn:hover,
+.pill-button.Add-Agreed-btn:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pill-button.Add-Broker-btn:focus,
+.pill-button.Add-Offer-btn:focus,
+.pill-button.Add-Counter-btn:focus,
+.pill-button.Add-Agreed-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(1, 118, 211, 0.6);
+}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ErrormessageAgeed</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+ {
+  &quot;label&quot;: &quot;Error&quot;,
+  &quot;name&quot;: &quot;Error&quot;,
+   &quot;type&quot;: &quot;Display text&quot;,
+   &quot;value&quot;: &quot;⚠️ Please Enter {!ValueInMessage} &quot;
+}
+]</text>
+    </textTemplates>
+    <variables>
+        <name>accountId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OfferRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Offer__c</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>true</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>true</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>TrueBO</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>VarBuyerCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>VarContractId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>VarNewBuyerConRole</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContractContactRole</objectType>
+    </variables>
+    <variables>
+        <name>VarNewSellerConRole</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContractContactRole</objectType>
+    </variables>
+    <variables>
+        <name>VarSellersCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>VarUBOBuyersConRoles</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContractContactRole</objectType>
+    </variables>
+    <variables>
+        <name>VarUBOSellerConRoles</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContractContactRole</objectType>
+    </variables>
+</Flow>

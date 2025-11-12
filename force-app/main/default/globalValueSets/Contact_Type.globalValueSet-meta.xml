@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Client</fullName>
+        <default>false</default>
+        <label>Client</label>
+    </customValue>
+    <customValue>
+        <fullName>Associate</fullName>
+        <default>false</default>
+        <label>Associate</label>
+    </customValue>
+    <customValue>
+        <fullName>Industry</fullName>
+        <default>false</default>
+        <label>Industry</label>
+    </customValue>
+    <customValue>
+        <fullName>Captain/Crew</fullName>
+        <default>false</default>
+        <label>Captain/Crew</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown</fullName>
+        <default>false</default>
+        <label>Unknown</label>
+    </customValue>
+    <customValue>
+        <fullName>Class society</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Class society</label>
+    </customValue>
+    <customValue>
+        <fullName>Interior designer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Interior designer</label>
+    </customValue>
+    <customValue>
+        <fullName>Shipping agent</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Shipping agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Surveyor</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Surveyor</label>
+    </customValue>
+    <customValue>
+        <fullName>Exterior designer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Exterior designer</label>
+    </customValue>
+    <customValue>
+        <fullName>Marine engineer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Marine engineer</label>
+    </customValue>
+    <customValue>
+        <fullName>Advertising/sales</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Advertising/sales</label>
+    </customValue>
+    <customValue>
+        <fullName>Designer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Designer</label>
+    </customValue>
+    <customValue>
+        <fullName>Online marketing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Online marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Print</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Print</label>
+    </customValue>
+    <customValue>
+        <fullName>Affinity partner</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Affinity partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Influencer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Influencer</label>
+    </customValue>
+    <customValue>
+        <fullName>Photographer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Photographer</label>
+    </customValue>
+    <customValue>
+        <fullName>Social media</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Social media</label>
+    </customValue>
+    <customValue>
+        <fullName>Editor</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Editor</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Press</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Press</label>
+    </customValue>
+    <customValue>
+        <fullName>Sponsorship</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sponsorship</label>
+    </customValue>
+    <customValue>
+        <fullName>Charter Manager</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Charter Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Burgess Employee</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Burgess Employee</label>
+    </customValue>
+    <customValue>
+        <fullName>Captain</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Captain</label>
+    </customValue>
+    <customValue>
+        <fullName>Charter Broker</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Charter Broker</label>
+    </customValue>
+    <customValue>
+        <fullName>Crew</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Crew</label>
+    </customValue>
+    <customValue>
+        <fullName>Lawyer</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Lawyer</label>
+    </customValue>
+    <customValue>
+        <fullName>Listing/Assistant</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Listing/Assistant</label>
+    </customValue>
+    <customValue>
+        <fullName>PA/Exec Assit/Sec</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PA/Exec Assit/Sec</label>
+    </customValue>
+    <customValue>
+        <fullName>Real Estate Agent</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Real Estate Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Broker</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Sales Broker</label>
+    </customValue>
+    <customValue>
+        <fullName>Travel Agent</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Travel Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Yacht Manager</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Yacht Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Commercial</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Commercial</label>
+    </customValue>
+    <customValue>
+        <fullName>PA/exec assistant/secretary</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PA/exec assistant/secretary</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Insurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Project manager</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Project manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Bank/financial</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Bank/financial</label>
+    </customValue>
+    <customValue>
+        <fullName>Family office</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Family office</label>
+    </customValue>
+    <customValue>
+        <fullName>Company manager</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Company manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Burgess external consultant</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Burgess external consultant</label>
+    </customValue>
+    <customValue>
+        <fullName>Flag state</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Flag state</label>
+    </customValue>
+    <customValue>
+        <fullName>Naval architect</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Naval architect</label>
+    </customValue>
+    <customValue>
+        <fullName>Shipyard (build)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Shipyard (build)</label>
+    </customValue>
+    <masterLabel>Contact Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

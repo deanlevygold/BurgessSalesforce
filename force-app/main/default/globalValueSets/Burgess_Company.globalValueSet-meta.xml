@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Nigel Burgess Ltd</fullName>
+        <default>false</default>
+        <label>Nigel Burgess Ltd</label>
+    </customValue>
+    <customValue>
+        <fullName>Nigel Burgess SAM</fullName>
+        <default>false</default>
+        <label>Nigel Burgess SAM</label>
+    </customValue>
+    <customValue>
+        <fullName>Nigel Burgess Inc (New York)</fullName>
+        <default>false</default>
+        <label>Nigel Burgess Inc (New York)</label>
+    </customValue>
+    <customValue>
+        <fullName>Nigel Burgess Inc (Miami)</fullName>
+        <default>false</default>
+        <label>Nigel Burgess Inc (Miami)</label>
+    </customValue>
+    <masterLabel>Burgess Company</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

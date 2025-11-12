@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Advertising</fullName>
+        <default>false</default>
+        <label>Advertising</label>
+    </customValue>
+    <customValue>
+        <fullName>App</fullName>
+        <default>false</default>
+        <label>App</label>
+    </customValue>
+    <customValue>
+        <fullName>Australian Financial Review</fullName>
+        <default>false</default>
+        <label>Australian Financial Review</label>
+    </customValue>
+    <customValue>
+        <fullName>Bloomberg</fullName>
+        <default>false</default>
+        <label>Bloomberg</label>
+    </customValue>
+    <customValue>
+        <fullName>BoatPro</fullName>
+        <default>false</default>
+        <label>BoatPro</label>
+    </customValue>
+    <customValue>
+        <fullName>Boat Show</fullName>
+        <default>false</default>
+        <label>Boat Show</label>
+    </customValue>
+    <customValue>
+        <fullName>Bought List</fullName>
+        <default>false</default>
+        <label>Bought List</label>
+    </customValue>
+    <customValue>
+        <fullName>Broker Initiative</fullName>
+        <default>false</default>
+        <label>Broker Initiative</label>
+    </customValue>
+    <customValue>
+        <fullName>Client Initiative</fullName>
+        <default>false</default>
+        <label>Client Initiative</label>
+    </customValue>
+    <customValue>
+        <fullName>Data Mining</fullName>
+        <default>false</default>
+        <label>Data Mining</label>
+    </customValue>
+    <customValue>
+        <fullName>Email Campaign</fullName>
+        <default>false</default>
+        <label>Email Campaign</label>
+    </customValue>
+    <customValue>
+        <fullName>Event</fullName>
+        <default>false</default>
+        <label>Event</label>
+    </customValue>
+    <customValue>
+        <fullName>Forbes</fullName>
+        <default>false</default>
+        <label>Forbes</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Data Mining</fullName>
+        <default>false</default>
+        <label>Other Data Mining</label>
+    </customValue>
+    <customValue>
+        <fullName>Pebble Beach</fullName>
+        <default>false</default>
+        <label>Pebble Beach</label>
+    </customValue>
+    <customValue>
+        <fullName>PR</fullName>
+        <default>false</default>
+        <label>PR</label>
+    </customValue>
+    <customValue>
+        <fullName>Printed Mailing</fullName>
+        <default>false</default>
+        <label>Printed Mailing</label>
+    </customValue>
+    <customValue>
+        <fullName>Referral</fullName>
+        <default>false</default>
+        <label>Referral</label>
+    </customValue>
+    <customValue>
+        <fullName>Repeat Enquirer</fullName>
+        <default>false</default>
+        <label>Repeat Enquirer</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Media</fullName>
+        <default>false</default>
+        <label>Social Media</label>
+    </customValue>
+    <customValue>
+        <fullName>Super Yacht Times</fullName>
+        <default>false</default>
+        <label>Super Yacht Times</label>
+    </customValue>
+    <customValue>
+        <fullName>Times Rich List</fullName>
+        <default>false</default>
+        <label>Times Rich List</label>
+    </customValue>
+    <customValue>
+        <fullName>Wealth-X</fullName>
+        <default>false</default>
+        <label>Wealth-X</label>
+    </customValue>
+    <customValue>
+        <fullName>Website</fullName>
+        <default>false</default>
+        <label>Website</label>
+    </customValue>
+    <masterLabel>Source</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unknown</fullName>
+    <active>true</active>
+    <label>Unknown</label>
+    <picklistValues>
+        <picklist>AccountSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advertising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boat Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bought List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broker Initiative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Initiative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Mining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printed Mailing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repeat Enquirer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Developing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lapsed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potential</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apparel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not For Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecommunications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Type__c</picklist>
+        <values>
+            <fullName>AVIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advertising%2FSales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Affinity Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ancillary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Art</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank%2FFinancial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boat Show Supplier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burgess Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charter Brokers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charter Managers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Classification Society</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coatings Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computer Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Control Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Courier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crewing Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dealer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deck Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Editor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exterior Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family%2FWealth Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel %26 Lube Oil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Galley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Supplier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hull Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interior Designer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interior Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interior Finishing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interior Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interior Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lighting Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lighting Supplier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marine Engineer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Naval Architect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Noise %26 Vibration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Photographer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Port</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Press</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Managers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refrigeration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restaurant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Brokers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ship Registry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipyard - Build</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipyard - Refit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipyard - Repair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spa%2FGym</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sponsorship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steel%2FAlu fabrications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surveyor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tenders %26 Toys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Woodwork%2FVeneers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yacht Managers</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Analyst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Press</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suppliers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yachting Industry</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

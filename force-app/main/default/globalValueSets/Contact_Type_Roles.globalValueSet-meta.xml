@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Adviser</fullName>
+        <default>false</default>
+        <label>Adviser</label>
+    </customValue>
+    <customValue>
+        <fullName>Affinity partner</fullName>
+        <default>false</default>
+        <label>Affinity partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Affinity Partner Client</fullName>
+        <default>false</default>
+        <label>Affinity Partner Client</label>
+    </customValue>
+    <customValue>
+        <fullName>Agent</fullName>
+        <default>false</default>
+        <label>Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Assistant</fullName>
+        <default>false</default>
+        <label>Assistant</label>
+    </customValue>
+    <customValue>
+        <fullName>Associate</fullName>
+        <default>false</default>
+        <label>Associate</label>
+    </customValue>
+    <customValue>
+        <fullName>Bank/financial</fullName>
+        <default>false</default>
+        <label>Bank/financial</label>
+    </customValue>
+    <customValue>
+        <fullName>Burgess Associate</fullName>
+        <default>false</default>
+        <label>Burgess Associate</label>
+    </customValue>
+    <customValue>
+        <fullName>Burgess Employee</fullName>
+        <default>false</default>
+        <label>Burgess Employee</label>
+    </customValue>
+    <customValue>
+        <fullName>Burgess external consultant</fullName>
+        <default>false</default>
+        <label>Burgess external consultant</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Partner</fullName>
+        <default>false</default>
+        <label>Business Partner</label>
+    </customValue>
+    <customValue>
+        <fullName>Captain</fullName>
+        <default>false</default>
+        <label>Captain</label>
+    </customValue>
+    <customValue>
+        <fullName>Charter Broker</fullName>
+        <default>false</default>
+        <label>Charter Broker</label>
+    </customValue>
+    <customValue>
+        <fullName>Charter Manager</fullName>
+        <default>false</default>
+        <label>Charter Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Child</fullName>
+        <default>false</default>
+        <label>Child</label>
+    </customValue>
+    <customValue>
+        <fullName>Class society</fullName>
+        <default>false</default>
+        <label>Class society</label>
+    </customValue>
+    <customValue>
+        <fullName>Client</fullName>
+        <default>false</default>
+        <label>Client</label>
+    </customValue>
+    <customValue>
+        <fullName>Crew</fullName>
+        <default>false</default>
+        <label>Crew</label>
+    </customValue>
+    <customValue>
+        <fullName>Exterior designer</fullName>
+        <default>false</default>
+        <label>Exterior designer</label>
+    </customValue>
+    <customValue>
+        <fullName>External Broker</fullName>
+        <default>false</default>
+        <label>External Broker</label>
+    </customValue>
+    <customValue>
+        <fullName>Family office</fullName>
+        <default>false</default>
+        <label>Family office</label>
+    </customValue>
+    <customValue>
+        <fullName>Flag state</fullName>
+        <default>false</default>
+        <label>Flag state</label>
+    </customValue>
+    <customValue>
+        <fullName>Friend</fullName>
+        <default>false</default>
+        <label>Friend</label>
+    </customValue>
+    <customValue>
+        <fullName>Influencer</fullName>
+        <default>false</default>
+        <label>Influencer</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance</fullName>
+        <default>false</default>
+        <label>Insurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Interior designer</fullName>
+        <default>false</default>
+        <label>Interior designer</label>
+    </customValue>
+    <customValue>
+        <fullName>Lawyer</fullName>
+        <default>false</default>
+        <label>Lawyer</label>
+    </customValue>
+    <customValue>
+        <fullName>Listing/Assistant</fullName>
+        <default>false</default>
+        <label>Listing/Assistant</label>
+    </customValue>
+    <customValue>
+        <fullName>Marine engineer</fullName>
+        <default>false</default>
+        <label>Marine engineer</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Naval architect</fullName>
+        <default>false</default>
+        <label>Naval architect</label>
+    </customValue>
+    <customValue>
+        <fullName>PA/EA/Secretary</fullName>
+        <default>false</default>
+        <label>PA/EA/Secretary</label>
+    </customValue>
+    <customValue>
+        <fullName>Photographer/Videographer</fullName>
+        <default>false</default>
+        <label>Photographer/Videographer</label>
+    </customValue>
+    <customValue>
+        <fullName>Press</fullName>
+        <default>false</default>
+        <label>Press</label>
+    </customValue>
+    <customValue>
+        <fullName>Project manager</fullName>
+        <default>false</default>
+        <label>Project manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Real Estate Agent</fullName>
+        <default>false</default>
+        <label>Real Estate Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Relative</fullName>
+        <default>false</default>
+        <label>Relative</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Broker</fullName>
+        <default>false</default>
+        <label>Sales Broker</label>
+    </customValue>
+    <customValue>
+        <fullName>Shipping agent</fullName>
+        <default>false</default>
+        <label>Shipping agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Shipyard</fullName>
+        <default>false</default>
+        <label>Shipyard</label>
+    </customValue>
+    <customValue>
+        <fullName>Spouse</fullName>
+        <default>false</default>
+        <label>Spouse</label>
+    </customValue>
+    <customValue>
+        <fullName>Stakeholder</fullName>
+        <default>false</default>
+        <label>Stakeholder</label>
+    </customValue>
+    <customValue>
+        <fullName>Surveyor</fullName>
+        <default>false</default>
+        <label>Surveyor</label>
+    </customValue>
+    <customValue>
+        <fullName>Travel Agent</fullName>
+        <default>false</default>
+        <label>Travel Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Yacht Manager</fullName>
+        <default>false</default>
+        <label>Yacht Manager</label>
+    </customValue>
+    <masterLabel>Contact Type Roles</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
