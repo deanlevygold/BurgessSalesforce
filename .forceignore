@@ -1,0 +1,109 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+package.xml
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
+
+# ============================================
+# Burgess Salesforce Project .forceignore
+# Keep System Administrator profile
+# Ignore everything standard or managed not needed for deployment
+# ============================================
+
+# --- STANDARD PROFILES (ignore all except System Administrator) ---
+**/profiles/Admin.profile-meta.xml
+**/profiles/Chatter*.profile-meta.xml
+**/profiles/Marketing*.profile-meta.xml
+**/profiles/Standard*.profile-meta.xml
+**/profiles/ContractManager.profile-meta.xml
+**/profiles/SolutionManager.profile-meta.xml
+**/profiles/ReadOnly.profile-meta.xml
+**/profiles/Customer Community*.profile-meta.xml
+**/profiles/HighVolumeCustomerPortal.profile-meta.xml
+**/profiles/Partner*.profile-meta.xml
+
+# --- STANDARD APPS (Sales, Service, etc.) ---
+**/applications/standard*.app-meta.xml
+**/applications/Sales.app-meta.xml
+**/applications/Sales_Console.app-meta.xml
+**/applications/Service.app-meta.xml
+**/applications/Service_Console.app-meta.xml
+**/applications/Marketing.app-meta.xml
+**/applications/Community.app-meta.xml
+**/applications/Content.app-meta.xml
+
+# --- MANAGED PACKAGE & NAMESPACE METADATA ---
+**/aura/*__*
+**/lwc/*__*
+**/staticresources/*__*
+**/objects/*__*
+**/classes/*__*
+**/triggers/*__*
+**/permissionsets/*__*
+**/profiles/*__*
+**/flows/*__*
+
+# --- AUTOMATICALLY GENERATED SETTINGS & CONFIG ---
+**/settings/*
+**/email/*
+**/homePageLayouts/*
+**/portal/*
+**/networkBranding/*
+**/brandingSets/*
+**/navigationMenus/*
+**/translations/*
+**/connectedApps/*
+**/notificationTypeConfig/*
+**/entitlementTemplates/*
+**/quickActions/FeedItem.*
+**/queue/*
+**/role/*
+**/sharingRules/*
+**/pathAssistants/Standard_*.pathAssistant-meta.xml
+
+# --- STANDARD FLEXIPAGES & LAYOUTS ---
+**/flexipages/Home_*.flexipage-meta.xml
+**/flexipages/Standard_*.flexipage-meta.xml
+**/layouts/Standard*.layout-meta.xml
+**/layouts/Service*.layout-meta.xml
+**/layouts/Sales*.layout-meta.xml
+
+# --- AUTO-GENERATED REPORTS & DASHBOARDS ---
+**/reports/unfiled$public/*
+**/dashboards/unfiled$public/*
+**/reportTypes/*
+**/analyticSnapshots/*
+**/reportFolders/unfiled$public.folder-meta.xml
+
+# --- TEMP FILES / CACHE / IDE ---
+# VS Code & CLI working directories
+.vscode/
+.sfdx/
+.sf/
+.sfdx-tools/
+.idea/
+logs/
+node_modules/
+coverage/
+temp/
+tmp/
+
+# --- EVERYTHING ELSE SYSTEM-GENERATED ---
+**/workflows/*
+**/approvalProcesses/*
+**/profiles/Guest*.profile-meta.xml
+**/weblinks/Standard_*.weblink-meta.xml
+**/datacategory/*
+**/userCriteria/*
+**/objectTranslations/*
+**/authproviders/*
+**/externalDataSources/*
+**/authproviders/*
+

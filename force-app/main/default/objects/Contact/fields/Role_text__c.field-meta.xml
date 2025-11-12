@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role_text__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES(Role__c, &quot;Adviser&quot;), &quot;Adviser;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Affinity partner&quot;), &quot;Affinity partner;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Assistant&quot;), &quot;Assistant;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Bank/financial&quot;), &quot;Bank/financial;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Burgess Associate&quot;), &quot;Burgess Associate;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Burgess Employee&quot;), &quot;Burgess Employee;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Burgess external consultant&quot;), &quot;Burgess external consultant;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Captain&quot;), &quot;Captain;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Charter Broker&quot;), &quot;Charter Broker;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Charter Manager&quot;), &quot;Charter Manager;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Child&quot;), &quot;Child;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Class society&quot;), &quot;Class society;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Client&quot;), &quot;Client;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Crew&quot;), &quot;Crew;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Exterior designer&quot;), &quot;Exterior designer;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Family office&quot;), &quot;Family office;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Flag state&quot;), &quot;Flag state;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Influencer&quot;), &quot;Influencer;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Insurance&quot;), &quot;Insurance;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Interior designer&quot;), &quot;Interior designer;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Lawyer&quot;), &quot;Lawyer;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Listing/Assistant&quot;), &quot;Listing/Assistant;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Marine engineer&quot;), &quot;Marine engineer;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Marketing&quot;), &quot;Marketing;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Naval architect&quot;), &quot;Naval architect;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;PA/EA/Secretary&quot;), &quot;PA/EA/Secretary;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Photographer/Videographer&quot;), &quot;Photographer/Videographer;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Press&quot;), &quot;Press;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Project manager&quot;), &quot;Project manager;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Real Estate Agent&quot;), &quot;Real Estate Agent;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Relative&quot;), &quot;Relative;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Sales Broker&quot;), &quot;Sales Broker;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Shipping agent&quot;), &quot;Shipping agent;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Shipyard&quot;), &quot;Shipyard;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Spouse&quot;), &quot;Spouse;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Stakeholder&quot;), &quot;Stakeholder;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Surveyor&quot;), &quot;Surveyor;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Travel Agent&quot;), &quot;Travel Agent;&quot;,null) &amp;
+IF(INCLUDES(Role__c, &quot;Yacht Manager&quot;), &quot;Yacht Manager;&quot;,null)</formula>
+    <label>Role text</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

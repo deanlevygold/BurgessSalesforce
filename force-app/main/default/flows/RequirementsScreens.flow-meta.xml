@@ -1,0 +1,2871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>AboveOneRecordClient</name>
+        <label>AboveOneRecordClient</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>OneReq.Id</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>CountReqRecords</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_prepared_reqs_to_collection</name>
+        <label>Add prepared reqs to collection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VARNewBasketItems</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>record_newBasketItem</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_yachts</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AddBasketUpdatesto_collection</name>
+        <label>AddBasketUpdatesto collection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarUpdateBasketItems</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>VarRecord_updatedBasket</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_yachtIDs_to_collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Addtodonotincludeinupdate</name>
+        <label>Addtodonotincludeinupdate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarBasketDoNotIncludeUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>VarRecordDonotIncludeinUpdate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopRemoveAlreadysent</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_yachtIDs_to_collection</name>
+        <label>Assign yachtIDs to collection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varListofYachtIDsforWebsite</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_basket_IDs.Yacht_Ref_Number__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_basket_IDs</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignAnotherRecordsReq</name>
+        <label>AssignAnotherRecordsReq</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CollectionAllReq</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>LoopOnReqCheckType</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CountReqRecords</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignEmpty</name>
+        <label>AssignEmpty</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CountReq</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CollectionAllReq</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CollectionClientReq</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TrueClientTypeExist</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_current_requirements</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assignokaytothecollection</name>
+        <label>Assignokaytothecollection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarOkaytoSendCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>VarRecordBasketOkaytoSend</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopRemoveAlreadysent</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignOneValue</name>
+        <label>AssignOneValue</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>OneReq.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopOnReqCheckType.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CountReqRecords</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignRecordClientReq</name>
+        <label>AssignRecordClientReq</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CollectionClientReq</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>LoopOnReqCheckType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CollectionAllReq</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>LoopOnReqCheckType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TrueClientTypeExist</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ReqCount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>CollectionClientReq</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OneDoestClient</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ClientReqTypeIsOne</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>CollectIDdonotupdate</name>
+        <label>CollectIDdonotupdate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarRecordDonotIncludeinUpdate.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopRemoveAlreadysent.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Addtodonotincludeinupdate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>CountRemainingRecords</name>
+        <label>CountRemainingRecords</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarCountRecordsOkaytoSendtoWebsite</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>VarOkaytoSendCollection</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Action_button_selected</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>CountReqRecords</name>
+        <label>CountReqRecords</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CountReq</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>CollectionAllReq</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopOnReqCheckType</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Okay_to_be_sent_to_website</name>
+        <label>Okay to be sent to website</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarRecordBasketOkaytoSend.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopRemoveAlreadysent.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarRecordBasketOkaytoSend.Yacht_Ref_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopRemoveAlreadysent.Yacht_Ref_Number__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assignokaytothecollection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Prepare_reqs_for_basket</name>
+        <label>Prepare reqs for basket</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>record_newBasketItem.Search_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CurrentRequirements.firstSelectedRow.Description__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>record_newBasketItem.OpportunityID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetOppSearchRecords.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>record_newBasketItem.Asking_Currency__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_yachts.Asking_currency__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>record_newBasketItem.Asking_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_yachts.Askingprice__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>record_newBasketItem.Yacht_Ref_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_yachts.Yacht_ref_number__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>record_newBasketItem.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>record_newBasketItem.Yacht__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_yachts.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>record_newBasketItem.Yacht_Name_at_selection__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_yachts.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_prepared_reqs_to_collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Prepare_Yachts_for_Basket_update</name>
+        <label>Prepare Yachts for Basket update</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>VarRecord_updatedBasket.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Copy to web selection</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarRecord_updatedBasket.Sent_to_website__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarRecord_updatedBasket.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_basket_IDs.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AddBasketUpdatesto_collection</targetReference>
+        </connector>
+    </assignments>
+    <collectionProcessors>
+        <name>Sort_All_Reqs</name>
+        <elementSubtype>SortCollectionProcessor</elementSubtype>
+        <label>Sort All Reqs</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionProcessorType>SortCollectionProcessor</collectionProcessorType>
+        <collectionReference>CollectionAllReq</collectionReference>
+        <connector>
+            <targetReference>Requirements</targetReference>
+        </connector>
+        <sortOptions>
+            <doesPutEmptyStringAndNullFirst>false</doesPutEmptyStringAndNullFirst>
+            <sortField>CreatedDate</sortField>
+            <sortOrder>Desc</sortOrder>
+        </sortOptions>
+    </collectionProcessors>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <decisions>
+        <name>Action_button_selected</name>
+        <label>Action button selected</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Selected_zero_valid_records</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarCountRecordsOkaytoSendtoWebsite</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CantSendtowebordeletePage</targetReference>
+            </connector>
+            <label>Selected zero valid records</label>
+        </rules>
+        <rules>
+            <name>Delete_Basket_Items</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BasketActionController.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DeleteBasketItems</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Record_Basket</targetReference>
+            </connector>
+            <label>Delete Basket Items</label>
+        </rules>
+        <rules>
+            <name>Sent_to_Website</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BasketActionController.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sendtowebsite</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_basket_IDs</targetReference>
+            </connector>
+            <label>Sent to Website</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Already_sent_to_website</name>
+        <label>Already sent to website</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Okay_to_be_sent_to_website</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_already_sent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopRemoveAlreadysent.Sent_to_website__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CollectIDdonotupdate</targetReference>
+            </connector>
+            <label>Yes already sent</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>At_least_one_record_must_be_Client_Req</name>
+        <label>At least one record must be Client Req</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>AssignAnotherRecordsReq</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>ElseRecords</defaultConnectorLabel>
+        <rules>
+            <name>YesOneRecordIsClientReq</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopOnReqCheckType.Requirement_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Requirement</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignRecordClientReq</targetReference>
+            </connector>
+            <label>YesOneRecordIsClientReq</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckClientFirstTimeCreate</name>
+        <label>CheckClientFirstTimeCreate</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>AlreadyExistClientTypeReq</defaultConnectorLabel>
+        <rules>
+            <name>FirstTimeCreation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CountReq</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateOpp</targetReference>
+            </connector>
+            <label>FirstTimeCreation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ClientReqTypeIsOne</name>
+        <label>ClientReqTypeIsOne</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>AboveOneRecordClient</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>AboveOneRecord</defaultConnectorLabel>
+        <rules>
+            <name>ClientOne</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ReqCount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignOneValue</targetReference>
+            </connector>
+            <label>ClientOne</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ReqButtonSelectionInScreen</name>
+        <label>ReqButtonSelectionInScreen</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AddRequirement</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Requirement_ADD_Button.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Add</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ButtonCancelCick</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateRequirement</targetReference>
+            </connector>
+            <label>AddRequirement</label>
+        </rules>
+        <rules>
+            <name>EditRequirement</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Requirement_EditDel_Btn.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Edit</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ClickButtoncancel</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>EditRequirement</label>
+        </rules>
+        <rules>
+            <name>DeleteRequirement</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Requirement_EditDel_Btn.outputValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Delete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CancelButtonPress</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OneReq.Id</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>CurrentRequirements.firstSelectedRow.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Selected_Requirement</targetReference>
+            </connector>
+            <label>DeleteRequirement</label>
+        </rules>
+        <rules>
+            <name>Create_Basket_Item</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DataTableYachts.firstSelectedRow</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ButtonForYacht.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Select</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_yachts</targetReference>
+            </connector>
+            <label>Create Basket Item</label>
+        </rules>
+        <rules>
+            <name>CancelButtonClick</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ButtonCancelCick</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ClickButtoncancel</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CancelButtonPress</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>CancelButtonClick</label>
+        </rules>
+        <rules>
+            <name>BasketPath</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>BasketActionController.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sendtowebsite</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>BasketActionController.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DeleteBasketItems</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>LoopRemoveAlreadysent</targetReference>
+            </connector>
+            <label>BasketPath</label>
+        </rules>
+    </decisions>
+    <description>feedback updates</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Budgetcurrency</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!FieldOutPut}, &quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;),
+  MID(
+    {!FieldOutPut},
+    FIND(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;, {!FieldOutPut}) + LEN(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;),
+    FIND(
+      &quot;\&quot;&quot;,
+      {!FieldOutPut},
+      FIND(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;, {!FieldOutPut}) + LEN(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+      FIND(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;, {!FieldOutPut}) + LEN(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;)
+    )
+  ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Budgetmax</name>
+        <dataType>Number</dataType>
+        <expression>VALUE(
+  MID(
+    {!ReqAddValues},
+    FIND(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;),
+    FIND(
+      &quot;\&quot;&quot;,
+      {!ReqAddValues},
+      FIND(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+      FIND(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;)
+    )
+  )
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>BudgetMin</name>
+        <dataType>Number</dataType>
+        <expression>VALUE(
+MID(
+  {!FieldOutPut},
+  FIND(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;, {!FieldOutPut}) + LEN(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;),
+  FIND(
+    &quot;\&quot;&quot;,
+    {!FieldOutPut},
+    FIND(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;, {!FieldOutPut}) + LEN(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;)
+  ) -
+  (
+    FIND(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;, {!FieldOutPut}) + LEN(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;)
+  )
+)
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>Cabinsmin</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!ReqAddValues}, &quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;),
+  MID(
+    {!ReqAddValues},
+    FIND(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;),
+    FIND(
+      &quot;\&quot;&quot;,
+      {!ReqAddValues},
+      FIND(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+      FIND(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;)
+    )
+  ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>currencyBudget</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!ReqEditValue}, &quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;),
+  MID(
+    {!ReqEditValue},
+    FIND(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;),
+    FIND(
+      &quot;\&quot;&quot;,
+      {!ReqEditValue},
+      FIND(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+      FIND(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Budget_currency__c\&quot;:\&quot;&quot;)
+    )
+  ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>DescriptionValue</name>
+        <dataType>String</dataType>
+        <expression>/* Returns the string after &quot;Description__c&quot;:&quot; and before the next quote */
+MID(
+    {!ReqAddValues},
+    FIND(&quot;\&quot;Description__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Description__c\&quot;:\&quot;&quot;),
+    FIND(
+        &quot;\&quot;&quot;,
+        {!ReqAddValues},
+        FIND(&quot;\&quot;Description__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Description__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+        FIND(&quot;\&quot;Description__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Description__c\&quot;:\&quot;&quot;)
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>EditReqTrueClick</name>
+        <dataType>Boolean</dataType>
+        <expression>{!Requirement_EditDel_Btn.outputValue} =&quot;Edit&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>ForLast12Hours</name>
+        <dataType>DateTime</dataType>
+        <expression>now() - (13/24)</expression>
+    </formulas>
+    <formulas>
+        <name>LOAMaxMetres</name>
+        <dataType>Number</dataType>
+        <expression>VALUE(
+MID(
+  {!ReqAddValues},
+  FIND(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;),
+  FIND(
+    &quot;\&quot;&quot;,
+    {!ReqAddValues},
+    FIND(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;)
+  ) -
+  (
+    FIND(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;)
+  )
+)
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>LOAMinMetres</name>
+        <dataType>Number</dataType>
+        <expression>  VALUE(
+MID(
+  {!ReqAddValues},
+  FIND(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;),
+FIND(
+    &quot;\&quot;&quot;,
+    {!ReqAddValues},
+    FIND(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;)
+  ) -
+  (
+    FIND(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;)
+  )
+)
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>MaxBudget</name>
+        <dataType>Number</dataType>
+        <expression>VALUE(
+  MID(
+    {!ReqEditValue},
+    FIND(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;),
+    FIND(
+      &quot;\&quot;&quot;,
+       {!ReqEditValue},
+      FIND(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+      FIND(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Budget_max__c\&quot;:\&quot;&quot;)
+    )
+  )
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>MaxMetreLOA</name>
+        <dataType>Number</dataType>
+        <expression>VALUE(
+MID(
+  {!ReqEditValue},
+  FIND(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;),
+  FIND(
+    &quot;\&quot;&quot;,
+    {!ReqEditValue},
+    FIND(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;)
+  ) -
+  (
+    FIND(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;LOA_max_metres__c\&quot;:\&quot;&quot;)
+  )
+)
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>MinBudget</name>
+        <dataType>Number</dataType>
+        <expression>VALUE(
+MID(
+  {!ReqEditValue},
+  FIND(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;),
+  FIND(
+    &quot;\&quot;&quot;,
+    {!ReqEditValue},
+    FIND(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;)
+  ) -
+  (
+    FIND(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Budget_min__c\&quot;:\&quot;&quot;)
+  )
+)
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>MinCabin</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!ReqEditValue}, &quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;),
+  TEXT(
+    VALUE(
+      TRIM(
+        SUBSTITUTE(
+          MID(
+            SUBSTITUTE(SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;), CHR(13), &quot;&quot;),
+            FIND(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;, SUBSTITUTE(SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;), CHR(13), &quot;&quot;)) + LEN(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;),
+            FIND(
+              &quot;\&quot;&quot;,
+              SUBSTITUTE(SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;), CHR(13), &quot;&quot;),
+              FIND(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;, SUBSTITUTE(SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;), CHR(13), &quot;&quot;)) + LEN(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;)
+            ) - (
+              FIND(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;, SUBSTITUTE(SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;), CHR(13), &quot;&quot;)) + LEN(&quot;\&quot;Cabins_min__c\&quot;:\&quot;&quot;)
+            )
+          ),
+          &quot;\&quot;&quot;,
+          &quot;&quot;
+        )
+      )
+    )
+  ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>MinMetresLOA</name>
+        <dataType>Number</dataType>
+        <expression>  VALUE(
+MID(
+  {!ReqEditValue},
+  FIND(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;),
+FIND(
+    &quot;\&quot;&quot;,
+    {!ReqEditValue},
+    FIND(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;)
+  ) -
+  (
+    FIND(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;LOA_min_metres__c\&quot;:\&quot;&quot;)
+  )
+)
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>NameReq</name>
+        <dataType>String</dataType>
+        <expression>/* Returns the string after &quot;Description__c&quot;:&quot; and before the next quote */
+MID(
+    {!ReqEditValue},
+    FIND(&quot;\&quot;Description__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Description__c\&quot;:\&quot;&quot;),
+    FIND(
+        &quot;\&quot;&quot;,
+        {!ReqEditValue},
+        FIND(&quot;\&quot;Description__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Description__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+        FIND(&quot;\&quot;Description__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Description__c\&quot;:\&quot;&quot;)
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>RequirementType</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!ReqAddValues}, &quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;),
+  MID(
+    {!ReqAddValues},
+    FIND(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;),
+    FIND(
+      &quot;\&quot;&quot;,
+      {!ReqAddValues},
+      FIND(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+      FIND(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;)
+    )
+  ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>TrueCondtionAddreqClick</name>
+        <dataType>Boolean</dataType>
+        <expression>{!Requirement_ADD_Button.outputValue} = &quot;Add&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>TrueDel</name>
+        <dataType>Boolean</dataType>
+        <expression>{!Requirement_EditDel_Btn.outputValue} = &quot;Delete&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>TypeReq</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+  MID(
+    SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;),  /* Removes line breaks */
+    FIND(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;, SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;)) + LEN(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;),
+    FIND(
+      &quot;\&quot;&quot;,
+      SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;),
+      FIND(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;, SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;)) + LEN(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;)
+    ) - (
+      FIND(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;, SUBSTITUTE({!ReqEditValue}, CHR(10), &quot;&quot;)) + LEN(&quot;\&quot;Requirement_Type__c\&quot;:\&quot;&quot;)
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>TypeYacht</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!ReqEditValue}, &quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;),
+  MID(
+    {!ReqEditValue},
+    FIND(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;),
+    FIND(
+      &quot;\&quot;&quot;,
+      {!ReqEditValue},
+      FIND(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+      FIND(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;, {!ReqEditValue}) + LEN(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;)
+    )
+  ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Yachttype</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  CONTAINS({!ReqAddValues}, &quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;),
+  MID(
+    {!ReqAddValues},
+    FIND(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;),
+    FIND(
+      &quot;\&quot;&quot;,
+      {!ReqAddValues},
+      FIND(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;)
+    ) -
+    (
+      FIND(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;, {!ReqAddValues}) + LEN(&quot;\&quot;Yacht_type__c\&quot;:\&quot;&quot;)
+    )
+  ),
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>RequirementsScreens {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RequirementsScreens</label>
+    <loops>
+        <name>Loop_basket_IDs</name>
+        <label>Loop basket IDs</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>VarOkaytoSendCollection</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Prepare_Yachts_for_Basket_update</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>SenttoWebsiteconfirmPage</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_yachts</name>
+        <label>Loop yachts</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>DataTableYachts.selectedRows</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Prepare_reqs_for_basket</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_New_Basket_Item</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>LoopOnReqCheckType</name>
+        <label>LoopOnReqCheckType</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_current_requirements</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>At_least_one_record_must_be_Client_Req</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Opp_Basket</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>LoopRemoveAlreadysent</name>
+        <label>LoopRemoveAlreadysent</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>YachtBasketTableView.selectedRows</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Already_sent_to_website</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>CountRemainingRecords</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_New_Basket_Item</name>
+        <label>Create New Basket Item</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>VARNewBasketItems</inputReference>
+    </recordCreates>
+    <recordDeletes>
+        <name>Delete_Record_Basket</name>
+        <label>Delete Record Basket</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>VarOkaytoSendCollection</inputReference>
+    </recordDeletes>
+    <recordDeletes>
+        <name>Delete_Selected_Requirement</name>
+        <label>Delete Selected Requirement</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>CurrentRequirements.selectedRows</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_current_requirements</name>
+        <label>Get current requirements</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>LoopOnReqCheckType</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Purchase_Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Purchase_Requirement__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Opp_Basket</name>
+        <label>Get Opp Basket</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Sort_All_Reqs</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CreatedDate</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>ForLast12Hours</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Yacht_Search_Basket__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Yacht_Ref_Number__c</queriedFields>
+        <queriedFields>Asking_Currency__c</queriedFields>
+        <queriedFields>Asking_Price__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>On_the_Market__c</queriedFields>
+        <queriedFields>OpportunityID__c</queriedFields>
+        <queriedFields>Search_Name__c</queriedFields>
+        <queriedFields>Sent_to_website__c</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+        <queriedFields>Yacht_Name__c</queriedFields>
+        <queriedFields>Yacht__c</queriedFields>
+        <queriedFields>Yacht_Name_at_selection__c</queriedFields>
+        <queriedFields>Created_By_Name__c</queriedFields>
+        <queriedFields>CreatedDate</queriedFields>
+        <queriedFields>YachtURL__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetOppSearchRecords</name>
+        <label>GetOppSearchRecords</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AssignEmpty</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>OwnerId</queriedFields>
+        <queriedFields>Nigel_Opportunity_Number__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>UpdateBasket</name>
+        <label>UpdateBasket</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>VarUpdateBasketItems</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateOpp</name>
+        <label>UpdateOpp</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GetOppSearchRecords.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Opportunity_Amount__c</field>
+            <value>
+                <elementReference>BudgetMin</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity_Currency__c</field>
+            <value>
+                <elementReference>Budgetcurrency</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateRequirement</name>
+        <label>UpdateRequirement</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CheckClientFirstTimeCreate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ReqId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Purchase_Opportunity__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Purchase_Requirement__c</object>
+    </recordUpdates>
+    <screens>
+        <name>CantSendtowebordeletePage</name>
+        <label>CantSendtowebordeletePage</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>WarningMessageBasketWebsite</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>WarningMessage</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldConfig</name>
+                <value>
+                    <elementReference>Basketwarning</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>FinishYes</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Close</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>CancelHide</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Requirements</name>
+        <label>Requirements</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actions>
+            <name>ReqScreenFLow_SubflowYachts</name>
+            <actionName>ReqScreenFLow_SubflowYachts</actionName>
+            <actionType>flow</actionType>
+            <inputParameters>
+                <name>Requirementid</name>
+                <value>
+                    <elementReference>CurrentRequirements.firstSelectedRow.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>ReqScreenFLow(SubflowYachts)</label>
+            <nameSegment>ReqScreenFLow_SubflowYachts</nameSegment>
+        </actions>
+        <actions>
+            <name>YachtAlreadyCreatedBasketOrNot</name>
+            <actionName>ReqScreenFLow_SubflowYachts</actionName>
+            <actionType>flow</actionType>
+            <inputParameters>
+                <name>OppId</name>
+                <value>
+                    <elementReference>GetOppSearchRecords.Id</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>Searching</name>
+                <value>
+                    <stringValue>Searching</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>Yachts</name>
+                <value>
+                    <elementReference>DataTableYachts.selectedRows</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>yachtsrec</name>
+                <value>
+                    <elementReference>DataTableYachts.firstSelectedRow.Id</elementReference>
+                </value>
+            </inputParameters>
+            <label>YachtAlreadyCreatedBasketOrNot</label>
+            <nameSegment>ReqScreenFLow_SubflowYachts</nameSegment>
+        </actions>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>ReqButtonSelectionInScreen</targetReference>
+        </connector>
+        <fields>
+            <name>CurrentRequirements</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>Purchase_Requirement__c</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>CurrentRequirements</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>SINGLE_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>CollectionAllReq</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Description__c&quot;,&quot;guid&quot;:&quot;column-7bdb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Name&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Requirement_Type__c&quot;,&quot;guid&quot;:&quot;column-9cd1&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;Requirement Type&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Requirement Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;CreatedDate&quot;,&quot;guid&quot;:&quot;column-1a80&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Created Date&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Budget_currency__c&quot;,&quot;guid&quot;:&quot;column-c89d&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Budget currency&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Budget_min__c&quot;,&quot;guid&quot;:&quot;column-2e22&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Budget min&quot;,&quot;type&quot;:&quot;number&quot;},{&quot;apiName&quot;:&quot;Budget_max__c&quot;,&quot;guid&quot;:&quot;column-2ad2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Budget max&quot;,&quot;type&quot;:&quot;number&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Requirements_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Requirements_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Requirement_ADD_Button</name>
+                    <extensionName>c:buttonCCTcustom</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>config</name>
+                        <value>
+                            <elementReference>AddBtn</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>customCss</name>
+                        <value>
+                            <elementReference>AddBtnCss</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>alignment</name>
+                        <value>
+                            <stringValue>Right</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>( 1 AND 2 ) OR 3</conditionLogic>
+                        <conditions>
+                            <leftValueReference>CurrentRequirements.firstSelectedRow.Id</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>CountReq</leftValueReference>
+                            <operator>LessThanOrEqualTo</operator>
+                            <rightValue>
+                                <numberValue>4.0</numberValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>TrueClientTypeExist</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>AddButtonPopUpScreen</name>
+                    <extensionName>c:customFlowPopUpdynamicModelForReq</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Purchase_Requirement__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>showPopup</name>
+                        <value>
+                            <elementReference>TrueCondtionAddreqClick</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>fieldApiNames</name>
+                        <value>
+                            <stringValue>Description__c,Requirement_Type__c,Yacht_type__c, Budget_currency__c, Budget_min__c, Budget_max__c, LOA_min_metres__c, LOA_max_metres__c, Cabins_min__c,</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>buttonLabel</name>
+                        <value>
+                            <stringValue>Create New Requirement</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>fieldName</name>
+                        <value>
+                            <stringValue>Requirement_Type__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>fieldValue</name>
+                        <value>
+                            <stringValue>Client Requirement</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>readonlyPrepopulate</name>
+                        <value>
+                            <elementReference>OneDoestClient</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <outputParameters>
+                        <assignToReference>ReqId</assignToReference>
+                        <name>outputRecordId</name>
+                    </outputParameters>
+                    <outputParameters>
+                        <assignToReference>FieldOutPut</assignToReference>
+                        <name>outputData</name>
+                    </outputParameters>
+                    <outputParameters>
+                        <assignToReference>ButtonCancelCick</assignToReference>
+                        <name>cancelOutput</name>
+                    </outputParameters>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Requirements_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Requirements_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Requirement_EditDel_Btn</name>
+                    <extensionName>c:buttonCCTcustom</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>config</name>
+                        <value>
+                            <elementReference>editDelReqButtons</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>alignment</name>
+                        <value>
+                            <stringValue>Right</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>customCss</name>
+                        <value>
+                            <elementReference>CssEditDelReqBtns</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>CurrentRequirements.firstSelectedRow.Id</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>CountReq</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <numberValue>4.0</numberValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>EditReqScreen</name>
+                    <extensionName>c:customFlowPopUpdynamicModelForReq</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Purchase_Requirement__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>showPopup</name>
+                        <value>
+                            <elementReference>EditReqTrueClick</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>fieldApiNames</name>
+                        <value>
+                            <stringValue>Description__c,Requirement_Type__c,Yacht_type__c, Budget_currency__c, Budget_min__c, Budget_max__c, LOA_min_metres__c, LOA_max_metres__c, Cabins_min__c,</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>CurrentRequirements.firstSelectedRow.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>buttonLabel</name>
+                        <value>
+                            <stringValue>Save</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <outputParameters>
+                        <assignToReference>ClickButtoncancel</assignToReference>
+                        <name>cancelOutput</name>
+                    </outputParameters>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>DeleteConformationPopup</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Delete</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldConfig</name>
+                <value>
+                    <elementReference>warningMessage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>Warning</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <elementReference>TrueDel</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>CancelButtonPress</assignToReference>
+                <name>cancelOutput</name>
+            </outputParameters>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>CurrentRequirements.firstSelectedRow.Id</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <elementReference>OneReq.Id</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OneReq.Id</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>DeleteConformationPopupOneClient</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>Warning</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <elementReference>TrueDel</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Close</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldConfig</name>
+                <value>
+                    <elementReference>OneReqClientErrorDel</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>CancelHide</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>CurrentRequirements.firstSelectedRow.Id</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>OneReq.Id</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OneReq.Id</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>CssForButton</name>
+            <extensionName>c:css</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>cssfile</name>
+                <value>
+                    <elementReference>Css</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>DataTableYachts</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>Yacht__c</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>MULTI_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>DataTableYachts</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>ReqScreenFLow_SubflowYachts.Results.YachtsRecords</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name_Formula__c&quot;,&quot;guid&quot;:&quot;column-ffb8&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name Formula&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;For_Sale__c&quot;,&quot;guid&quot;:&quot;column-62cf&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;For Sale&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Type__c&quot;,&quot;guid&quot;:&quot;column-9c73&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Yacht_length__c&quot;,&quot;guid&quot;:&quot;column-1dda&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Yacht length&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Asking_currency__c&quot;,&quot;guid&quot;:&quot;column-51a3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Asking currency&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Askingprice__c&quot;,&quot;guid&quot;:&quot;column-7bc1&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Asking price&quot;,&quot;type&quot;:&quot;number&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isShowSearchBar</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Requirement_EditDel_Btn.outputValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Requirement Search </stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>WarningMessageBasket</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); font-size: 14px;&quot;&gt;⚠️ Warning : &lt;/strong&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;The yacht &lt;/strong&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(255, 0, 0);&quot;&gt;&apos;&lt;/strong&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;&lt;u&gt;{!YachtAlreadyCreatedBasketOrNot.Results.YachtsName}&lt;/u&gt;&lt;/strong&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(255, 0, 0);&quot;&gt;&apos; &lt;/strong&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;is already linked to another basket. Please deselect it before proceeding.&quot;&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>YachtAlreadyCreatedBasketOrNot.Results.ExistOrNot</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>DataTableYachts.firstSelectedRow.Id</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>CurrentRequirements.firstSelectedRow.Id</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>ButtonForYacht</name>
+            <extensionName>c:fsc_flowButtonBar</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>alignment</name>
+                <value>
+                    <stringValue>right</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>orientation</name>
+                <value>
+                    <stringValue>horizontal</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showLines</name>
+                <value>
+                    <stringValue>neither</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>actionMode</name>
+                <value>
+                    <stringValue>navigation</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>buttons</name>
+                <value>
+                    <stringValue>[{&quot;label&quot;:&quot;Select&quot;,&quot;value&quot;:&quot;Select&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;brand&quot;,&quot;index&quot;:0}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>cssString</name>
+                <value>
+                    <stringValue>padding:12px; background:#f9fcff; display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; border:1px solid #eef5fb; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.04);</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>required</name>
+                <value>
+                    <stringValue>yes</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Requirement_EditDel_Btn.outputValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Requirement Search</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>YachtAlreadyCreatedBasketOrNot.Results.ExistOrNot</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>DataTableYachts.firstSelectedRow.Id</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>BasketLabel</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;Basket&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>YachtBasketTableView</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>Yacht_Search_Basket__c</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>MULTI_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>YachtBasketTableView</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>Get_Opp_Basket</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isShowSearchBar</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;CreatedDate&quot;,&quot;guid&quot;:&quot;column-54bb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Created Date&quot;,&quot;type&quot;:&quot;customDateTime&quot;},{&quot;apiName&quot;:&quot;Search_Name__c&quot;,&quot;guid&quot;:&quot;column-1d04&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Search Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;YachtURL__c&quot;,&quot;guid&quot;:&quot;column-0782&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Yacht&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Yacht&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Created_By_Name__c&quot;,&quot;guid&quot;:&quot;column-35e2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Created By&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Status__c&quot;,&quot;guid&quot;:&quot;column-f44d&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Sent_to_website__c&quot;,&quot;guid&quot;:&quot;column-b1f7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Sent to website&quot;,&quot;type&quot;:&quot;date-local&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>BasketActionController</name>
+            <extensionName>c:fsc_flowButtonBar</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>alignment</name>
+                <value>
+                    <stringValue>right</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>orientation</name>
+                <value>
+                    <stringValue>horizontal</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showLines</name>
+                <value>
+                    <stringValue>neither</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>actionMode</name>
+                <value>
+                    <stringValue>navigation</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>buttons</name>
+                <value>
+                    <stringValue>[{&quot;label&quot;:&quot;Delete&quot;,&quot;value&quot;:&quot;DeleteBasketItems&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;destructive&quot;,&quot;index&quot;:0},{&quot;label&quot;:&quot;Copy to webselection&quot;,&quot;value&quot;:&quot;Sendtowebsite&quot;,&quot;iconPosition&quot;:&quot;left&quot;,&quot;variant&quot;:&quot;brand&quot;,&quot;index&quot;:1}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>YachtBasketTableView.firstSelectedRow.Id</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+        <triggers>
+            <eventName>flow__screeninit</eventName>
+            <eventSource>Requirements</eventSource>
+            <handlers>
+                <screenActionName>ReqScreenFLow_SubflowYachts</screenActionName>
+            </handlers>
+        </triggers>
+        <triggers>
+            <eventName>flow__screenfieldattributechange</eventName>
+            <eventSource>CurrentRequirements.firstSelectedRow.Id</eventSource>
+            <handlers>
+                <screenActionName>ReqScreenFLow_SubflowYachts</screenActionName>
+            </handlers>
+        </triggers>
+        <triggers>
+            <eventName>flow__screeninit</eventName>
+            <eventSource>Requirements</eventSource>
+            <handlers>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>DataTableYachts.firstSelectedRow.Id</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <screenActionName>YachtAlreadyCreatedBasketOrNot</screenActionName>
+            </handlers>
+        </triggers>
+        <triggers>
+            <eventName>flow__screenfieldattributechange</eventName>
+            <eventSource>DataTableYachts.selectedRows</eventSource>
+            <handlers>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>DataTableYachts.firstSelectedRow.Id</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <screenActionName>YachtAlreadyCreatedBasketOrNot</screenActionName>
+            </handlers>
+        </triggers>
+        <triggers>
+            <eventName>flow__screenfieldattributechange</eventName>
+            <eventSource>DataTableYachts.firstSelectedRow.Id</eventSource>
+            <handlers>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>DataTableYachts.firstSelectedRow.Id</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <screenActionName>YachtAlreadyCreatedBasketOrNot</screenActionName>
+            </handlers>
+        </triggers>
+    </screens>
+    <screens>
+        <name>SenttoWebsiteconfirmPage</name>
+        <label>SenttoWebsiteconfirmPage</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>UpdateBasket</targetReference>
+        </connector>
+        <fields>
+            <name>FinishPopup</name>
+            <extensionName>c:customFlowPopUpModel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>actionButtonLabel</name>
+                <value>
+                    <stringValue>Finish</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldConfig</name>
+                <value>
+                    <elementReference>LastScreenMessagebasket</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>popupHeaderText</name>
+                <value>
+                    <stringValue>Basket</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>showPopup</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>CancelHide</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>SenttoWebsiteconfirmPageCss</name>
+            <extensionName>c:css</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>cssfile</name>
+                <value>
+                    <elementReference>FinishPopupCss</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetOppSearchRecords</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <textTemplates>
+        <name>AddBtn</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+        {
+            &quot;label&quot;: &quot;Create Requirement&quot;,
+            &quot;value&quot;: &quot;Add&quot;,
+            &quot;variant&quot;: &quot;brand&quot;,
+            &quot;cssClass&quot;: &quot;pill-button Add-btn&quot;
+        }
+   ]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>AddBtnCss</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>.pill-button.Add-btn {
+    border-radius: 25px !important;
+    font-size: 0.75rem; /* same as SLDS default button text */
+    padding: 0 0.75rem; /* SLDS brand button padding */
+    height: 2rem; /* SLDS default height */
+    line-height: 2rem;
+    font-weight: 700;
+    
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    float: right; /* move to the right */
+}
+
+.pill-button.Add-btn:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pill-button.Add-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(1, 118, 211, 0.6);
+}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Basketwarning</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+ {
+  &quot;label&quot;: &quot;Warning&quot;,
+  &quot;name&quot;: &quot;Warning&quot;,
+   &quot;type&quot;: &quot;Display text&quot;,
+   &quot;value&quot;: &quot; ⚠️ You can&apos;t delete or send basket items to the website that have already been sent to the website&quot;
+}
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Css</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>.slds-scope .slds-button-group .slds-button:only-child {
+    background-color: #066afe;
+    color: whitesmoke;
+    border-radius: 25px;
+    font-weight: bold;
+}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CssEditDelReqBtns</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>.pill-button.Edit-btn {
+    border-radius: 25px !important;
+    font-size: 0.75rem;
+    padding: 0 0.75rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    float: right;
+}
+
+.pill-button.Edit-btn:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pill-button.Edit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(1, 118, 211, 0.6);
+}
+
+.pill-button.delete-btn {
+    border-radius: 25px !important;
+    font-size: 0.75rem;
+    padding: 0 0.75rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    float: right;
+    background-color: #e3066a; /* destructive color */
+    color: white;
+}
+
+.pill-button.delete-btn:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #ea001e;
+}
+
+.pill-button.delete-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(217, 83, 79, 0.6);
+}
+
+.pill-button.RequirementSearch-btn {
+    border-radius: 25px !important;
+    font-size: 0.75rem;
+    padding: 0 0.75rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    float: right;
+}
+
+.pill-button.RequirementSearch-btn:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pill-button.RequirementSearch-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(1, 118, 211, 0.6);
+}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CssTwo</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>.add-button {
+    background-color: #007bff; /* Bright blue background */
+    color: white; /* White text */
+    font-weight: 700;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px; /* Rounded pill shape */
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover effect */
+.add-button:hover {
+    background-color: #0069d9; /* Slightly darker blue */
+}
+
+/* Active click effect */
+.add-button:active {
+    transform: scale(0.98);
+}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>editBtn</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+  {
+    &quot;label&quot;: &quot;Edit&quot;,
+    &quot;value&quot;: &quot;Edit&quot;,
+    &quot;variant&quot;: &quot;brand&quot;,
+    &quot;cssClass&quot;: &quot;pill-button Edit-btn&quot;
+  },
+  {
+    &quot;label&quot;: &quot;Requirement Search&quot;,
+    &quot;value&quot;: &quot;Requirement Search&quot;,
+    &quot;variant&quot;: &quot;brand&quot;,
+    &quot;cssClass&quot;: &quot;pill-button RequirementSearch-btn&quot;
+  }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>editDelReqButtons</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+  {
+    &quot;label&quot;: &quot;Edit&quot;,
+    &quot;value&quot;: &quot;Edit&quot;,
+    &quot;variant&quot;: &quot;brand&quot;,
+    &quot;cssClass&quot;: &quot;pill-button Edit-btn&quot;
+  },
+  {
+    &quot;label&quot;: &quot;Requirement Search&quot;,
+    &quot;value&quot;: &quot;Requirement Search&quot;,
+    &quot;variant&quot;: &quot;brand&quot;,
+    &quot;cssClass&quot;: &quot;pill-button RequirementSearch-btn&quot;
+  },
+  {
+    &quot;label&quot;: &quot;Delete&quot;,
+    &quot;value&quot;: &quot;Delete&quot;,
+    &quot;variant&quot;: &quot;destructive&quot;,
+    &quot;cssClass&quot;: &quot;pill-button delete-btn&quot;
+  }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>FinishPopupCss</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>.slds-scope .slds-form-element {
+  font-weight: bold;
+}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>LastScreenMessagebasket</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+  {
+    &quot;label&quot;: &quot;Basket Message&quot;,
+    &quot;name&quot;: &quot;Basket Message&quot;,
+    &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot;Please use this reference ID as the opportunity ID in the website: {!GetOppSearchRecords.Nigel_Opportunity_Number__c}&quot;
+  },
+  {
+    &quot;label&quot;: &quot;Copy paste this list of Yacht Ids into the website: {!varListofYachtIDsforWebsite}&quot;,
+    &quot;name&quot;: &quot;Copy paste this list of Yacht Ids into the website: {!varListofYachtIDsforWebsite} &quot;,
+    &quot;type&quot;: &quot;Display text&quot;,
+    &quot;value&quot;: &quot; Make sure you click the \&quot;Finish\&quot; button to update Salesforce&quot;
+  }
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>OneReqClientErrorDel</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+ {
+  &quot;label&quot;: &quot;Warning&quot;,
+  &quot;name&quot;: &quot;Warning&quot;,
+   &quot;type&quot;: &quot;Display text&quot;,
+   &quot;value&quot;: &quot; ⚠️ You can’t delete this requirement because at least one requirement must be “Client Requirement.” type&quot;
+}
+]</text>
+    </textTemplates>
+    <textTemplates>
+        <name>warningMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>[
+ {
+  &quot;label&quot;: &quot;Warning&quot;,
+  &quot;name&quot;: &quot;Warning&quot;,
+   &quot;type&quot;: &quot;Display text&quot;,
+   &quot;value&quot;: &quot; ⚠️ Are you sure you want to delete this requirement?&quot;
+}
+]</text>
+    </textTemplates>
+    <variables>
+        <name>ButtonCancelCick</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CancelButtonPress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ClickButtoncancel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CollectionAllReq</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Purchase_Requirement__c</objectType>
+    </variables>
+    <variables>
+        <name>CollectionClientReq</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Purchase_Requirement__c</objectType>
+    </variables>
+    <variables>
+        <name>CountReq</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>FieldOutPut</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>NewRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OneDoestClient</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>OneReq</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Purchase_Requirement__c</objectType>
+    </variables>
+    <variables>
+        <name>record_newBasketItem</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Yacht_Search_Basket__c</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ReqAddValues</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ReqCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>ReqEditValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ReqId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>TrueClientTypeExist</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TrueIfFirstRecClient</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TrueRestart</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>VarBasketDoNotIncludeUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Yacht_Search_Basket__c</objectType>
+    </variables>
+    <variables>
+        <name>VarCountAllReqs</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>VarCountRecordsOkaytoSendtoWebsite</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>VarCountSelectedReqs</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>varListofYachtIDsforWebsite</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>VARMatchingYachts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Yacht__c</objectType>
+    </variables>
+    <variables>
+        <name>VARNewBasketItems</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Yacht_Search_Basket__c</objectType>
+    </variables>
+    <variables>
+        <name>VarNewRequ</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>VarOkaytoSendCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Yacht_Search_Basket__c</objectType>
+    </variables>
+    <variables>
+        <name>VarRecord_updatedBasket</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Yacht_Search_Basket__c</objectType>
+    </variables>
+    <variables>
+        <name>VarRecordBasketOkaytoSend</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Yacht_Search_Basket__c</objectType>
+    </variables>
+    <variables>
+        <name>VarRecordDonotIncludeinUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Yacht_Search_Basket__c</objectType>
+    </variables>
+    <variables>
+        <name>VarReqCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>VARReqID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>VarUpdateBasketItems</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Yacht_Search_Basket__c</objectType>
+    </variables>
+</Flow>

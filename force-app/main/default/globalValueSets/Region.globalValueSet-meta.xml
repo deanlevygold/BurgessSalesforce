@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Africa</fullName>
+        <default>false</default>
+        <label>Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>Alaska</fullName>
+        <default>false</default>
+        <label>Alaska</label>
+    </customValue>
+    <customValue>
+        <fullName>Antarctica</fullName>
+        <default>false</default>
+        <label>Antarctica</label>
+    </customValue>
+    <customValue>
+        <fullName>Asia</fullName>
+        <default>false</default>
+        <label>Asia</label>
+    </customValue>
+    <customValue>
+        <fullName>Atlantic Ocean</fullName>
+        <default>false</default>
+        <label>Atlantic Ocean</label>
+    </customValue>
+    <customValue>
+        <fullName>Australasia</fullName>
+        <default>false</default>
+        <label>Australasia</label>
+    </customValue>
+    <customValue>
+        <fullName>Baltic Sea</fullName>
+        <default>false</default>
+        <label>Baltic Sea</label>
+    </customValue>
+    <customValue>
+        <fullName>Bermuda</fullName>
+        <default>false</default>
+        <label>Bermuda</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada</fullName>
+        <default>false</default>
+        <label>Canada</label>
+    </customValue>
+    <customValue>
+        <fullName>Caribbean</fullName>
+        <default>false</default>
+        <label>Caribbean</label>
+    </customValue>
+    <customValue>
+        <fullName>Central America</fullName>
+        <default>false</default>
+        <label>Central America</label>
+    </customValue>
+    <customValue>
+        <fullName>Cruising</fullName>
+        <default>false</default>
+        <label>Cruising</label>
+    </customValue>
+    <customValue>
+        <fullName>East Mediterranean</fullName>
+        <default>false</default>
+        <label>East Mediterranean</label>
+    </customValue>
+    <customValue>
+        <fullName>Europe</fullName>
+        <default>false</default>
+        <label>Europe</label>
+    </customValue>
+    <customValue>
+        <fullName>Galapagos</fullName>
+        <default>false</default>
+        <label>Galapagos</label>
+    </customValue>
+    <customValue>
+        <fullName>Hawaii</fullName>
+        <default>false</default>
+        <label>Hawaii</label>
+    </customValue>
+    <customValue>
+        <fullName>Indian Ocean</fullName>
+        <default>false</default>
+        <label>Indian Ocean</label>
+    </customValue>
+    <customValue>
+        <fullName>Mediterranean</fullName>
+        <default>false</default>
+        <label>Mediterranean</label>
+    </customValue>
+    <customValue>
+        <fullName>Middle East</fullName>
+        <default>false</default>
+        <label>Middle East</label>
+    </customValue>
+    <customValue>
+        <fullName>New England</fullName>
+        <default>false</default>
+        <label>New England</label>
+    </customValue>
+    <customValue>
+        <fullName>North America</fullName>
+        <default>false</default>
+        <label>North America</label>
+    </customValue>
+    <customValue>
+        <fullName>Northern Europe</fullName>
+        <default>false</default>
+        <label>Northern Europe</label>
+    </customValue>
+    <customValue>
+        <fullName>Pacific Islands</fullName>
+        <default>false</default>
+        <label>Pacific Islands</label>
+    </customValue>
+    <customValue>
+        <fullName>Panama Canal</fullName>
+        <default>false</default>
+        <label>Panama Canal</label>
+    </customValue>
+    <customValue>
+        <fullName>Polar Regions</fullName>
+        <default>false</default>
+        <label>Polar Regions</label>
+    </customValue>
+    <customValue>
+        <fullName>Scandinavia</fullName>
+        <default>false</default>
+        <label>Scandinavia</label>
+    </customValue>
+    <customValue>
+        <fullName>South America</fullName>
+        <default>false</default>
+        <label>South America</label>
+    </customValue>
+    <customValue>
+        <fullName>South Pacific</fullName>
+        <default>false</default>
+        <label>South Pacific</label>
+    </customValue>
+    <customValue>
+        <fullName>Southeast Asia</fullName>
+        <default>false</default>
+        <label>Southeast Asia</label>
+    </customValue>
+    <customValue>
+        <fullName>Transatlantic</fullName>
+        <default>false</default>
+        <label>Transatlantic</label>
+    </customValue>
+    <customValue>
+        <fullName>Transpacific</fullName>
+        <default>false</default>
+        <label>Transpacific</label>
+    </customValue>
+    <customValue>
+        <fullName>United States</fullName>
+        <default>false</default>
+        <label>United States</label>
+    </customValue>
+    <customValue>
+        <fullName>West Africa</fullName>
+        <default>false</default>
+        <label>West Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>West Mediterranean</fullName>
+        <default>false</default>
+        <label>West Mediterranean</label>
+    </customValue>
+    <customValue>
+        <fullName>Western Europe</fullName>
+        <default>false</default>
+        <label>Western Europe</label>
+    </customValue>
+    <customValue>
+        <fullName>World Cruise</fullName>
+        <default>false</default>
+        <label>World Cruise</label>
+    </customValue>
+    <customValue>
+        <fullName>Under construction</fullName>
+        <default>false</default>
+        <label>Under construction</label>
+    </customValue>
+    <customValue>
+        <fullName>Pacific Ocean</fullName>
+        <default>false</default>
+        <label>Pacific Ocean</label>
+    </customValue>
+    <masterLabel>Region</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

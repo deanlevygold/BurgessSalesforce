@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_detail__c</fullName>
+    <label>Source detail</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Antigua</fullName>
+                <default>false</default>
+                <label>Antigua</label>
+            </value>
+            <value>
+                <fullName>Arabian Business</fullName>
+                <default>false</default>
+                <label>Arabian Business</label>
+            </value>
+            <value>
+                <fullName>Asia Pacific Boating</fullName>
+                <default>false</default>
+                <label>Asia Pacific Boating</label>
+            </value>
+            <value>
+                <fullName>Aspen</fullName>
+                <default>false</default>
+                <label>Aspen</label>
+            </value>
+            <value>
+                <fullName>Australian Financial Review</fullName>
+                <default>false</default>
+                <label>Australian Financial Review</label>
+            </value>
+            <value>
+                <fullName>Barcelona</fullName>
+                <default>false</default>
+                <label>Barcelona</label>
+            </value>
+            <value>
+                <fullName>Bentley Magazine</fullName>
+                <default>false</default>
+                <label>Bentley Magazine</label>
+            </value>
+            <value>
+                <fullName>Bloomberg</fullName>
+                <default>false</default>
+                <label>Bloomberg</label>
+            </value>
+            <value>
+                <fullName>Boat International</fullName>
+                <default>false</default>
+                <label>Boat International</label>
+            </value>
+            <value>
+                <fullName>Boat International Website</fullName>
+                <default>false</default>
+                <label>Boat International Website</label>
+            </value>
+            <value>
+                <fullName>Burgess App</fullName>
+                <default>false</default>
+                <label>Burgess App</label>
+            </value>
+            <value>
+                <fullName>Burgess Cross Dept</fullName>
+                <default>false</default>
+                <label>Burgess Cross Dept</label>
+            </value>
+            <value>
+                <fullName>Burgess Magazine</fullName>
+                <default>false</default>
+                <label>Burgess Magazine</label>
+            </value>
+            <value>
+                <fullName>Burgess Newsletter</fullName>
+                <default>false</default>
+                <label>Burgess Newsletter</label>
+            </value>
+            <value>
+                <fullName>Burgess Sales Update</fullName>
+                <default>false</default>
+                <label>Burgess Sales Update</label>
+            </value>
+            <value>
+                <fullName>Burgess Website</fullName>
+                <default>false</default>
+                <label>Burgess Website</label>
+            </value>
+            <value>
+                <fullName>Business Insider</fullName>
+                <default>false</default>
+                <label>Business Insider</label>
+            </value>
+            <value>
+                <fullName>Business Review Weekly</fullName>
+                <default>false</default>
+                <label>Business Review Weekly</label>
+            </value>
+            <value>
+                <fullName>Cannes</fullName>
+                <default>false</default>
+                <label>Cannes</label>
+            </value>
+            <value>
+                <fullName>Caribbean Charter</fullName>
+                <default>false</default>
+                <label>Caribbean Charter</label>
+            </value>
+            <value>
+                <fullName>Challenges (Magazine)</fullName>
+                <default>false</default>
+                <label>Challenges (Magazine)</label>
+            </value>
+            <value>
+                <fullName>Charter B2B</fullName>
+                <default>false</default>
+                <label>Charter B2B</label>
+            </value>
+            <value>
+                <fullName>Cold Email</fullName>
+                <default>false</default>
+                <label>Cold Email</label>
+            </value>
+            <value>
+                <fullName>Dubai</fullName>
+                <default>false</default>
+                <label>Dubai</label>
+            </value>
+            <value>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+                <label>Facebook</label>
+            </value>
+            <value>
+                <fullName>Forbes</fullName>
+                <default>false</default>
+                <label>Forbes</label>
+            </value>
+            <value>
+                <fullName>Fort Lauderdale</fullName>
+                <default>false</default>
+                <label>Fort Lauderdale</label>
+            </value>
+            <value>
+                <fullName>From Burgess Staff</fullName>
+                <default>false</default>
+                <label>From Burgess Staff</label>
+            </value>
+            <value>
+                <fullName>From Existing Client</fullName>
+                <default>false</default>
+                <label>From Existing Client</label>
+            </value>
+            <value>
+                <fullName>From Industry Contact</fullName>
+                <default>false</default>
+                <label>From Industry Contact</label>
+            </value>
+            <value>
+                <fullName>General News</fullName>
+                <default>false</default>
+                <label>General News</label>
+            </value>
+            <value>
+                <fullName>Genoa</fullName>
+                <default>false</default>
+                <label>Genoa</label>
+            </value>
+            <value>
+                <fullName>Global Data</fullName>
+                <default>false</default>
+                <label>Global Data</label>
+            </value>
+            <value>
+                <fullName>Greenwich Concours</fullName>
+                <default>false</default>
+                <label>Greenwich Concours</label>
+            </value>
+            <value>
+                <fullName>Hard Mailing</fullName>
+                <default>false</default>
+                <label>Hard Mailing</label>
+            </value>
+            <value>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+                <label>Instagram</label>
+            </value>
+            <value>
+                <fullName>James Edition</fullName>
+                <default>false</default>
+                <label>James Edition</label>
+            </value>
+            <value>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+                <label>LinkedIn</label>
+            </value>
+            <value>
+                <fullName>London</fullName>
+                <default>false</default>
+                <label>London</label>
+            </value>
+            <value>
+                <fullName>Marketing Partner</fullName>
+                <default>false</default>
+                <label>Marketing Partner</label>
+            </value>
+            <value>
+                <fullName>Miami</fullName>
+                <default>false</default>
+                <label>Miami</label>
+            </value>
+            <value>
+                <fullName>Monaco</fullName>
+                <default>false</default>
+                <label>Monaco</label>
+            </value>
+            <value>
+                <fullName>Other Boat Show</fullName>
+                <default>false</default>
+                <label>Other Boat Show</label>
+            </value>
+            <value>
+                <fullName>Other Data Mining</fullName>
+                <default>false</default>
+                <label>Other Data Mining</label>
+            </value>
+            <value>
+                <fullName>Other Email Campaign</fullName>
+                <default>false</default>
+                <label>Other Email Campaign</label>
+            </value>
+            <value>
+                <fullName>Other - Middle East</fullName>
+                <default>false</default>
+                <label>Other - Middle East</label>
+            </value>
+            <value>
+                <fullName>Other Printed Mail</fullName>
+                <default>false</default>
+                <label>Other Printed Mail</label>
+            </value>
+            <value>
+                <fullName>Other Publication</fullName>
+                <default>false</default>
+                <label>Other Publication</label>
+            </value>
+            <value>
+                <fullName>Other - USA</fullName>
+                <default>false</default>
+                <label>Other - USA</label>
+            </value>
+            <value>
+                <fullName>Other Website</fullName>
+                <default>false</default>
+                <label>Other Website</label>
+            </value>
+            <value>
+                <fullName>Palma</fullName>
+                <default>false</default>
+                <label>Palma</label>
+            </value>
+            <value>
+                <fullName>Palm Beach</fullName>
+                <default>false</default>
+                <label>Palm Beach</label>
+            </value>
+            <value>
+                <fullName>Pebble Beach</fullName>
+                <default>false</default>
+                <label>Pebble Beach</label>
+            </value>
+            <value>
+                <fullName>Sales B2B</fullName>
+                <default>false</default>
+                <label>Sales B2B</label>
+            </value>
+            <value>
+                <fullName>Superyacht Gathering</fullName>
+                <default>false</default>
+                <label>Superyacht Gathering</label>
+            </value>
+            <value>
+                <fullName>SuperYacht Times</fullName>
+                <default>false</default>
+                <label>SuperYacht Times</label>
+            </value>
+            <value>
+                <fullName>Superyacht World</fullName>
+                <default>false</default>
+                <label>Superyacht World</label>
+            </value>
+            <value>
+                <fullName>The Bridge</fullName>
+                <default>false</default>
+                <label>The Bridge</label>
+            </value>
+            <value>
+                <fullName>Times Rich List</fullName>
+                <default>false</default>
+                <label>Times Rich List</label>
+            </value>
+            <value>
+                <fullName>Wealth-X</fullName>
+                <default>false</default>
+                <label>Wealth-X</label>
+            </value>
+            <value>
+                <fullName>Yachtfolio</fullName>
+                <default>false</default>
+                <label>Yachtfolio</label>
+            </value>
+            <value>
+                <fullName>Yacht Harbour</fullName>
+                <default>false</default>
+                <label>Yacht Harbour</label>
+            </value>
+            <value>
+                <fullName>Yachtworld</fullName>
+                <default>false</default>
+                <label>Yachtworld</label>
+            </value>
+            <value>
+                <fullName>YATCO</fullName>
+                <default>false</default>
+                <label>YATCO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

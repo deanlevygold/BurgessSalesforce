@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsClient__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Tick if the Account is also a client. Eg a shipbuilder with a commercial relationship with Burgess</inlineHelpText>
+    <label>Client</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

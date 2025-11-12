@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Main_point_of_contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Main point of contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Contacts (Main point of contact)</relationshipLabel>
+    <relationshipName>Contacts1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

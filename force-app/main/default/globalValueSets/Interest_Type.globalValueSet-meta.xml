@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Buying a yacht</fullName>
+        <default>false</default>
+        <label>Buying a yacht</label>
+    </customValue>
+    <customValue>
+        <fullName>Charter a yacht</fullName>
+        <default>false</default>
+        <label>Charter a yacht</label>
+    </customValue>
+    <customValue>
+        <fullName>Charter Management</fullName>
+        <default>false</default>
+        <label>Charter Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Crew Management</fullName>
+        <default>false</default>
+        <label>Crew Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Vacancies</fullName>
+        <default>false</default>
+        <label>Office Vacancies</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Press</fullName>
+        <default>false</default>
+        <label>Press</label>
+    </customValue>
+    <customValue>
+        <fullName>Procurement</fullName>
+        <default>false</default>
+        <label>Procurement</label>
+    </customValue>
+    <customValue>
+        <fullName>Selling a yacht</fullName>
+        <default>false</default>
+        <label>Selling a yacht</label>
+    </customValue>
+    <customValue>
+        <fullName>Yacht Build</fullName>
+        <default>false</default>
+        <label>Yacht Build</label>
+    </customValue>
+    <customValue>
+        <fullName>Yacht Insurance</fullName>
+        <default>false</default>
+        <label>Yacht Insurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Yacht Management</fullName>
+        <default>false</default>
+        <label>Yacht Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Yacht-based Vacancies</fullName>
+        <default>false</default>
+        <label>Yacht-based Vacancies</label>
+    </customValue>
+    <customValue>
+        <fullName>Yacht Support Services</fullName>
+        <default>false</default>
+        <label>Yacht Support Services</label>
+    </customValue>
+    <masterLabel>Interest Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

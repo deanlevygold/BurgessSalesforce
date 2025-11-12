@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_source__c</fullName>
+    <label>Original source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3rd party client</fullName>
+                <default>false</default>
+                <label>3rd party client</label>
+            </value>
+            <value>
+                <fullName>Adertising</fullName>
+                <default>false</default>
+                <label>Adertising</label>
+            </value>
+            <value>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+                <label>Advertising</label>
+            </value>
+            <value>
+                <fullName>App</fullName>
+                <default>false</default>
+                <label>App</label>
+            </value>
+            <value>
+                <fullName>Boat Show</fullName>
+                <default>false</default>
+                <label>Boat Show</label>
+            </value>
+            <value>
+                <fullName>Bought List</fullName>
+                <default>false</default>
+                <label>Bought List</label>
+            </value>
+            <value>
+                <fullName>Broker Initiative</fullName>
+                <default>false</default>
+                <label>Broker Initiative</label>
+            </value>
+            <value>
+                <fullName>Client Initiative</fullName>
+                <default>false</default>
+                <label>Client Initiative</label>
+            </value>
+            <value>
+                <fullName>Data Mining</fullName>
+                <default>false</default>
+                <label>Data Mining</label>
+            </value>
+            <value>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+                <label>Email Campaign</label>
+            </value>
+            <value>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <label>Event</label>
+            </value>
+            <value>
+                <fullName>PR</fullName>
+                <default>false</default>
+                <label>PR</label>
+            </value>
+            <value>
+                <fullName>Printed Mailing</fullName>
+                <default>false</default>
+                <label>Printed Mailing</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>Repeat Enquirer</fullName>
+                <default>false</default>
+                <label>Repeat Enquirer</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
