@@ -1158,11 +1158,7 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SendCustomNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendExternalEmailAvailable</name>
-    </userPermissions>
+    </userPermissions>    
     <userPermissions>
         <enabled>true</enabled>
         <name>SendSitRequests</name>
