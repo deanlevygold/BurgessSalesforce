@@ -181,12 +181,6 @@
     <name>PathAssistant</name>
   </types>
 
-  <!-- Permission Sets -->
-  <types>
-    <members>Admin</members>
-    <name>PermissionSet</name>
-  </types>
-
   <!-- Profiles -->
   <types>
     <members>Admin</members>
