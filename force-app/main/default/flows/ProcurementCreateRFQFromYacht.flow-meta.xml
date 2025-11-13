@@ -88,7 +88,7 @@
     <formulas>
         <name>varOppName</name>
         <dataType>String</dataType>
-        <expression>&quot;Procurement RFQ&quot;&amp;&quot;-&quot;&amp; {!GetYacht.Name} &amp;&quot;-&quot;&amp; TEXT( TODAY())</expression>
+        <expression>&quot;Procurement RFQ&quot;&amp;&quot;: &quot;&amp; {!GetYacht.Name} &amp;&quot;-&quot;&amp; TEXT( TODAY())</expression>
     </formulas>
     <interviewLabel>ProcurementCreateRFQFromYacht {!$Flow.CurrentDateTime}</interviewLabel>
     <label>ProcurementCreateRFQFromYacht</label>
