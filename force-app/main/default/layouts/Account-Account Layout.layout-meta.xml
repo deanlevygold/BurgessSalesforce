@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -65,7 +67,20 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Account Summary</label>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <reportChartComponent>
+                    <cacheData>true</cacheData>
+                    <contextFilterableField>ACCOUNT_ID</contextFilterableField>
+                    <error>To view the report chart, you need both the Run Reports permission and access to the report&apos;s folder.</error>
+                    <hideOnError>true</hideOnError>
+                    <includeContext>true</includeContext>
+                    <reportName>00OKB000000Klik</reportName>
+                    <showTitle>true</showTitle>
+                    <size>SMALL</size>
+                </reportChartComponent>
+            </layoutItems>
+        </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
@@ -134,16 +149,6 @@
             <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>LogACall</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>1</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>NewTask</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>2</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -242,15 +247,6 @@
         <fields>CONTACT.PHONE1</fields>
         <fields>ACCCONRELATION.ROLES</fields>
         <relatedList>RelatedAccountContactRelationList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>QUOTE.NAME</fields>
-        <fields>OPPORTUNITY.NAME</fields>
-        <fields>QUOTE.ISSYNCING</fields>
-        <fields>QUOTE.EXPIRATIONDATE</fields>
-        <fields>QUOTE.SUBTOTAL</fields>
-        <fields>QUOTE.TOTALPRICE</fields>
-        <relatedList>Quote.Supplier__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
