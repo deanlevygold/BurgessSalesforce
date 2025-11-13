@@ -81,7 +81,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>LeadSource</field>
+                <field>Source__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -214,11 +214,9 @@
     <relatedLists>
         <fields>ContactName</fields>
         <fields>Role</fields>
-        <fields>ContactTitle</fields>
         <fields>IsPrimary</fields>
         <fields>isubo__c</fields>
         <fields>ContactPhone</fields>
-        <fields>ContactEmail</fields>
         <fields>ContactAccountName</fields>
         <relatedList>RelatedContactRoleList</relatedList>
     </relatedLists>

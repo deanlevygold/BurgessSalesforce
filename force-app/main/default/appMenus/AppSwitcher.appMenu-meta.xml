@@ -53,10 +53,6 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>standard__LightningInstrumentation</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>standard__LightningBolt</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -201,7 +197,7 @@
         <type>ConnectedApp</type>
     </appMenuItems>
     <appMenuItems>
-        <name>Goldclipper_Integration</name>
-        <type>ExternalClientApplication</type>
+        <name>Salesforce_CLI</name>
+        <type>ConnectedApp</type>
     </appMenuItems>
 </AppMenu>

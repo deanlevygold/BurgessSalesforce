@@ -12,173 +12,7 @@
         <valueSetName>Contact_Type_Roles</valueSetName>
         <valueSettings>
             <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Affinity partner</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Affinity Partner Client</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Agent</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Associate</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Bank/financial</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Burgess Associate</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Burgess Employee</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Business Partner</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Captain</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Charter Broker</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Charter Manager</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Child</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
             <valueName>Client</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Crew</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Exterior designer</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Interior designer</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Lawyer</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Marketing</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Naval architect</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>PA/EA/Secretary</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Real Estate Agent</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Unknown</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Relative</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Sales Broker</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Shipping agent</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Shipyard</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Spouse</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Surveyor</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Travel Agent</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Yacht Manager</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Associate</controllingFieldValue>
@@ -186,7 +20,31 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Associate</controllingFieldValue>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Agent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Associate</controllingFieldValue>
             <valueName>Assistant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Associate</controllingFieldValue>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Associate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Associate</controllingFieldValue>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Bank/financial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Associate</controllingFieldValue>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Business Partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Associate</controllingFieldValue>
+            <valueName>Child</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Associate</controllingFieldValue>
@@ -200,7 +58,38 @@
         <valueSettings>
             <controllingFieldValue>Associate</controllingFieldValue>
             <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Lawyer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Associate</controllingFieldValue>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Relative</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Associate</controllingFieldValue>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Spouse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Associate</controllingFieldValue>
+            <controllingFieldValue>Industry</controllingFieldValue>
             <valueName>Stakeholder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Affinity partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Affinity Partner Client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Burgess Associate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Burgess Employee</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industry</controllingFieldValue>
@@ -208,7 +97,19 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Charter Broker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Charter Manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
             <valueName>Class society</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Exterior designer</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industry</controllingFieldValue>
@@ -228,16 +129,26 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Interior designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
             <valueName>Listing/Assistant</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
             <valueName>Marine engineer</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
+            <valueName>Marketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Naval architect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
             <valueName>Photographer/Videographer</valueName>
         </valueSettings>
         <valueSettings>
@@ -246,8 +157,43 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
             <valueName>Project manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Real Estate Agent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Sales Broker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Shipping agent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Shipyard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Surveyor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Travel Agent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Yacht Manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Captain/Crew</controllingFieldValue>
+            <valueName>Captain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Captain/Crew</controllingFieldValue>
+            <valueName>Crew</valueName>
         </valueSettings>
     </valueSet>
     <visibleLines>4</visibleLines>

@@ -10,5 +10,5 @@
         <operation>notEqual</operation>
         <value>Account.Client</value>
     </filters>
-    <label>All_Companies</label>
+    <label>All Companies</label>
 </ListView>

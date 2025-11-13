@@ -220,7 +220,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Enquiry_Source__c</fieldItem>
-                <identifier>RecordEnquirySource__cField</identifier>
+                <identifier>RecordEnquiry_Source_cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -245,6 +245,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.utm_Campaign__c</fieldItem>
                 <identifier>Recordutm_Campaign_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Enquiry_method__c</fieldItem>
+                <identifier>RecordEnquiry_method_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-5c6cedff-d922-4150-9a01-0a5ec9e8ded6</name>

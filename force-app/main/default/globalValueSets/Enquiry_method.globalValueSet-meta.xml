@@ -41,14 +41,20 @@
         <label>Unknown</label>
     </customValue>
     <customValue>
-        <fullName>Walk in/up</fullName>
-        <default>false</default>
-        <label>Walk in/up</label>
-    </customValue>
-    <customValue>
         <fullName>Web chat</fullName>
         <default>false</default>
         <label>Web chat</label>
+    </customValue>
+    <customValue>
+        <fullName>In person</fullName>
+        <default>false</default>
+        <label>In person</label>
+    </customValue>
+    <customValue>
+        <fullName>Walk in/up</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Walk in/up</label>
     </customValue>
     <masterLabel>Enquiry method</masterLabel>
     <sorted>false</sorted>

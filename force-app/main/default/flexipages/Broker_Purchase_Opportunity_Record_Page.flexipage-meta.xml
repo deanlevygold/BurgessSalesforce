@@ -148,8 +148,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Opportunity_Amount__c</fieldItem>
-                <identifier>RecordOpportunity_Amount_cField</identifier>
+                <fieldItem>Record.Opportunity_Currency__c</fieldItem>
+                <identifier>RecordOpportunity_Currency_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -158,8 +158,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Opportunity_Currency__c</fieldItem>
-                <identifier>RecordOpportunity_Currency_cField</identifier>
+                <fieldItem>Record.Opportunity_Amount__c</fieldItem>
+                <identifier>RecordOpportunity_Amount_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -202,16 +202,10 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Data_Population_Score__c</fieldItem>
-                <identifier>RecordData_Population_Score__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Name}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
+                <fieldItem>Record.RecordTypeId</fieldItem>
+                <identifier>RecordRecordTypeIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -252,8 +246,14 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Source__c</fieldItem>
-                <identifier>RecordSource_cField</identifier>
+                <fieldItem>Record.Method__c</fieldItem>
+                <identifier>RecordMethod_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -262,8 +262,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Method__c</fieldItem>
-                <identifier>RecordMethod_cField</identifier>
+                <fieldItem>Record.Source__c</fieldItem>
+                <identifier>RecordSource_cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Name}</leftValue>
@@ -683,24 +683,6 @@
                 <identifier>lst_dynamicRelatedList3</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>flowArguments</name>
-                    <value>[{&quot;label&quot;:&quot;recordid&quot;,&quot;dataType&quot;:&quot;String&quot;,&quot;supportsRecordId&quot;:true,&quot;value&quot;:&quot;{!Record.Id}&quot;}]</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowLayout</name>
-                    <value>oneColumn</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
-                    <value>KYCOpptyScreens</value>
-                </componentInstanceProperties>
-                <componentName>flowruntime:interview</componentName>
-                <identifier>flowruntime_interview</identifier>
-            </componentInstance>
-        </itemInstances>
         <name>Facet-075a8df0-f597-458e-bfb5-472cfd3c3cb7</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -763,28 +745,6 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>flowArguments</name>
-                    <value>[{&quot;label&quot;:&quot;recordid&quot;,&quot;dataType&quot;:&quot;String&quot;,&quot;supportsRecordId&quot;:true,&quot;value&quot;:&quot;{!Record.Id}&quot;}]</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowLayout</name>
-                    <value>oneColumn</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>flowName</name>
-                    <value>OppScreenContractClosing</value>
-                </componentInstanceProperties>
-                <componentName>flowruntime:interview</componentName>
-                <identifier>flowruntime_interview7</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-d94463d5-161a-48d6-8a6c-4b47de6429ea</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>flowArguments</name>
                     <value>[{&quot;label&quot;:&quot;recordId&quot;,&quot;dataType&quot;:&quot;String&quot;,&quot;supportsRecordId&quot;:true,&quot;value&quot;:&quot;{!Record.Id}&quot;}]</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -800,6 +760,28 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-3c73a2d4-5422-4b35-9e21-0b26cef90b8d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>flowArguments</name>
+                    <value>[{&quot;label&quot;:&quot;recordid&quot;,&quot;dataType&quot;:&quot;String&quot;,&quot;supportsRecordId&quot;:true,&quot;value&quot;:&quot;{!Record.Id}&quot;}]</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>flowLayout</name>
+                    <value>oneColumn</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>flowName</name>
+                    <value>OppScreenContractClosing</value>
+                </componentInstanceProperties>
+                <componentName>flowruntime:interview</componentName>
+                <identifier>flowruntime_interview7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-d94463d5-161a-48d6-8a6c-4b47de6429ea</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -944,14 +926,14 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-d94463d5-161a-48d6-8a6c-4b47de6429ea</value>
+                    <value>Facet-3c73a2d4-5422-4b35-9e21-0b26cef90b8d</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Closing Actions</value>
+                    <value>Survey</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab10</identifier>
+                <identifier>flexipage_tab6</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Tab_Visibility__c}</leftValue>
@@ -965,14 +947,14 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-3c73a2d4-5422-4b35-9e21-0b26cef90b8d</value>
+                    <value>Facet-d94463d5-161a-48d6-8a6c-4b47de6429ea</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Survey</value>
+                    <value>Closing Actions</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab6</identifier>
+                <identifier>flexipage_tab10</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.Tab_Visibility__c}</leftValue>

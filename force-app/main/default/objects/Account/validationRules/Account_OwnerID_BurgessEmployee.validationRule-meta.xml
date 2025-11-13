@@ -4,8 +4,8 @@
     <active>true</active>
     <description>A User with the [Burgess Employee] Profile, attempts to update the [OwnerID] field, they will receive an error</description>
     <errorConditionFormula>AND(
-ISCHANGED(OwnerId),
-$Profile.Name = &quot;Burgess Employee&quot;
+    ISCHANGED(OwnerId),
+    $Profile.Name = &quot;Burgess Employee&quot;
 )</errorConditionFormula>
     <errorMessage>Users do not have the ability to update the Owner of a record.
 Please contact your System Administrator.</errorMessage>

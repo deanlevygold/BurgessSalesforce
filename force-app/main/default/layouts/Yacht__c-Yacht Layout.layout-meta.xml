@@ -97,6 +97,14 @@
         <relatedList>RelatedActivityList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>Purchase_Opportunity__c</fields>
+        <fields>Status__c</fields>
+        <fields>OfferPrice__c</fields>
+        <fields>Counter_Price__c</fields>
+        <fields>Agreed_Price__c</fields>
+        <relatedList>Offer__c.Yacht__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
         <fields>ACTIVITY.TASK</fields>

@@ -16,9 +16,15 @@
         <label>Withdrawn</label>
     </customValue>
     <customValue>
-        <fullName>Not known</fullName>
+        <fullName>Not Known</fullName>
         <default>false</default>
-        <label>Not known</label>
+        <label>Not Known</label>
+    </customValue>
+    <customValue>
+        <fullName>Null</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Null</label>
     </customValue>
     <masterLabel>Yes/No/Withdrawn/Null</masterLabel>
     <sorted>false</sorted>

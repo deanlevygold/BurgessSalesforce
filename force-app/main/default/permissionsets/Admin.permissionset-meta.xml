@@ -1587,21 +1587,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Custom_currency__c.CurrencyExternalId__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Custom_currency__c.LastModified_On__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Custom_currency__c.Last_updated_at__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Event.Description</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3135,10 +3120,6 @@
         <field>Yacht__c.crewemployer__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>Inspection_Related_Data_Flow</flow>
-    </flowAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Admin</label>
     <license>Salesforce</license>
@@ -4050,8 +4031,4 @@
         <tab>standard-report</tab>
         <visibility>Visible</visibility>
     </tabSettings>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewAllForeignKeyNames</name>
-    </userPermissions>
 </PermissionSet>

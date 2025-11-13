@@ -33,7 +33,7 @@
             <label>No contract yet</label>
         </rules>
     </decisions>
-    <description>Change to system context</description>
+    <description>Adding contract list view</description>
     <environments>Default</environments>
     <formulas>
         <name>ForHyperLinkContract</name>
@@ -205,7 +205,6 @@
         </connector>
         <inputReference>Get_Contract_Most_Recent</inputReference>
     </recordUpdates>
-    <runInMode>DefaultMode</runInMode>
     <screens>
         <name>Fincheck</name>
         <label>FinCheckOld</label>
@@ -1400,7 +1399,7 @@
             <inputParameters>
                 <name>columnWidths</name>
                 <value>
-                    <stringValue>ContractNumber:80, Status:263, Purchase_Opportunity__c:263, Sale_Opportunity__c:263, Market_Position__c:263, Price_Agreed_Amount__c:263, Price_Agreed_Currency__c:263, Price_Agreed_Date__c:263</stringValue>
+                    <stringValue>ContractNumber:80, Status:139, Purchase_Opportunity__c:263, Sale_Opportunity__c:263, Market_Position__c:186, Price_Agreed_Amount__c:170, Price_Agreed_Currency__c:134, Price_Agreed_Date__c:263</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1470,20 +1469,6 @@
             <fields>
                 <name>FinCheck_New_Section2_Column2</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <fieldType>ObjectProvided</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                    <objectFieldReference>Get_Contract_Most_Recent.Status</objectFieldReference>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1991,7 +1976,7 @@
             <targetReference>Get_Opp</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>recordid</name>
         <dataType>String</dataType>

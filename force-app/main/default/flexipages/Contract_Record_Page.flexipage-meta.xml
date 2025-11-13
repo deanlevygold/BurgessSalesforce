@@ -489,11 +489,11 @@
                 <identifier>RecordSurvey_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-02b95dfa-d7d3-4685-aefe-d3100ad5e7ec</name>
+        <name>Facet-9afd6c77-45db-456b-9388-a3db0bf6b421</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <name>Facet-4849c885-0a2c-4431-9d48-ce44267c58dd</name>
+        <name>Facet-02baa00f-4d51-45c1-a2c4-20e7c91cd4d7</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -501,7 +501,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-02b95dfa-d7d3-4685-aefe-d3100ad5e7ec</value>
+                    <value>Facet-9afd6c77-45db-456b-9388-a3db0bf6b421</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column10</identifier>
@@ -511,13 +511,13 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-4849c885-0a2c-4431-9d48-ce44267c58dd</value>
+                    <value>Facet-02baa00f-4d51-45c1-a2c4-20e7c91cd4d7</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column11</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-7030e8cc-73ce-4450-9d31-761416876bdc</name>
+        <name>Facet-ec2b6c46-84ca-4d23-9081-bf0e7853a0e5</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -1119,7 +1119,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
-                    <value>Facet-7030e8cc-73ce-4450-9d31-761416876bdc</value>
+                    <value>Facet-ec2b6c46-84ca-4d23-9081-bf0e7853a0e5</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>horizontalAlignment</name>
@@ -1333,6 +1333,32 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Contract.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>ContractContactRoles</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>rowsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>showLegacyActivityComposer</name>
                     <value>false</value>
                 </componentInstanceProperties>
@@ -1368,32 +1394,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Contract.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>ContractContactRoles</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer</identifier>
-            </componentInstance>
-        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

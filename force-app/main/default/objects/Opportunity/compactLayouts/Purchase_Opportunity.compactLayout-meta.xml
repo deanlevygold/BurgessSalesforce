@@ -3,6 +3,5 @@
     <fullName>Purchase_Opportunity</fullName>
     <fields>Name</fields>
     <fields>AccountId</fields>
-    <fields>OwnerId</fields>
     <label>Purchase Opportunity</label>
 </CompactLayout>

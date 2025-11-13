@@ -16,6 +16,11 @@
                 <label>English</label>
             </value>
             <value>
+                <fullName>English (US)</fullName>
+                <default>false</default>
+                <label>English (US)</label>
+            </value>
+            <value>
                 <fullName>French</fullName>
                 <default>false</default>
                 <label>French</label>
@@ -89,12 +94,6 @@
                 <fullName>Other</fullName>
                 <default>false</default>
                 <label>Other</label>
-            </value>
-            <value>
-                <fullName>English (US)</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>English (US)</label>
             </value>
         </valueSetDefinition>
     </valueSet>

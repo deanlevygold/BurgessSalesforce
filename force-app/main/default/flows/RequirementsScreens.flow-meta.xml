@@ -684,7 +684,7 @@
             <label>BasketPath</label>
         </rules>
     </decisions>
-    <description>feedback updates</description>
+    <description>swapping asking price field from askingprice__c to asking_price__c the calculated field</description>
     <environments>Default</environments>
     <formulas>
         <name>Budgetcurrency</name>
@@ -1934,7 +1934,7 @@ MID(
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name_Formula__c&quot;,&quot;guid&quot;:&quot;column-ffb8&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name Formula&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;For_Sale__c&quot;,&quot;guid&quot;:&quot;column-62cf&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;For Sale&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Type__c&quot;,&quot;guid&quot;:&quot;column-9c73&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Yacht_length__c&quot;,&quot;guid&quot;:&quot;column-1dda&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Yacht length&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Asking_currency__c&quot;,&quot;guid&quot;:&quot;column-51a3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Asking currency&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Askingprice__c&quot;,&quot;guid&quot;:&quot;column-7bc1&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Asking price&quot;,&quot;type&quot;:&quot;number&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name_Formula__c&quot;,&quot;guid&quot;:&quot;column-ffb8&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name Formula&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;For_Sale__c&quot;,&quot;guid&quot;:&quot;column-62cf&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;For Sale&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Type__c&quot;,&quot;guid&quot;:&quot;column-9c73&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Yacht_length__c&quot;,&quot;guid&quot;:&quot;column-1dda&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Yacht length&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Asking_currency__c&quot;,&quot;guid&quot;:&quot;column-51a3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Asking currency&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Asking_price__c&quot;,&quot;guid&quot;:&quot;column-7bc1&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Asking price&quot;,&quot;type&quot;:&quot;number&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -2360,7 +2360,7 @@ MID(
             <targetReference>GetOppSearchRecords</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>AddBtn</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>

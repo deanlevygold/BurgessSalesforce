@@ -391,7 +391,7 @@
             <targetReference>get_Lead</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>recordid</name>
         <dataType>String</dataType>
