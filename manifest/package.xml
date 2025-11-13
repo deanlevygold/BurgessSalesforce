@@ -36,6 +36,7 @@
   <types><members>*</members><name>FieldSet</name></types>
   <types><members>*</members><name>WebLink</name></types>
   <types><members>*</members><name>SharingReason</name></types>
+  <types><members>*</members><name>CustomMetadata</name></types>
 
   <!-- === OBJECT METADATA === -->
   <types><members>*</members><name>Layout</name></types>

@@ -42,7 +42,7 @@ package.xml
 **/aura/*__*
 **/lwc/*__*
 **/staticresources/*__*
-**/objects/*__*
+#**/objects/*__*
 **/classes/*__*
 **/triggers/*__*
 **/permissionsets/*__*
