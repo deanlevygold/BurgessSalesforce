@@ -158,6 +158,11 @@ git push origin feature/deandev-sync
 
 # Validate deployment to QA
 sfdeploy-deploycheck --checkonly
+
+# Generate delta and retrieve in one flow
+sf sgd source delta --from HEAD --to origin/prod --output-dir delta-prod-diff
+sf project retrieve start --manifest delta-prod-diff/package/package.xml --target-org prod
+
 ```
 
 ---
