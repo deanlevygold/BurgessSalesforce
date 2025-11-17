@@ -71,8 +71,9 @@
     <members>Account.Category__c</members>
     <members>Account.Company_Email__c</members>
     <members>Account.Department__c</members>
+    <members>Account.Other_Category__c</members>
     <members>Account.Sub_Category__c</members>
-    <members>Account.Supplier_Currency__c</members>
+    <members>Account.Supplier_Currency__c</members>    
     <members>Opportunity.BP_Invoice_Status__c</members>
     <members>Opportunity.BP_Invoice_Total__c</members>
     <members>Opportunity.BP_Order_No__c</members>
