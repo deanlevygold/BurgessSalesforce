@@ -88,9 +88,10 @@
     <members>Opportunity.SysIsProcuerment__c</members>
     <members>Opportunity.Total_Expenses__c</members>
     <members>Opportunity.Yacht_Ref_No__c</members>
-    <members>OpportunityLineItem.Brand_Requirements__c</members>
-    <members>OpportunityLineItem.Part_Number__c</members>
-    <members>OpportunityLineItem.Size__c</members>
+    <members>OpportunityLineItem.Manufacturer__c</members>    
+    <members>OpportunityLineItem.Unit__c</members>
+    <members>OpportunityLineItem.Manufacturer_Part_Number__c</members>
+    <members>OpportunityLineItem.Unit_Quantity__c</members>
     <members>Procurement_Insurance__mdt.Insurance_Rate__c</members>
     <members>Quote.BP_Invoice_Total__c</members>
     <members>Quote.Expense_Outbound_Freight__c</members>
@@ -115,7 +116,7 @@
     <members>Quote.Supplier__c</members>
     <members>Quote.Total_Expenses__c</members>
     <members>QuoteLineItem.BP_Invoice_Total__c</members>
-    <members>QuoteLineItem.Brand_Requirements__c</members>
+    <members>QuoteLineItem.Manufacturer__c</members>
     <members>QuoteLineItem.Description</members>
     <members>QuoteLineItem.Discount</members>
     <members>QuoteLineItem.Expense_Outbound_Freight__c</members>
@@ -127,19 +128,21 @@
     <members>QuoteLineItem.ListPrice</members>
     <members>QuoteLineItem.Order_Value_Converted__c</members>
     <members>QuoteLineItem.Order_Value__c</members>
-    <members>QuoteLineItem.Part_Number__c</members>
     <members>QuoteLineItem.Product2Id</members>
     <members>QuoteLineItem.ProductCode</members>
     <members>QuoteLineItem.Quantity</members>
     <members>QuoteLineItem.QuoteId</members>
     <members>QuoteLineItem.ServiceDate</members>
     <members>QuoteLineItem.Service__c</members>
-    <members>QuoteLineItem.Size__c</members>
     <members>QuoteLineItem.SortOrder</members>
     <members>QuoteLineItem.Subtotal</members>
     <members>QuoteLineItem.TotalPrice</members>
     <members>QuoteLineItem.Total_Expenses__c</members>
     <members>QuoteLineItem.UnitPrice</members>
+    <members>OuoteLineItem.Manufacturer__c</members>    
+    <members>QuoteLineItem.Unit__c</members>
+    <members>OuoteLineItem.Manufacturer_Part_Number__c</members>
+    <members>QuoteLineItem.Unit_Quantity__c</members>
     <name>CustomField</name>
   </types>
 
