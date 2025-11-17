@@ -65,6 +65,11 @@
         <default>false</default>
         <label>Protection</label>
     </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
     <masterLabel>Category</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

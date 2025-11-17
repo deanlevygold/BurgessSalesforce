@@ -106,6 +106,23 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Other_Category__c</fieldItem>
+                <identifier>RecordOther_Category__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Category__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Other</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Sub_Category__c</fieldItem>
@@ -120,12 +137,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Brands__c</fieldItem>
                 <identifier>RecordBrands__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Company_Email__c</fieldItem>
-                <identifier>RecordCompany_Email__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-55489c66-be24-4df1-a402-331bf255328f</name>
@@ -180,6 +191,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Website</fieldItem>
                 <identifier>RecordWebsiteField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Company_Email__c</fieldItem>
+                <identifier>RecordCompany_Email__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
