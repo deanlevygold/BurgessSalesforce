@@ -115,6 +115,10 @@
     <members>Quote.Supplier_Provided_Invoice__c</members>
     <members>Quote.Supplier__c</members>
     <members>Quote.Total_Expenses__c</members>
+    <members>Quote.RFQ_Emailed__c</members>
+    <members>Quote.RFQ_Emailed_Date__c</members>
+    <members>Quote.Quote_Emailed__c</members>
+    <members>Quote.Quote_Emailed_Date__c</members>
     <members>QuoteLineItem.BP_Invoice_Total__c</members>
     <members>QuoteLineItem.Manufacturer__c</members>
     <members>QuoteLineItem.Description</members>

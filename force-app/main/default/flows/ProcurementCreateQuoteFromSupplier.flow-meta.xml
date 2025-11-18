@@ -160,6 +160,12 @@
             <targetReference>GetOppProducts</targetReference>
         </connector>
         <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>IntroRFQs.firstSelectedRow.Description</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Main_Supplier_Contact__c</field>
             <value>
                 <elementReference>ListSupplierContacts.firstSelectedRow.Id</elementReference>
