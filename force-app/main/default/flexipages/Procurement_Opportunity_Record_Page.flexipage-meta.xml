@@ -82,28 +82,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.BP_Order_No__c</fieldItem>
-                <identifier>RecordBP_Order_No__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Yacht_Ref_No__c</fieldItem>
                 <identifier>RecordYacht_Ref_No__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.SysIsProcuerment__c</fieldItem>
-                <identifier>RecordSysIsProcuerment_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e3ee213f-50b8-4984-bcd8-b54c13a0357a</name>
@@ -206,6 +186,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Name</fieldItem>
                 <identifier>RecordNameField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.BP_Number__c</fieldItem>
+                <identifier>RecordBP_Number__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

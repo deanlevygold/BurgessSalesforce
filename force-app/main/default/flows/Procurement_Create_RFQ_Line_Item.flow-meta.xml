@@ -110,27 +110,27 @@
             <targetReference>Item_has_been_added</targetReference>
         </connector>
         <inputAssignments>
-            <field>Brand_Requirements__c</field>
-            <value>
-                <elementReference>Brand_Requirements</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>Description</field>
             <value>
                 <elementReference>Line_Description</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>OpportunityId</field>
+            <field>Manufacturer_Part_Number__c</field>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>Manufacturer_Part_Number</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Part_Number__c</field>
+            <field>Manufacturer__c</field>
             <value>
-                <elementReference>Part_Number</elementReference>
+                <elementReference>Manufacturer</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OpportunityId</field>
+            <value>
+                <elementReference>recordId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -152,15 +152,21 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Size__c</field>
-            <value>
-                <elementReference>Size</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>UnitPrice</field>
             <value>
                 <elementReference>Procurement_Service_Sales_Price</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unit_Quantity__c</field>
+            <value>
+                <elementReference>Unit_Quantity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unit__c</field>
+            <value>
+                <elementReference>Unit</elementReference>
             </value>
         </inputAssignments>
         <object>OpportunityLineItem</object>
@@ -284,6 +290,71 @@
             </styleProperties>
         </fields>
         <fields>
+            <name>Unit</name>
+            <dataType>String</dataType>
+            <fieldText>Unit</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Unit_Quantity</name>
+            <dataType>Number</dataType>
+            <fieldText>Unit Quantity</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Manufacturer</name>
+            <dataType>String</dataType>
+            <fieldText>Manufacturer</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Manufacturer_Part_Number</name>
+            <dataType>String</dataType>
+            <fieldText>Manufacturer Part Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
             <name>Line_Description</name>
             <dataType>String</dataType>
             <fieldText>Line Description</fieldText>
@@ -300,57 +371,9 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>Brand_Requirements</name>
-            <dataType>String</dataType>
-            <fieldText>Brand Requirements</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Part_Number</name>
-            <dataType>String</dataType>
-            <fieldText>Part Number</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Size</name>
-            <dataType>String</dataType>
-            <fieldText>Size</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
             <name>Procurement_Service_Sales_Price</name>
             <dataType>Currency</dataType>
-            <fieldText>Procurement Service (Sales Price)</fieldText>
+            <fieldText>Estimated Procurement Service (Sales Price)</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>

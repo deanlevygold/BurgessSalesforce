@@ -81,6 +81,51 @@
     </decisions>
     <environments>Default</environments>
     <formulas>
+        <name>f_BaseBP</name>
+        <dataType>String</dataType>
+        <expression>&quot;BP1&quot; &amp; {!f_YachtPrefix} &amp; {!Get_Procurement_Product.ProductCode}</expression>
+    </formulas>
+    <formulas>
+        <name>f_ExistingCounter</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+    ISBLANK({!Get_Latest_BP_Number.BP_Number__c}),
+    0,
+    VALUE(
+        RIGHT(
+            {!Get_Latest_BP_Number.BP_Number__c},
+            4
+        )
+    )
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>f_FullBP</name>
+        <dataType>String</dataType>
+        <expression>&quot;BP1&quot; &amp;
+UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
+{!Get_Procurement_Product.ProductCode} &amp;
+{!f_NextCounter}</expression>
+    </formulas>
+    <formulas>
+        <name>f_NextCounter</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    {!f_ExistingCounter} = 0,
+    &quot;0001&quot;,
+    RIGHT(
+        &quot;0000&quot; &amp; TEXT({!f_ExistingCounter} + 1),
+        4
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>f_YachtPrefix</name>
+        <dataType>String</dataType>
+        <expression>UPPER( LEFT( {!GetYacht.Name} , 3 ) )</expression>
+    </formulas>
+    <formulas>
         <name>varClosedDate</name>
         <dataType>Date</dataType>
         <expression>ADDMONTHS(TODAY(),3)</expression>
@@ -112,23 +157,17 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <name>Create_RFQ_Line_Item</name>
-        <label>Create RFQ Line Item</label>
+        <name>AddContactRole</name>
+        <label>AddContactRole</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Item_has_been_added</targetReference>
+            <targetReference>Add_RFQ_Line_Items</targetReference>
         </connector>
         <inputAssignments>
-            <field>Brand_Requirements__c</field>
+            <field>ContactId</field>
             <value>
-                <elementReference>Brand_Requirements</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Description</field>
-            <value>
-                <elementReference>Line_Description</elementReference>
+                <elementReference>YachtRelationships.firstSelectedRow.Contact__r.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -138,9 +177,44 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Part_Number__c</field>
+            <field>Role</field>
             <value>
-                <elementReference>Part_Number</elementReference>
+                <stringValue>Vessel Contact</stringValue>
+            </value>
+        </inputAssignments>
+        <object>OpportunityContactRole</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_RFQ_Line_Item</name>
+        <label>Create RFQ Line Item</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Opp_with_BP_Number</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>Line_Description</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Manufacturer_Part_Number__c</field>
+            <value>
+                <elementReference>Manufacturer_Part_Number</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Manufacturer__c</field>
+            <value>
+                <elementReference>Manufacturer</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OpportunityId</field>
+            <value>
+                <elementReference>CreateOpp.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -162,15 +236,21 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Size__c</field>
-            <value>
-                <elementReference>Size</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>UnitPrice</field>
             <value>
                 <elementReference>Procurement_Service_Sales_Price</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unit_Quantity__c</field>
+            <value>
+                <elementReference>Unit_Quantity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unit__c</field>
+            <value>
+                <elementReference>Unit</elementReference>
             </value>
         </inputAssignments>
         <object>OpportunityLineItem</object>
@@ -182,12 +262,18 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Add_RFQ_Line_Items</targetReference>
+            <targetReference>AddContactRole</targetReference>
         </connector>
         <inputAssignments>
             <field>CloseDate</field>
             <value>
                 <elementReference>varClosedDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>RFQ_Description</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -217,6 +303,29 @@
         <object>Opportunity</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordLookups>
+        <name>Get_Latest_BP_Number</name>
+        <label>Get Latest BP Number</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetOppRecordType</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BP_Number__c</field>
+            <operator>StartsWith</operator>
+            <value>
+                <elementReference>f_BaseBP</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>BP_Number__c</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Get_Procurement_Product</name>
         <label>Get Procurement Product</label>
@@ -259,7 +368,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>NewOppScreen</targetReference>
+            <targetReference>AddContact</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -301,7 +410,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>GetOppRecordType</targetReference>
+            <targetReference>GetYachtRelationship</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -315,6 +424,58 @@
         <object>Yacht__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>GetYachtRelationship</name>
+        <label>GetYachtRelationship</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Latest_BP_Number</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Yacht__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Contact__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Yacht_Relationship__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opp_with_BP_Number</name>
+        <label>Update Opp with BP Number</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Item_has_been_added</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CreateOpp.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>BP_Number__c</field>
+            <value>
+                <elementReference>f_FullBP</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
     <screens>
         <name>Add_RFQ_Line_Items</name>
         <label>Add RFQ Line Items</label>
@@ -377,6 +538,71 @@
             </styleProperties>
         </fields>
         <fields>
+            <name>Unit</name>
+            <dataType>String</dataType>
+            <fieldText>Unit</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Unit_Quantity</name>
+            <dataType>Number</dataType>
+            <fieldText>Unit Quantity</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Manufacturer</name>
+            <dataType>String</dataType>
+            <fieldText>Manufacturer</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Manufacturer_Part_Number</name>
+            <dataType>String</dataType>
+            <fieldText>Manufacturer Part Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
             <name>Line_Description</name>
             <dataType>String</dataType>
             <fieldText>Line Description</fieldText>
@@ -393,61 +619,13 @@
             </styleProperties>
         </fields>
         <fields>
-            <name>Brand_Requirements</name>
-            <dataType>String</dataType>
-            <fieldText>Brand Requirements</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Part_Number</name>
-            <dataType>String</dataType>
-            <fieldText>Part Number</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Size</name>
-            <dataType>String</dataType>
-            <fieldText>Size</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
             <name>Procurement_Service_Sales_Price</name>
             <dataType>Currency</dataType>
-            <fieldText>Procurement Service (Sales Price)</fieldText>
+            <fieldText>Estimated Procurement Service (Sales Price)</fieldText>
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
-            <scale>0</scale>
+            <scale>2</scale>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -459,6 +637,117 @@
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>AddContact</name>
+        <label>AddContact</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>CreateOpp</targetReference>
+        </connector>
+        <fields>
+            <name>RFQ_Description</name>
+            <fieldText>RFQ Description</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>YachtRelationships</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>Yacht_Relationship__c</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Add Vessel Contact</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>SINGLE_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>shouldDisplayLabel</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>GetYachtRelationship</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>keyField</name>
+                <value>
+                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Yacht_Relationship__c&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;GetYachtRelationship&quot;}</complexValue>
+                    <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>isShowSearchBar</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Connected_To__c&quot;,&quot;guid&quot;:&quot;column-8d92&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Connected To&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;Type__c&quot;,&quot;guid&quot;:&quot;column-e99f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Type&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columnReferences</name>
+                <value>
+                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Yacht_Relationship__c&quot;,&quot;fieldReferences&quot;:[&quot;Connected_To__c&quot;,&quot;Type__c&quot;],&quot;elementReference&quot;:&quot;GetYachtRelationship&quot;}</complexValue>
+                    <complexValueType>ComplexObjectFieldDetails</complexValueType>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Item_has_been_added</name>
@@ -505,35 +794,6 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
-    <screens>
-        <name>NewOppScreen</name>
-        <label>NewOppScreen</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <connector>
-            <targetReference>CreateOpp</targetReference>
-        </connector>
-        <fields>
-            <name>Description</name>
-            <fieldText>Description</fieldText>
-            <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
@@ -548,6 +808,17 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>var_CurrentCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <elementReference>f_ExistingCounter</elementReference>
+        </value>
     </variables>
     <variables>
         <name>varOppProduct</name>

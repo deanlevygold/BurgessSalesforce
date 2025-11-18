@@ -53,7 +53,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.BP_Order_No__c</field>
+        <field>Opportunity.BP_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -464,6 +464,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>QuoteLineItem.Total_Expenses__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>QuoteLineItem.Unit_Quantity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>QuoteLineItem.Unit__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>

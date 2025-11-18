@@ -76,7 +76,7 @@
     <members>Account.Supplier_Currency__c</members>    
     <members>Opportunity.BP_Invoice_Status__c</members>
     <members>Opportunity.BP_Invoice_Total__c</members>
-    <members>Opportunity.BP_Order_No__c</members>
+    <members>Opportunity.BP_Number__c</members>
     <members>Opportunity.Expense_Outbound_Freight__c</members>
     <members>Opportunity.Expenses_Inbound__c</members>
     <members>Opportunity.Fee_less_INS__c</members>

@@ -50,24 +50,38 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varQuoteLine.Size__c</assignToReference>
+            <assignToReference>varQuoteLine.Manufacturer_Part_Number__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>LoopOppProds.Size__c</elementReference>
+                <elementReference>LoopOppProds.Manufacturer_Part_Number__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varQuoteLine.Part_Number__c</assignToReference>
+            <assignToReference>varQuoteLine.Manufacturer__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>LoopOppProds.Part_Number__c</elementReference>
+                <elementReference>LoopOppProds.Manufacturer__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varQuoteLine.Brand_Requirements__c</assignToReference>
+            <assignToReference>varQuoteLine.Unit__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>LoopOppProds.Brand_Requirements__c</elementReference>
+                <elementReference>LoopOppProds.Unit__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varQuoteLine.Unit_Quantity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopOppProds.Unit_Quantity__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varQuoteLine.Manufacturer_Part_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopOppProds.Manufacturer_Part_Number__c</elementReference>
             </value>
         </assignmentItems>
         <connector>

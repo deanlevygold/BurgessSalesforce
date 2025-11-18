@@ -452,6 +452,16 @@
                 <identifier>RecordFlag_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Prefered_Currency__c</fieldItem>
+                <identifier>RecordPrefered_Currency__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-a428f6c7-d085-445c-bd76-7f84aeb040dc</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -1108,12 +1118,6 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>boatProYachtDetails</componentName>
-                <identifier>c_boatProYachtDetails</identifier>
-            </componentInstance>
-        </itemInstances>
         <name>sidebar</name>
         <type>Region</type>
     </flexiPageRegions>
