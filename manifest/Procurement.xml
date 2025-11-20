@@ -146,21 +146,18 @@
     <members>QuoteLineItem.TotalPrice</members>
     <members>QuoteLineItem.Total_Expenses__c</members>
     <members>QuoteLineItem.UnitPrice</members>
-    <members>OuoteLineItem.Manufacturer__c</members>    
+    <members>OuoteLineItem.Manufacturer__c</members>
     <members>QuoteLineItem.Unit__c</members>
     <members>OuoteLineItem.Manufacturer_Part_Number__c</members>
-    <members>QuoteLineItem.Unit_Quantity__c</members>
-    <members>Yacht__c.Preferred_Currency__c</members>
+    <members>QuoteLineItem.Unit_Quantity__c</members>  
     <name>CustomField</name>
   </types>
 
   <!-- Objects -->
   <types>
-    <members>Procurement_Insurance__mdt</members>
-    <members>Procurement_Quote_PDF_Template__mdt</members>
+    <members>Procurement_Insurance__mdt</members>  
     <members>Quote</members>
     <members>QuoteLineItem</members>
-    <members>Yacht__c</members>
     <name>CustomObject</name>
   </types>
 

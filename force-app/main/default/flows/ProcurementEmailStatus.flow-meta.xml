@@ -176,7 +176,7 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Quote_Emailed_Data__c</field>
+            <field>Quote_Emailed_Date__c</field>
             <value>
                 <elementReference>$Record.MessageDate</elementReference>
             </value>

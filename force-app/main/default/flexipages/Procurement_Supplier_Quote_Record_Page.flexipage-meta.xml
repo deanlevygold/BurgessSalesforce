@@ -240,7 +240,7 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Quote_Emailed_Data__c</fieldItem>
+                <fieldItem>Record.Quote_Emailed_Date__c</fieldItem>
                 <identifier>RecordQuote_Emailed_Data__cField</identifier>
             </fieldInstance>
         </itemInstances>
