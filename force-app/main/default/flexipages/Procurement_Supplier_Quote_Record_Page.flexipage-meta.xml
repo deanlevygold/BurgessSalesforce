@@ -7,6 +7,26 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
+                            <value>Quote.Accepted</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Status}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Quoted</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Quote.Declined</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.Status}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Quoted</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>FeedItem.ContentPost</value>
                         </valueListItems>
                         <valueListItems>
@@ -17,9 +37,6 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>EmailQuote</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CreatePdf</value>
@@ -57,7 +74,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>hideUpdateButton</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>variant</name>
@@ -99,6 +116,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Description</fieldItem>
                 <identifier>RecordDescriptionField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Yacht_Preferred_Currency__c</fieldItem>
+                <identifier>RecordYacht_Preferred_Currency__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.ContactId</fieldItem>
+                <identifier>RecordContactIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ce90306e-ff5d-4ae8-83fd-9d3f06aaf6a4</name>
@@ -169,8 +206,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.ContactId</fieldItem>
-                <identifier>RecordContactIdField</identifier>
+                <fieldItem>Record.Main_Yacht_Contact__c</fieldItem>
+                <identifier>RecordMain_Yacht_Contact__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -179,8 +216,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Email</fieldItem>
-                <identifier>RecordEmailField</identifier>
+                <fieldItem>Record.Contact_Email__c</fieldItem>
+                <identifier>RecordContact_Email__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-17541793-3049-4cd7-80de-559c29d47653</name>
@@ -191,10 +228,20 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Phone</fieldItem>
-                <identifier>RecordPhoneField</identifier>
+                <fieldItem>Record.Quote_Emailed__c</fieldItem>
+                <identifier>RecordQuote_Emailed__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Quote_Emailed_Data__c</fieldItem>
+                <identifier>RecordQuote_Emailed_Data__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-dea72645-61ce-4331-952e-9484f2742737</name>
@@ -241,8 +288,18 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Supplier_Currency__c</fieldItem>
-                <identifier>RecordSupplier_Currency_cField</identifier>
+                <fieldItem>Record.Main_Supplier_Contact__c</fieldItem>
+                <identifier>RecordMain_Supplier_Contact__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Email</fieldItem>
+                <identifier>RecordEmailField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-ca013dc5-d3b3-4fe4-88ea-efb90b86f63f</name>
@@ -255,8 +312,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Main_Supplier_Contact__c</fieldItem>
-                <identifier>RecordMain_Supplier_Contact__cField</identifier>
+                <fieldItem>Record.Supplier_Email__c</fieldItem>
+                <identifier>RecordSupplier_Email__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -265,8 +322,28 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Supplier_Email__c</fieldItem>
-                <identifier>RecordSupplier_Email__cField</identifier>
+                <fieldItem>Record.Supplier_Currency__c</fieldItem>
+                <identifier>RecordSupplier_Currency_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.RFQ_Emailed__c</fieldItem>
+                <identifier>RecordRFQ_Emailed__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.RFQ_Emailed_Date__c</fieldItem>
+                <identifier>RecordRFQ_Emailed_Date__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-03e01c24-18ef-438d-9e7a-ca1556d2a297</name>

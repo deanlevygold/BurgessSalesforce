@@ -171,6 +171,12 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>IsPrimary</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>OpportunityId</field>
             <value>
                 <elementReference>CreateOpp.Id</elementReference>
@@ -297,7 +303,7 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <inputAssignments>
             <field>StageName</field>
             <value>
-                <stringValue>Intro</stringValue>
+                <stringValue>Quote Requested</stringValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>

@@ -331,26 +331,21 @@
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection2</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.StageName}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Closed - Ordered</rightValue>
+                        <rightValue>BP Invoicing - Rasied</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.StageName}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Not Started</rightValue>
+                        <rightValue>BP Invoicing - Paid</rightValue>
                     </criteria>
                     <criteria>
                         <leftValue>{!Record.StageName}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Raised</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.StageName}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Paid</rightValue>
+                        <rightValue>Ordered</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -515,6 +510,9 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Supplier__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>QUOTE.STATUS</value>
                         </valueListItems>
                         <valueListItems>
                             <value>QUOTE.ISSYNCING</value>

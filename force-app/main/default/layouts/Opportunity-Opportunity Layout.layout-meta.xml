@@ -290,10 +290,12 @@
         <excludeButtons>MultiAdd</excludeButtons>
         <excludeButtons>MultiEdit</excludeButtons>
         <fields>Product2</fields>
-        <fields>Description</fields>
         <fields>Quantity</fields>
-        <fields>Part_Number__c</fields>
-        <fields>Size__c</fields>
+        <fields>Description</fields>
+        <fields>Manufacturer__c</fields>
+        <fields>Manufacturer_Part_Number__c</fields>
+        <fields>Unit__c</fields>
+        <fields>Unit_Quantity__c</fields>
         <relatedList>RelatedLineItemList</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>

@@ -53,12 +53,12 @@
             <field>StageName</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Intro</stringValue>
+                <stringValue>Quote Requested</stringValue>
             </value>
         </filters>
         <object>Opportunity</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>
