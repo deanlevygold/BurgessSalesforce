@@ -288,7 +288,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Quote.Quote_Emailed_Data__c</field>
+        <field>Quote.Quote_Emailed_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
