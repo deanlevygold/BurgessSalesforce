@@ -204,4 +204,8 @@
         <name>Goldclipper_Integration</name>
         <type>ExternalClientApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>standard__DigitalWallet</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

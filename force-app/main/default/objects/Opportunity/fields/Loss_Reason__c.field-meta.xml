@@ -11,6 +11,16 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Another Supplier</fullName>
+                <default>false</default>
+                <label>Another Supplier</label>
+            </value>
+            <value>
+                <fullName>Bought Locally</fullName>
+                <default>false</default>
+                <label>Bought Locally</label>
+            </value>
+            <value>
                 <fullName>Lost to Competitor</fullName>
                 <default>false</default>
                 <label>Lost to Competitor</label>
@@ -26,6 +36,21 @@
                 <label>No Decision / Non-Responsive</label>
             </value>
             <value>
+                <fullName>No Longer Needed</fullName>
+                <default>false</default>
+                <label>No Longer Needed</label>
+            </value>
+            <value>
+                <fullName>Not Enough Information</fullName>
+                <default>false</default>
+                <label>Not Enough Information</label>
+            </value>
+            <value>
+                <fullName>Not Ordering Yet</fullName>
+                <default>false</default>
+                <label>Not Ordering Yet</label>
+            </value>
+            <value>
                 <fullName>Price</fullName>
                 <default>false</default>
                 <label>Price</label>
@@ -37,6 +62,36 @@
             </value>
         </valueSetDefinition>
         <valueSettings>
+            <controllingFieldValue>Closed - No Order</controllingFieldValue>
+            <valueName>Another Supplier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed - No Order</controllingFieldValue>
+            <valueName>Bought Locally</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed - No Order</controllingFieldValue>
+            <valueName>No Longer Needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed - No Order</controllingFieldValue>
+            <valueName>Not Enough Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed - No Order</controllingFieldValue>
+            <valueName>Not Ordering Yet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed - No Order</controllingFieldValue>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed - No Order</controllingFieldValue>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>Closed Lost</controllingFieldValue>
             <valueName>Lost to Competitor</valueName>
         </valueSettings>
@@ -47,14 +102,6 @@
         <valueSettings>
             <controllingFieldValue>Closed Lost</controllingFieldValue>
             <valueName>No Decision / Non-Responsive</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Closed Lost</controllingFieldValue>
-            <valueName>Price</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Closed Lost</controllingFieldValue>
-            <valueName>Other</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

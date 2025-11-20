@@ -38,7 +38,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Status_Reason__c</field>
+                <field>zzzStatus_Reason__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -47,6 +47,14 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Brokerage_House__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Status_reason__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -112,6 +120,12 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Yacht_Price_History__c.Yacht__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>OPPORTUNITY.NAME</fields>
+        <fields>ACCOUNT.NAME</fields>
+        <fields>OPPORTUNITY.CLOSE_DATE</fields>
+        <relatedList>Opportunity.ProcurementYacht__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

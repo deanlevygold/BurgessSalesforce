@@ -108,7 +108,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>ContactRecord.Allow_marketing__c</assignToReference>
+            <assignToReference>ContactRecord.AllowMarketing__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Allow_Marketing</elementReference>
@@ -136,11 +136,8 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>ContactRecord.GDPR_consent_type__c</assignToReference>
+            <assignToReference>ContactRecord.GDPRConsentType__c</assignToReference>
             <operator>Assign</operator>
-            <value>
-                <elementReference>GDPR_Consent_Type</elementReference>
-            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>ContactRecord.GDPR_consent_via_third_party__c</assignToReference>
@@ -356,7 +353,7 @@
         <dataType>Picklist</dataType>
         <displayField xsi:nil="true"/>
         <object xsi:nil="true"/>
-        <picklistField>GDPR_consent_type__c</picklistField>
+        <picklistField>GDPRConsentType__c</picklistField>
         <picklistObject>Contact</picklistObject>
     </dynamicChoiceSets>
     <dynamicChoiceSets>

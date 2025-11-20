@@ -77,16 +77,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Public__c</fieldItem>
-                <identifier>RecordPosition_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Description__c</fieldItem>
                 <identifier>RecordDescription_cField</identifier>
             </fieldInstance>
@@ -112,7 +102,7 @@
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Status__c</fieldItem>
-                <identifier>RecordActive__cField</identifier>
+                <identifier>RecordStatus__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -121,8 +111,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Status_Reason__c</fieldItem>
-                <identifier>RecordStatus_Reason_cField</identifier>
+                <fieldItem>Record.Sub_Status__c</fieldItem>
+                <identifier>RecordSub_Status__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -133,6 +123,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Yacht__c</fieldItem>
                 <identifier>RecordYacht_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Yacht_ref_number__c</fieldItem>
+                <identifier>RecordYacht_ref_number_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-604e67b4-558f-401d-8e0f-1567287471f2</name>
@@ -171,6 +171,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.BURGESS_BR_CA_Start_Date__c</fieldItem>
                 <identifier>RecordBURGESS_BR_CA_Start_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Start_date__c</fieldItem>
+                <identifier>RecordStart_date_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -245,6 +255,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.BURGESS_BR_CA_End_Date__c</fieldItem>
                 <identifier>RecordBURGESS_BR_CA_End_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.End_date__c</fieldItem>
+                <identifier>RecordEnd_date_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -351,6 +371,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Start_date__c</fieldItem>
+                <identifier>RecordStart_date_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Summer_Charter_Location__c</fieldItem>
                 <identifier>RecordSummer_Charter_Location_cField</identifier>
             </fieldInstance>
@@ -397,6 +427,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.BURGESS_CM_CA_End_Date__c</fieldItem>
                 <identifier>RecordBURGESS_CM_CA_End_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.End_date__c</fieldItem>
+                <identifier>RecordEnd_date_cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -483,18 +523,18 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Yacht_name_at_event__c</fieldItem>
-                <identifier>RecordYacht_name_at_event_cField</identifier>
+                <fieldItem>Record.Yacht_Owner__c</fieldItem>
+                <identifier>RecordYacht_Owner_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Yacht_ref_number__c</fieldItem>
-                <identifier>RecordYacht_ref_number_cField</identifier>
+                <fieldItem>Record.Yacht_name_at_event__c</fieldItem>
+                <identifier>RecordYacht_name_at_event_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -523,8 +563,8 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.GT__c</fieldItem>
-                <identifier>RecordGT_cField</identifier>
+                <fieldItem>Record.Build_year_c__c</fieldItem>
+                <identifier>RecordBuild_year_c_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-14e4b5fd-7105-45f4-97dd-0b8c35682fb6</name>
@@ -545,16 +585,6 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Yacht_Owner__c</fieldItem>
-                <identifier>RecordYacht_Owner_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.LOA_Metres_c__c</fieldItem>
@@ -567,8 +597,8 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Build_year_c__c</fieldItem>
-                <identifier>RecordBuild_year_c_cField</identifier>
+                <fieldItem>Record.GT__c</fieldItem>
+                <identifier>RecordGT_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

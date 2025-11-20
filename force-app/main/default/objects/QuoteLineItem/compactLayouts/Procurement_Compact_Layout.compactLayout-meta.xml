@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Procurement_Compact_Layout</fullName>
+    <fields>Product2Id</fields>
+    <fields>Quantity</fields>
+    <fields>Order_Value_Converted__c</fields>
+    <fields>UnitPrice</fields>
+    <fields>BP_Invoice_Total__c</fields>
+    <label>Procurement Compact Layout</label>
+</CompactLayout>

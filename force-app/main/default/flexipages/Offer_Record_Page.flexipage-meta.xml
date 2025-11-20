@@ -72,6 +72,12 @@
                 <identifier>RecordSale_Opportunity_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.DynamicsID36__c</fieldItem>
+                <identifier>RecordDynamicsID36__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-7df3ba5d-0323-4a8f-b34a-c8518a70effb</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -2,8 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>LKW_Base__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( LKW_Jump_Formula__c&lt;1,&quot;GBP 0&quot;, 
-&quot;GBP &quot; &amp;
+    <formula>IF( LKW_Jump_Formula__c&lt;1,&quot;GBP 0&quot;, &quot;GBP &quot; &amp;
 IF(
   ISBLANK(LKW_Jump_Formula__c), &quot;&quot;,
   IF(

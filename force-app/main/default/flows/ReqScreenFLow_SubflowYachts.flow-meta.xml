@@ -302,7 +302,7 @@
             </value>
         </filters>
         <filters>
-            <field>Status_Reason__c</field>
+            <field>zzzStatus_Reason__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Inactive</stringValue>
@@ -346,7 +346,7 @@
         <queriedFields>Yacht_length__c</queriedFields>
         <queriedFields>Build_year__c</queriedFields>
         <queriedFields>Builder__c</queriedFields>
-        <queriedFields>Status_Reason__c</queriedFields>
+        <queriedFields>zzzStatus_Reason__c</queriedFields>
         <queriedFields>Name</queriedFields>
         <queriedFields>Type__c</queriedFields>
         <queriedFields>Name_Formula__c</queriedFields>
@@ -373,7 +373,7 @@
             </value>
         </filters>
         <filters>
-            <field>Status_Reason__c</field>
+            <field>zzzStatus_Reason__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Inactive</stringValue>
@@ -417,7 +417,7 @@
         <queriedFields>Yacht_length__c</queriedFields>
         <queriedFields>Build_year__c</queriedFields>
         <queriedFields>Builder__c</queriedFields>
-        <queriedFields>Status_Reason__c</queriedFields>
+        <queriedFields>zzzStatus_Reason__c</queriedFields>
         <queriedFields>Name</queriedFields>
         <queriedFields>Type__c</queriedFields>
         <queriedFields>Name_Formula__c</queriedFields>
@@ -444,7 +444,7 @@
             </value>
         </filters>
         <filters>
-            <field>Status_Reason__c</field>
+            <field>zzzStatus_Reason__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Inactive</stringValue>
@@ -488,7 +488,7 @@
         <queriedFields>Yacht_length__c</queriedFields>
         <queriedFields>Build_year__c</queriedFields>
         <queriedFields>Builder__c</queriedFields>
-        <queriedFields>Status_Reason__c</queriedFields>
+        <queriedFields>zzzStatus_Reason__c</queriedFields>
         <queriedFields>Name</queriedFields>
         <queriedFields>Type__c</queriedFields>
         <queriedFields>Name_Formula__c</queriedFields>
@@ -515,7 +515,7 @@
             </value>
         </filters>
         <filters>
-            <field>Status_Reason__c</field>
+            <field>zzzStatus_Reason__c</field>
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Inactive</stringValue>
@@ -559,7 +559,7 @@
         <queriedFields>Yacht_length__c</queriedFields>
         <queriedFields>Build_year__c</queriedFields>
         <queriedFields>Builder__c</queriedFields>
-        <queriedFields>Status_Reason__c</queriedFields>
+        <queriedFields>zzzStatus_Reason__c</queriedFields>
         <queriedFields>Name</queriedFields>
         <queriedFields>Type__c</queriedFields>
         <queriedFields>Name_Formula__c</queriedFields>

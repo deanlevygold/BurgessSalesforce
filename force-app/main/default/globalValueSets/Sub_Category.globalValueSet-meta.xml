@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Detectors</fullName>
+        <default>false</default>
+        <label>Detectors</label>
+    </customValue>
+    <customValue>
+        <fullName>Extinguishing Systems</fullName>
+        <default>false</default>
+        <label>Extinguishing Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Fire Detection</fullName>
+        <default>false</default>
+        <label>Fire Detection</label>
+    </customValue>
+    <customValue>
+        <fullName>Fire Extinguishers</fullName>
+        <default>false</default>
+        <label>Fire Extinguishers</label>
+    </customValue>
+    <customValue>
+        <fullName>Fire Safety</fullName>
+        <default>false</default>
+        <label>Fire Safety</label>
+    </customValue>
+    <customValue>
+        <fullName>Flame Detection</fullName>
+        <default>false</default>
+        <label>Flame Detection</label>
+    </customValue>
+    <customValue>
+        <fullName>Gas Detection</fullName>
+        <default>false</default>
+        <label>Gas Detection</label>
+    </customValue>
+    <customValue>
+        <fullName>Gas Detectors</fullName>
+        <default>false</default>
+        <label>Gas Detectors</label>
+    </customValue>
+    <customValue>
+        <fullName>Gas Sensors</fullName>
+        <default>false</default>
+        <label>Gas Sensors</label>
+    </customValue>
+    <customValue>
+        <fullName>GPS Signals</fullName>
+        <default>false</default>
+        <label>GPS Signals</label>
+    </customValue>
+    <customValue>
+        <fullName>Hearing Protection</fullName>
+        <default>false</default>
+        <label>Hearing Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>Heat Detection</fullName>
+        <default>false</default>
+        <label>Heat Detection</label>
+    </customValue>
+    <customValue>
+        <fullName>Hose Reels</fullName>
+        <default>false</default>
+        <label>Hose Reels</label>
+    </customValue>
+    <customValue>
+        <fullName>Life Boats</fullName>
+        <default>false</default>
+        <label>Life Boats</label>
+    </customValue>
+    <customValue>
+        <fullName>Life Rafts</fullName>
+        <default>false</default>
+        <label>Life Rafts</label>
+    </customValue>
+    <customValue>
+        <fullName>Mist Systems</fullName>
+        <default>false</default>
+        <label>Mist Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Monitoring</fullName>
+        <default>false</default>
+        <label>Monitoring</label>
+    </customValue>
+    <customValue>
+        <fullName>Monitors</fullName>
+        <default>false</default>
+        <label>Monitors</label>
+    </customValue>
+    <customValue>
+        <fullName>Nozzles</fullName>
+        <default>false</default>
+        <label>Nozzles</label>
+    </customValue>
+    <customValue>
+        <fullName>Piping Systems</fullName>
+        <default>false</default>
+        <label>Piping Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>PPE</fullName>
+        <default>false</default>
+        <label>PPE</label>
+    </customValue>
+    <customValue>
+        <fullName>Pump Stations</fullName>
+        <default>false</default>
+        <label>Pump Stations</label>
+    </customValue>
+    <customValue>
+        <fullName>Rescue Boats</fullName>
+        <default>false</default>
+        <label>Rescue Boats</label>
+    </customValue>
+    <customValue>
+        <fullName>Respirators</fullName>
+        <default>false</default>
+        <label>Respirators</label>
+    </customValue>
+    <customValue>
+        <fullName>Safety Technology</fullName>
+        <default>false</default>
+        <label>Safety Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Signalling</fullName>
+        <default>false</default>
+        <label>Signalling</label>
+    </customValue>
+    <customValue>
+        <fullName>Smoke Detectors</fullName>
+        <default>false</default>
+        <label>Smoke Detectors</label>
+    </customValue>
+    <customValue>
+        <fullName>Sounders</fullName>
+        <default>false</default>
+        <label>Sounders</label>
+    </customValue>
+    <customValue>
+        <fullName>Suppression Systems</fullName>
+        <default>false</default>
+        <label>Suppression Systems</label>
+    </customValue>
+    <masterLabel>Sub-Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

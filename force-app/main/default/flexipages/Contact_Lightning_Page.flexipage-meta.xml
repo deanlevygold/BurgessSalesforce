@@ -79,7 +79,7 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Contact.New_Purchase_Opp</value>
+                            <value>Contact.New_Opportunity</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Edit</value>
@@ -490,8 +490,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.GDPR_consent_type__c</fieldItem>
-                <identifier>RecordGDPR_consent_type_cField</identifier>
+                <fieldItem>Record.GDPRConsentType__c</fieldItem>
+                <identifier>RecordGDPRConsentType_cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.GDPR_consent__c}</leftValue>
@@ -570,15 +570,11 @@
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
-                    <name>conditionalFormatRuleset</name>
-                    <value>Allow_marketing</value>
-                </fieldInstanceProperties>
-                <fieldInstanceProperties>
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Allow_marketing__c</fieldItem>
-                <identifier>RecordAllow_marketing_cField</identifier>
+                <fieldItem>Record.AllowMarketing__c</fieldItem>
+                <identifier>RecordAllowMarketing_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
