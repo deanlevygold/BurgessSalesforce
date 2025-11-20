@@ -89,15 +89,6 @@
         <won>false</won>
     </standardValue>
     <standardValue>
-        <fullName>Intro</fullName>
-        <default>false</default>
-        <label>Intro</label>
-        <closed>false</closed>
-        <forecastCategory>Pipeline</forecastCategory>
-        <probability>10</probability>
-        <won>false</won>
-    </standardValue>
-    <standardValue>
         <fullName>Quote Requested</fullName>
         <default>false</default>
         <label>Quote Requested</label>
@@ -125,6 +116,15 @@
         <won>false</won>
     </standardValue>
     <standardValue>
+        <fullName>Ordered</fullName>
+        <default>false</default>
+        <label>Ordered</label>
+        <closed>false</closed>
+        <forecastCategory>Forecast</forecastCategory>
+        <probability>90</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
         <fullName>Closed - No Order</fullName>
         <default>false</default>
         <label>Closed - No Order</label>
@@ -134,36 +134,18 @@
         <won>false</won>
     </standardValue>
     <standardValue>
-        <fullName>Closed - Ordered</fullName>
+        <fullName>BP Invoicing - Rasied</fullName>
         <default>false</default>
-        <label>Closed - Ordered</label>
-        <closed>true</closed>
-        <forecastCategory>Closed</forecastCategory>
-        <probability>100</probability>
-        <won>true</won>
+        <label>BP Invoicing - Rasied</label>
+        <closed>false</closed>
+        <forecastCategory>Forecast</forecastCategory>
+        <probability>90</probability>
+        <won>false</won>
     </standardValue>
     <standardValue>
-        <fullName>Not Started</fullName>
+        <fullName>BP Invoicing - Paid</fullName>
         <default>false</default>
-        <label>Not Started</label>
-        <closed>true</closed>
-        <forecastCategory>Closed</forecastCategory>
-        <probability>100</probability>
-        <won>true</won>
-    </standardValue>
-    <standardValue>
-        <fullName>Raised</fullName>
-        <default>false</default>
-        <label>Raised</label>
-        <closed>true</closed>
-        <forecastCategory>Closed</forecastCategory>
-        <probability>100</probability>
-        <won>true</won>
-    </standardValue>
-    <standardValue>
-        <fullName>Paid</fullName>
-        <default>false</default>
-        <label>Paid</label>
+        <label>BP Invoicing - Paid</label>
         <closed>true</closed>
         <forecastCategory>Closed</forecastCategory>
         <probability>100</probability>

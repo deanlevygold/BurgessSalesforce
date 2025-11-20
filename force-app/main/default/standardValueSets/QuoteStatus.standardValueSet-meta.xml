@@ -32,9 +32,9 @@
         <allowEmail>true</allowEmail>
     </standardValue>
     <standardValue>
-        <fullName>Rejected</fullName>
+        <fullName>Declined</fullName>
         <default>false</default>
-        <label>Rejected</label>
+        <label>Declined</label>
         <allowEmail>true</allowEmail>
     </standardValue>
 </StandardValueSet>

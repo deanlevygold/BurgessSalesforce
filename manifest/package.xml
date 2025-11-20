@@ -49,7 +49,8 @@
   <types><members>*</members><name>QuickAction</name></types>
   <types><members>*</members><name>PathAssistant</name></types>
   <types><members>*</members><name>GlobalValueSet</name></types>
-  
+  <types><members>*</members><name>StandardValueSet</name></types>
+
   <!-- === SECURITY & ACCESS === -->
   <types><members>*</members><name>PermissionSet</name></types>
   <types><members>*</members><name>PermissionSetGroup</name></types>
