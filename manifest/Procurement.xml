@@ -150,6 +150,7 @@
     <members>QuoteLineItem.Unit__c</members>
     <members>OuoteLineItem.Manufacturer_Part_Number__c</members>
     <members>QuoteLineItem.Unit_Quantity__c</members>
+    <members>Yacht__c.Preferred_Currency__c</members>
     <name>CustomField</name>
   </types>
 
@@ -159,6 +160,7 @@
     <members>Procurement_Quote_PDF_Template__mdt</members>
     <members>Quote</members>
     <members>QuoteLineItem</members>
+    <members>Yacht__c</members>
     <name>CustomObject</name>
   </types>
 
