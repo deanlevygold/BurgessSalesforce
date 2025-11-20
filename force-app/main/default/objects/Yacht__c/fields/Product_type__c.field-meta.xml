@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_type__c</fullName>
+    <label>Product type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yacht</fullName>
+                <default>true</default>
+                <label>Yacht</label>
+            </value>
+            <value>
+                <fullName>Berth</fullName>
+                <default>false</default>
+                <label>Berth</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

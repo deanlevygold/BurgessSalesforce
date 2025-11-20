@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vessel_Type__c</fullName>
+    <label>Vessel Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Chase boat</fullName>
+                <default>false</default>
+                <label>Chase boat</label>
+            </value>
+            <value>
+                <fullName>Auxiliary schooner</fullName>
+                <default>false</default>
+                <label>Auxiliary schooner</label>
+            </value>
+            <value>
+                <fullName>Tender</fullName>
+                <default>false</default>
+                <label>Tender</label>
+            </value>
+            <value>
+                <fullName>Pilot/survey vessel</fullName>
+                <default>false</default>
+                <label>Pilot/survey vessel</label>
+            </value>
+            <value>
+                <fullName>Explorer</fullName>
+                <default>false</default>
+                <label>Explorer</label>
+            </value>
+            <value>
+                <fullName>Auxiliary catamaran</fullName>
+                <default>false</default>
+                <label>Auxiliary catamaran</label>
+            </value>
+            <value>
+                <fullName>Raised pilothouse</fullName>
+                <default>false</default>
+                <label>Raised pilothouse</label>
+            </value>
+            <value>
+                <fullName>Tri-deck</fullName>
+                <default>false</default>
+                <label>Tri-deck</label>
+            </value>
+            <value>
+                <fullName>Auxiliary four masted schooner</fullName>
+                <default>false</default>
+                <label>Auxiliary four masted schooner</label>
+            </value>
+            <value>
+                <fullName>Auxiliary sailing yacht</fullName>
+                <default>false</default>
+                <label>Auxiliary sailing yacht</label>
+            </value>
+            <value>
+                <fullName>Pilothouse</fullName>
+                <default>false</default>
+                <label>Pilothouse</label>
+            </value>
+            <value>
+                <fullName>Trimaran</fullName>
+                <default>false</default>
+                <label>Trimaran</label>
+            </value>
+            <value>
+                <fullName>Open</fullName>
+                <default>false</default>
+                <label>Open</label>
+            </value>
+            <value>
+                <fullName>Crossover</fullName>
+                <default>false</default>
+                <label>Crossover</label>
+            </value>
+            <value>
+                <fullName>Converted support vessel</fullName>
+                <default>false</default>
+                <label>Converted support vessel</label>
+            </value>
+            <value>
+                <fullName>Motor yacht</fullName>
+                <default>false</default>
+                <label>Motor yacht</label>
+            </value>
+            <value>
+                <fullName>Superbarge</fullName>
+                <default>false</default>
+                <label>Superbarge</label>
+            </value>
+            <value>
+                <fullName>Auxiliary sloop</fullName>
+                <default>false</default>
+                <label>Auxiliary sloop</label>
+            </value>
+            <value>
+                <fullName>Auxiliary ketch</fullName>
+                <default>false</default>
+                <label>Auxiliary ketch</label>
+            </value>
+            <value>
+                <fullName>Flybridge</fullName>
+                <default>false</default>
+                <label>Flybridge</label>
+            </value>
+            <value>
+                <fullName>Sport fisher</fullName>
+                <default>false</default>
+                <label>Sport fisher</label>
+            </value>
+            <value>
+                <fullName>Auxiliary Bermudan ketch</fullName>
+                <default>false</default>
+                <label>Auxiliary Bermudan ketch</label>
+            </value>
+            <value>
+                <fullName>Motorsailer</fullName>
+                <default>false</default>
+                <label>Motorsailer</label>
+            </value>
+            <value>
+                <fullName>Three masted aerorig schooner</fullName>
+                <default>false</default>
+                <label>Three masted aerorig schooner</label>
+            </value>
+            <value>
+                <fullName>Auxiliary three masted schooner</fullName>
+                <default>false</default>
+                <label>Auxiliary three masted schooner</label>
+            </value>
+            <value>
+                <fullName>Commercial vessel</fullName>
+                <default>false</default>
+                <label>Commercial vessel</label>
+            </value>
+            <value>
+                <fullName>Support Vessel</fullName>
+                <default>false</default>
+                <label>Support Vessel</label>
+            </value>
+            <value>
+                <fullName>Cruise ship</fullName>
+                <default>false</default>
+                <label>Cruise ship</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

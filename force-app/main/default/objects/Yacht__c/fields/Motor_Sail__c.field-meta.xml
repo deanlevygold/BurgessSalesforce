@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Motor_Sail__c</fullName>
+    <label>Motor/Sail</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Motor</fullName>
+                <default>false</default>
+                <label>Motor</label>
+            </value>
+            <value>
+                <fullName>Sail</fullName>
+                <default>false</default>
+                <label>Sail</label>
+            </value>
+            <value>
+                <fullName>Motorsailer</fullName>
+                <default>false</default>
+                <label>Motorsailer</label>
+            </value>
+            <value>
+                <fullName>Berth</fullName>
+                <default>false</default>
+                <label>Berth</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

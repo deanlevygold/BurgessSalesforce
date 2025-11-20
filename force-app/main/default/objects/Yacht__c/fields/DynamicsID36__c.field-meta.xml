@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DynamicsID36__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISBLANK( Dynamics_ID__c ),
+    &quot;&quot;,
+
+    IF(
+        CONTAINS(Dynamics_ID__c , &quot;~&quot;),
+        RIGHT(
+            Dynamics_ID__c ,
+            LEN(Dynamics_ID__c ) - FIND(&quot;~&quot;, Dynamics_ID__c )
+        ),
+
+        /* No tilde, but value exists → take last 36 chars */
+        RIGHT(Dynamics_ID__c , 36)
+    )
+)</formula>
+    <label>DynamicsID36</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

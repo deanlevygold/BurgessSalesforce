@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_reason__c</fullName>
+    <label>Status reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Conversion Project</fullName>
+                <default>false</default>
+                <label>Conversion Project</label>
+            </value>
+            <value>
+                <fullName>Shipyard Design Project</fullName>
+                <default>false</default>
+                <label>Shipyard Design Project</label>
+            </value>
+            <value>
+                <fullName>Design Project</fullName>
+                <default>false</default>
+                <label>Design Project</label>
+            </value>
+            <value>
+                <fullName>Under Construction</fullName>
+                <default>false</default>
+                <label>Under Construction</label>
+            </value>
+            <value>
+                <fullName>Construction on hold</fullName>
+                <default>false</default>
+                <label>Construction on hold</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

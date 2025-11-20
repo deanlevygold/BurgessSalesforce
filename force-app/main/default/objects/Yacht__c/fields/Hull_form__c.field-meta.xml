@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hull_form__c</fullName>
+    <label>Hull form</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Planing hull</fullName>
+                <default>false</default>
+                <label>Planing hull</label>
+            </value>
+            <value>
+                <fullName>Fast displacement</fullName>
+                <default>false</default>
+                <label>Fast displacement</label>
+            </value>
+            <value>
+                <fullName>Semi displacement</fullName>
+                <default>false</default>
+                <label>Semi displacement</label>
+            </value>
+            <value>
+                <fullName>Semi planing</fullName>
+                <default>false</default>
+                <label>Semi planing</label>
+            </value>
+            <value>
+                <fullName>Multi hull</fullName>
+                <default>false</default>
+                <label>Multi hull</label>
+            </value>
+            <value>
+                <fullName>Displacement</fullName>
+                <default>false</default>
+                <label>Displacement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

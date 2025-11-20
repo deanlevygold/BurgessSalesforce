@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lying_region__c</fullName>
+    <label>Lying region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Africa</fullName>
+                <default>false</default>
+                <label>Africa</label>
+            </value>
+            <value>
+                <fullName>Asia</fullName>
+                <default>false</default>
+                <label>Asia</label>
+            </value>
+            <value>
+                <fullName>Atlantic Ocean</fullName>
+                <default>false</default>
+                <label>Atlantic Ocean</label>
+            </value>
+            <value>
+                <fullName>Australasia</fullName>
+                <default>false</default>
+                <label>Australasia</label>
+            </value>
+            <value>
+                <fullName>Baltic Sea</fullName>
+                <default>false</default>
+                <label>Baltic Sea</label>
+            </value>
+            <value>
+                <fullName>Canada</fullName>
+                <default>false</default>
+                <label>Canada</label>
+            </value>
+            <value>
+                <fullName>Caribbean</fullName>
+                <default>false</default>
+                <label>Caribbean</label>
+            </value>
+            <value>
+                <fullName>Cruising</fullName>
+                <default>false</default>
+                <label>Cruising</label>
+            </value>
+            <value>
+                <fullName>East Mediterranean</fullName>
+                <default>false</default>
+                <label>East Mediterranean</label>
+            </value>
+            <value>
+                <fullName>Europe</fullName>
+                <default>false</default>
+                <label>Europe</label>
+            </value>
+            <value>
+                <fullName>Indian Ocean</fullName>
+                <default>false</default>
+                <label>Indian Ocean</label>
+            </value>
+            <value>
+                <fullName>Middle East</fullName>
+                <default>false</default>
+                <label>Middle East</label>
+            </value>
+            <value>
+                <fullName>North America</fullName>
+                <default>false</default>
+                <label>North America</label>
+            </value>
+            <value>
+                <fullName>Pacific Ocean</fullName>
+                <default>false</default>
+                <label>Pacific Ocean</label>
+            </value>
+            <value>
+                <fullName>South America</fullName>
+                <default>false</default>
+                <label>South America</label>
+            </value>
+            <value>
+                <fullName>Under construction</fullName>
+                <default>false</default>
+                <label>Under construction</label>
+            </value>
+            <value>
+                <fullName>USA</fullName>
+                <default>false</default>
+                <label>USA</label>
+            </value>
+            <value>
+                <fullName>West Mediterranean</fullName>
+                <default>false</default>
+                <label>West Mediterranean</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

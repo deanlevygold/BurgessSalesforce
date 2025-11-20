@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Population_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF
+(ISBLANK(TEXT(  Type__c )) = TRUE, 0, 33.33)
++
+IF
+(ISNULL(  Built__c ) = TRUE, 0, 33.33)
++
+IF
+(ISBLANK(  Builder__c  ) = TRUE, 0, 20.33)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Data Population Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

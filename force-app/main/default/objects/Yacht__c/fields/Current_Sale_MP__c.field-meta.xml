@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Sale_MP__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Current Sale market position</description>
+    <label>Current Sale MP</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Market_Position__c.Market_position_type__c</field>
+            <operation>equals</operation>
+            <value>Sale</value>
+        </filterItems>
+        <filterItems>
+            <field>Market_Position__c.Status_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Inactive</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Market_Position__c</referenceTo>
+    <relationshipLabel>Yachts</relationshipLabel>
+    <relationshipName>Yachts</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

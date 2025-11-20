@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asking_price_GBP__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Asking_currency__c, 
+&quot;GBP&quot;, Asking_price__c,
+&quot;USD&quot;, Asking_price__c* $CustomMetadata.Currency_rate__mdt.USD_GBP.Conversion_rate__c ,
+&quot;EUR&quot;, Asking_price__c* $CustomMetadata.Currency_rate__mdt.EUR_GBP.Conversion_rate__c ,
+&quot;AUD&quot;, Asking_price__c* $CustomMetadata.Currency_rate__mdt.AUD_GBP.Conversion_rate__c,
+0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Asking price GBP</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
