@@ -173,6 +173,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Quote.Contact_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Quote.ContractId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -247,6 +252,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Main_Yacht_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Quote.Order_Value_Converted__c</field>
         <readable>true</readable>
@@ -274,6 +284,26 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Quote.QuoteToName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Quote_Emailed_Data__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.Quote_Emailed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.RFQ_Emailed_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Quote.RFQ_Emailed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -363,12 +393,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Quote.Yacht_Preferred_Currency__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>QuoteLineItem.BP_Invoice_Total__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>QuoteLineItem.Brand_Requirements__c</field>
+        <field>QuoteLineItem.BP_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -419,6 +454,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>QuoteLineItem.Manufacturer_Part_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>QuoteLineItem.Manufacturer__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
