@@ -5638,7 +5638,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Yacht__c.Prefered_Currency__c</field>
+        <field>Yacht__c.Preferred_Currency__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

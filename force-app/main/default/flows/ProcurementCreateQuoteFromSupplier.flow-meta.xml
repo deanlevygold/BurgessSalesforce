@@ -234,7 +234,7 @@
         <inputAssignments>
             <field>Yacht_Preferred_Currency__c</field>
             <value>
-                <elementReference>IntroRFQs.firstSelectedRow.ProcurementYacht__r.Prefered_Currency__c</elementReference>
+                <elementReference>IntroRFQs.firstSelectedRow.ProcurementYacht__r.Preferred_Currency__c</elementReference>
             </value>
         </inputAssignments>
         <object>Quote</object>

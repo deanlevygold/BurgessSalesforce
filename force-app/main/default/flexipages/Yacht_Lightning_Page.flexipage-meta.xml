@@ -468,7 +468,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Prefered_Currency__c</fieldItem>
+                <fieldItem>Record.Preferred_Currency__c</fieldItem>
                 <identifier>RecordPrefered_Currency__cField</identifier>
             </fieldInstance>
         </itemInstances>
