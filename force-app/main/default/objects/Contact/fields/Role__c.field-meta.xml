@@ -24,12 +24,6 @@
             <controllingFieldValue>Client</controllingFieldValue>
             <controllingFieldValue>Associate</controllingFieldValue>
             <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Agent</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
             <controllingFieldValue>Captain/Crew</controllingFieldValue>
             <valueName>Associate</valueName>
         </valueSettings>
@@ -96,11 +90,6 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Interior designer</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
             <controllingFieldValue>Associate</controllingFieldValue>
             <controllingFieldValue>Industry</controllingFieldValue>
             <controllingFieldValue>Captain/Crew</controllingFieldValue>
@@ -114,14 +103,8 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <valueName>Naval architect</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
             <controllingFieldValue>Associate</controllingFieldValue>
             <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
             <valueName>PA/EA/Secretary</valueName>
         </valueSettings>
         <valueSettings>
@@ -132,7 +115,6 @@
         <valueSettings>
             <controllingFieldValue>Client</controllingFieldValue>
             <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Unknown</controllingFieldValue>
             <controllingFieldValue>Industry</controllingFieldValue>
             <controllingFieldValue>Captain/Crew</controllingFieldValue>
             <valueName>Relative</valueName>
@@ -147,26 +129,17 @@
             <controllingFieldValue>Client</controllingFieldValue>
             <controllingFieldValue>Industry</controllingFieldValue>
             <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Shipping agent</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
             <valueName>Shipyard</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Client</controllingFieldValue>
             <controllingFieldValue>Associate</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
             <controllingFieldValue>Captain/Crew</controllingFieldValue>
             <valueName>Spouse</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Surveyor</valueName>
+            <valueName>Third Party Client</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Client</controllingFieldValue>
@@ -175,14 +148,13 @@
             <valueName>Travel Agent</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>Client</controllingFieldValue>
-            <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
-            <valueName>Yacht Manager</valueName>
+            <controllingFieldValue>Associate</controllingFieldValue>
+            <valueName>Adviser</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Associate</controllingFieldValue>
-            <valueName>Adviser</valueName>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Agent</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Associate</controllingFieldValue>
@@ -228,6 +200,10 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industry</controllingFieldValue>
+            <valueName>Interior designer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
             <valueName>Listing/Assistant</valueName>
         </valueSettings>
         <valueSettings>
@@ -237,7 +213,10 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Industry</controllingFieldValue>
-            <controllingFieldValue>Captain/Crew</controllingFieldValue>
+            <valueName>Naval architect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
             <valueName>Photographer/Videographer</valueName>
         </valueSettings>
         <valueSettings>
@@ -248,6 +227,21 @@
             <controllingFieldValue>Industry</controllingFieldValue>
             <controllingFieldValue>Captain/Crew</controllingFieldValue>
             <valueName>Project manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <controllingFieldValue>Captain/Crew</controllingFieldValue>
+            <valueName>Shipping agent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <controllingFieldValue>Captain/Crew</controllingFieldValue>
+            <valueName>Surveyor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industry</controllingFieldValue>
+            <controllingFieldValue>Captain/Crew</controllingFieldValue>
+            <valueName>Yacht Manager</valueName>
         </valueSettings>
     </valueSet>
     <visibleLines>4</visibleLines>

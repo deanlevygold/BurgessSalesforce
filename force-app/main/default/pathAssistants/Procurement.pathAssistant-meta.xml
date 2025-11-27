@@ -9,10 +9,6 @@
         <picklistValueName>Closed - No Order</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>
-        <info>&lt;p&gt;Customer has placed an order and supplier(s) instructed.&lt;/p&gt;</info>
-        <picklistValueName>Closed - Ordered</picklistValueName>
-    </pathAssistantSteps>
-    <pathAssistantSteps>
         <info>&lt;p&gt;Initial customer engagement / request capture&lt;/p&gt;</info>
         <picklistValueName>Quote Requested</picklistValueName>
     </pathAssistantSteps>

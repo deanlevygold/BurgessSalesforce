@@ -216,6 +216,11 @@
         <label>Surveyor</label>
     </customValue>
     <customValue>
+        <fullName>Third Party Client</fullName>
+        <default>false</default>
+        <label>Third Party Client</label>
+    </customValue>
+    <customValue>
         <fullName>Travel Agent</fullName>
         <default>false</default>
         <label>Travel Agent</label>

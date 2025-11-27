@@ -3,6 +3,7 @@
     <fullName>Procurement_RFQ</fullName>
     <active>true</active>
     <businessProcess>Procurement RFQ</businessProcess>
+    <compactLayoutAssignment>Procurement_Compact_Layout</compactLayoutAssignment>
     <label>Procurement RFQ</label>
     <picklistValues>
         <picklist>BP_Invoice_Status__c</picklist>

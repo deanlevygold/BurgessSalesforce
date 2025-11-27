@@ -219,6 +219,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Enquiry_method__c</fieldItem>
+                <identifier>RecordEnquiry_method_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Enquiry_Source__c</fieldItem>
                 <identifier>RecordEnquirySource__cField</identifier>
             </fieldInstance>

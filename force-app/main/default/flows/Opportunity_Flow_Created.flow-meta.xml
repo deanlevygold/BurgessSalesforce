@@ -6,7 +6,7 @@
         <name>AssignCountENQs</name>
         <label>AssignCountENQs</label>
         <locationX>974</locationX>
-        <locationY>1079</locationY>
+        <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>VARCountofENQs</assignToReference>
             <operator>AssignCount</operator>
@@ -22,7 +22,7 @@
         <name>AssignCountOutstanding_Yachts</name>
         <label>AssignCountOutstanding Yachts</label>
         <locationX>974</locationX>
-        <locationY>971</locationY>
+        <locationY>1079</locationY>
         <assignmentItems>
             <assignToReference>VarOutstandingYPCount</assignToReference>
             <operator>AssignCount</operator>
@@ -38,7 +38,7 @@
         <name>Has_Stage_Been_moved_to_closed</name>
         <label>Has Stage Been moved to closed</label>
         <locationX>974</locationX>
-        <locationY>1295</locationY>
+        <locationY>1403</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Stage_is_changed_closed</name>
@@ -74,7 +74,7 @@
         <name>Is_UBO_empty</name>
         <label>Is UBO empty</label>
         <locationX>512</locationX>
-        <locationY>971</locationY>
+        <locationY>1079</locationY>
         <defaultConnector>
             <targetReference>New_Record_Type</targetReference>
         </defaultConnector>
@@ -99,7 +99,7 @@
         <name>New_Opp_Ds</name>
         <label>New Opp DS</label>
         <locationX>644</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Get_Outstanding_Yachts_Proposed</targetReference>
         </defaultConnector>
@@ -124,7 +124,7 @@
         <name>New_Record_Type</name>
         <label>New Record Type</label>
         <locationX>314</locationX>
-        <locationY>1355</locationY>
+        <locationY>1463</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>New_RT_BP</name>
@@ -158,7 +158,7 @@
         <name>Opp_Contact_Role_Count</name>
         <label>Opp Contact Role Count</label>
         <locationX>314</locationX>
-        <locationY>863</locationY>
+        <locationY>971</locationY>
         <defaultConnector>
             <targetReference>Is_UBO_empty</targetReference>
         </defaultConnector>
@@ -179,7 +179,29 @@
             <label>OCR is 0</label>
         </rules>
     </decisions>
-    <description>Updating contact type from MPL to SPL</description>
+    <decisions>
+        <name>Procurement_RT</name>
+        <label>Procurement RT</label>
+        <locationX>215</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Get_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_procurement_RT</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opp_Record_Type.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Procurement_RFQ</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Yes procurement RT</label>
+        </rules>
+    </decisions>
+    <description>Adding rt decision for procurement</description>
     <environments>Default</environments>
     <formulas>
         <name>FoRCloseDate</name>
@@ -245,7 +267,7 @@ IF(
         <name>Create_Opp_Contact_Role</name>
         <label>Create Opp Contact Role</label>
         <locationX>116</locationX>
-        <locationY>971</locationY>
+        <locationY>1079</locationY>
         <connector>
             <targetReference>New_Record_Type</targetReference>
         </connector>
@@ -286,7 +308,7 @@ IF(
         <name>Get_Account</name>
         <label>Get Account</label>
         <locationX>644</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Client_Contact</targetReference>
@@ -309,7 +331,7 @@ IF(
         <name>Get_Client_Contact</name>
         <label>Get Client Contact</label>
         <locationX>644</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>New_Opp_Ds</targetReference>
@@ -341,7 +363,7 @@ IF(
         <name>Get_ENQ</name>
         <label>Get ENQ</label>
         <locationX>974</locationX>
-        <locationY>863</locationY>
+        <locationY>971</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>AssignCountOutstanding_Yachts</targetReference>
@@ -363,7 +385,7 @@ IF(
         <name>Get_Opp_Contact_Roles</name>
         <label>Get Opp Contact Roles</label>
         <locationX>314</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Opp_Contact_Role_Count</targetReference>
@@ -388,11 +410,11 @@ IF(
     <recordLookups>
         <name>Get_Opp_Record_Type</name>
         <label>Get Opp Record Type</label>
-        <locationX>644</locationX>
+        <locationX>215</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Account</targetReference>
+            <targetReference>Procurement_RT</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -413,7 +435,7 @@ IF(
         <name>Get_Outstanding_Yachts_Proposed</name>
         <label>Get Outstanding Yachts Proposed</label>
         <locationX>974</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_ENQ</targetReference>
@@ -442,7 +464,7 @@ IF(
         <name>Update_New_Contact_Role</name>
         <label>Update New Contact Role</label>
         <locationX>380</locationX>
-        <locationY>1079</locationY>
+        <locationY>1187</locationY>
         <connector>
             <targetReference>New_Record_Type</targetReference>
         </connector>
@@ -472,7 +494,7 @@ IF(
         <name>Update_new_Opp</name>
         <label>Update new Opp</label>
         <locationX>50</locationX>
-        <locationY>1463</locationY>
+        <locationY>1571</locationY>
         <inputAssignments>
             <field>Name</field>
             <value>
@@ -485,7 +507,7 @@ IF(
         <name>Update_Opp</name>
         <label>Update Opp</label>
         <locationX>974</locationX>
-        <locationY>1187</locationY>
+        <locationY>1295</locationY>
         <connector>
             <targetReference>Has_Stage_Been_moved_to_closed</targetReference>
         </connector>
@@ -507,7 +529,7 @@ IF(
         <name>Update_Records_2</name>
         <label>Update Records 2</label>
         <locationX>842</locationX>
-        <locationY>1403</locationY>
+        <locationY>1511</locationY>
         <inputAssignments>
             <field>CloseDate</field>
             <value>
@@ -517,7 +539,7 @@ IF(
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>518</locationX>
+        <locationX>89</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Opp_Record_Type</targetReference>

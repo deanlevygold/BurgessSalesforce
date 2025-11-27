@@ -72,6 +72,14 @@
         <type>Flexipage</type>
         <pageOrSobjectType>QuoteLineItem</pageOrSobjectType>
     </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>Yacht_Management</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
@@ -230,7 +238,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Unknown_Account_Page</content>
+        <content>Yacht_Management_Account_Page</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>Account</pageOrSobjectType>
         <recordType>Account.Company</recordType>
@@ -239,7 +247,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Unknown_Account_Page</content>
+        <content>Yacht_Management_Account_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Account</pageOrSobjectType>
         <recordType>Account.Company</recordType>
@@ -248,7 +256,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Unknown_Account_Page</content>
+        <content>Yacht_Management_Account_Page</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>Account</pageOrSobjectType>
         <recordType>Account.Company</recordType>
@@ -257,7 +265,7 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>Unknown_Account_Page</content>
+        <content>Yacht_Management_Account_Page</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Account</pageOrSobjectType>
         <recordType>Account.Company</recordType>
@@ -268,6 +276,7 @@
     <tabs>standard-Account</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>standard-Opportunity</tabs>
+    <tabs>standard-Quote</tabs>
     <tabs>Yacht__c</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>

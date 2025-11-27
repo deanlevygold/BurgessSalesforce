@@ -336,6 +336,28 @@
         </rules>
     </decisions>
     <decisions>
+        <name>IsUserGoldclipperIntegration</name>
+        <label>IsUserGoldclipperIntegration</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>GetNewsTicker</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_is_GCI_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$User.Username</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>goldclipper_integration@burgessyachts.com</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Yes is GCI User</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>IsYachtNameAtEventChanged</name>
         <label>IsYachtNameAtEventChanged</label>
         <locationX>0</locationX>
@@ -501,7 +523,7 @@ Where MP Type equals sale, yacht ref is same, Status Reason not equal to Inactiv
             <label>New reason not equal to inactive</label>
         </rules>
     </decisions>
-    <description>Adding News ticket to MP flow formula</description>
+    <description>Adding goldclipper integration user exit path</description>
     <environments>Default</environments>
     <formulas>
         <name>ForBurgessSeller</name>
@@ -994,7 +1016,7 @@ ISBLANK({!$Record.Selling_Opportunity__c}) = TRUE,
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>GetNewsTicker</targetReference>
+            <targetReference>IsUserGoldclipperIntegration</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>

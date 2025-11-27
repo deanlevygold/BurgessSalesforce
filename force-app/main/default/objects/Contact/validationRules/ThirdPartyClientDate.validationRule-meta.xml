@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ThirdPartyClientDate</fullName>
+    <active>true</active>
+    <errorConditionFormula>(
+INCLUDES(Role__c, &apos;Third Party Client&apos;) &amp;&amp;
+isnull( Third_Party_Client_Created_Date__c)
+)
+||
+(
+not(INCLUDES(Role__c, &apos;Third Party Client&apos;)) &amp;&amp;
+not(isnull( Third_Party_Client_Created_Date__c))
+)</errorConditionFormula>
+    <errorDisplayField>Third_Party_Client_Created_Date__c</errorDisplayField>
+    <errorMessage>If Role is Third Party Client then Third Party Client Created Date must be populated.  If Role is not Third Party Client then you cannot populate  Third Party Client Created Date.</errorMessage>
+</ValidationRule>

@@ -4,6 +4,14 @@
     <description>Sales Process for Procurement</description>
     <isActive>true</isActive>
     <values>
+        <fullName>BP Invoicing - Paid</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>BP Invoicing - Rasied</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Closed - No Order</fullName>
         <default>false</default>
     </values>
@@ -17,6 +25,10 @@
     </values>
     <values>
         <fullName>Not Started</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Ordered</fullName>
         <default>false</default>
     </values>
     <values>

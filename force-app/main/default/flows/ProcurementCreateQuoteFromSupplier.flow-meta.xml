@@ -50,13 +50,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varQuoteLine.Size__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>LoopOppProds.Size__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varQuoteLine.Manufacturer_Part_Number__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -68,6 +61,27 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>LoopOppProds.Manufacturer__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varQuoteLine.Unit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopOppProds.Unit__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varQuoteLine.Unit_Quantity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopOppProds.Unit_Quantity__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varQuoteLine.Manufacturer_Part_Number__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopOppProds.Manufacturer_Part_Number__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -146,9 +160,39 @@
             <targetReference>GetOppProducts</targetReference>
         </connector>
         <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>ListSupplierContacts.firstSelectedRow.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contact_Email__c</field>
+            <value>
+                <elementReference>GetContactRole.Contact.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>IntroRFQs.firstSelectedRow.Description</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>ListSupplierContacts.firstSelectedRow.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Main_Supplier_Contact__c</field>
             <value>
                 <elementReference>ListSupplierContacts.firstSelectedRow.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Main_Yacht_Contact__c</field>
+            <value>
+                <elementReference>GetContactRole.ContactId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -187,6 +231,12 @@
                 <elementReference>recordId</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Yacht_Preferred_Currency__c</field>
+            <value>
+                <elementReference>IntroRFQs.firstSelectedRow.ProcurementYacht__r.Prefered_Currency__c</elementReference>
+            </value>
+        </inputAssignments>
         <object>Quote</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
@@ -198,24 +248,31 @@
         <inputReference>varLineItemCollection</inputReference>
     </recordCreates>
     <recordLookups>
-        <name>GetIntroOpps</name>
-        <label>GetIntroOpps</label>
+        <name>GetContactRole</name>
+        <label>GetContactRole</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>GetSupplierContacts</targetReference>
+            <targetReference>CreateQuote</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>StageName</field>
+            <field>OpportunityId</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Intro</stringValue>
+                <elementReference>IntroRFQs.firstSelectedRow.Id</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Opportunity</object>
+        <filters>
+            <field>IsPrimary</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OpportunityContactRole</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -240,13 +297,34 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>GetOpps</name>
+        <label>GetOpps</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetSupplierContacts</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Quote Requested</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>GetSupplier</name>
         <label>GetSupplier</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>GetIntroOpps</targetReference>
+            <targetReference>GetOpps</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -334,26 +412,26 @@
             <inputParameters>
                 <name>tableData</name>
                 <value>
-                    <elementReference>GetIntroOpps</elementReference>
+                    <elementReference>GetOpps</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>keyField</name>
                 <value>
-                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Opportunity&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;GetIntroOpps&quot;}</complexValue>
+                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Opportunity&quot;,&quot;fieldReferences&quot;:[&quot;Id&quot;],&quot;elementReference&quot;:&quot;GetOpps&quot;}</complexValue>
                     <complexValueType>ComplexObjectFieldDetails</complexValueType>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-f3f0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;&quot;,&quot;guid&quot;:&quot;column-2a05&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-f3f0&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;BP_Number__c&quot;,&quot;guid&quot;:&quot;column-2a05&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;BP Number&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Description&quot;,&quot;guid&quot;:&quot;column-6a41&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Description&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
                 <name>columnReferences</name>
                 <value>
-                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Opportunity&quot;,&quot;fieldReferences&quot;:[&quot;Name&quot;],&quot;elementReference&quot;:&quot;GetIntroOpps&quot;}</complexValue>
+                    <complexValue>{&quot;dataType&quot;:&quot;SObject&quot;,&quot;objectType&quot;:&quot;Opportunity&quot;,&quot;fieldReferences&quot;:[&quot;Name&quot;,&quot;BP_Number__c&quot;,&quot;Description&quot;],&quot;elementReference&quot;:&quot;GetOpps&quot;}</complexValue>
                     <complexValueType>ComplexObjectFieldDetails</complexValueType>
                 </value>
             </inputParameters>
@@ -393,7 +471,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>CreateQuote</targetReference>
+            <targetReference>GetContactRole</targetReference>
         </connector>
         <fields>
             <name>addleadcontact</name>
