@@ -79,6 +79,31 @@
             <label>Yes Add Another Item Decision</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Yacht_Relationships</name>
+        <label>Yacht Relationships</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Add_RFQ_Line_Items</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>HasRelationships</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetYachtRelationship</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AddContactRole</targetReference>
+            </connector>
+            <label>HasRelationships</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <formulas>
         <name>f_BaseBP</name>
@@ -197,7 +222,7 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Opp_with_BP_Number</targetReference>
+            <targetReference>Item_has_been_added</targetReference>
         </connector>
         <inputAssignments>
             <field>Description</field>
@@ -244,7 +269,7 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <inputAssignments>
             <field>UnitPrice</field>
             <value>
-                <elementReference>Procurement_Service_Sales_Price</elementReference>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -268,8 +293,14 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>AddContactRole</targetReference>
+            <targetReference>Yacht_Relationships</targetReference>
         </connector>
+        <inputAssignments>
+            <field>BP_Number__c</field>
+            <value>
+                <elementReference>f_FullBP</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>CloseDate</field>
             <value>
@@ -374,7 +405,7 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>AddContact</targetReference>
+            <targetReference>Get_Procurement_Product</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -395,7 +426,7 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_RFQ_Line_Item</targetReference>
+            <targetReference>CreateOpp</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -437,7 +468,7 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Latest_BP_Number</targetReference>
+            <targetReference>AddContact</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -458,30 +489,6 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <object>Yacht_Relationship__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordUpdates>
-        <name>Update_Opp_with_BP_Number</name>
-        <label>Update Opp with BP Number</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <connector>
-            <targetReference>Item_has_been_added</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>CreateOpp.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>BP_Number__c</field>
-            <value>
-                <elementReference>f_FullBP</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Opportunity</object>
-    </recordUpdates>
     <screens>
         <name>Add_RFQ_Line_Items</name>
         <label>Add RFQ Line Items</label>
@@ -491,32 +498,12 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Get_Procurement_Product</targetReference>
+            <targetReference>Create_RFQ_Line_Item</targetReference>
         </connector>
         <fields>
             <name>Enterprocurementlinedetails</name>
             <fieldText>&lt;p&gt;Enter Procurement line details:&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Procurement_Product</name>
-            <choiceReferences>Deck</choiceReferences>
-            <choiceReferences>Galley</choiceReferences>
-            <choiceReferences>Engineering</choiceReferences>
-            <choiceReferences>Interiors</choiceReferences>
-            <dataType>String</dataType>
-            <fieldText>Procurement Product</fieldText>
-            <fieldType>DropdownBox</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -533,7 +520,7 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
             <fieldType>InputField</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
-            <scale>2</scale>
+            <scale>0</scale>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -624,23 +611,6 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
                 </width>
             </styleProperties>
         </fields>
-        <fields>
-            <name>Procurement_Service_Sales_Price</name>
-            <dataType>Currency</dataType>
-            <fieldText>Estimated Procurement Service (Sales Price)</fieldText>
-            <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <scale>2</scale>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
@@ -653,7 +623,7 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>CreateOpp</targetReference>
+            <targetReference>Get_Latest_BP_Number</targetReference>
         </connector>
         <fields>
             <name>RFQ_Description</name>
@@ -661,6 +631,26 @@ UPPER(LEFT({!GetYacht.Name}, 3)) &amp;
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Procurement_Product</name>
+            <choiceReferences>Engineering</choiceReferences>
+            <choiceReferences>Deck</choiceReferences>
+            <choiceReferences>Galley</choiceReferences>
+            <choiceReferences>Interiors</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Procurement Product</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
